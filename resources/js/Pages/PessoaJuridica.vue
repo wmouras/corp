@@ -68,6 +68,7 @@
                             <input name="objetivo_social" id="objetivo_social" type="text" placeholder="Escolha o tipo de empresa" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
                             <p class="text-red-500 text-xs italic">Favor preencher este campo.</p>
                         </div>
+                        
                         <input type="hidden" name="usuario " id="usuario">
                         <input type="hidden" name="data_cadastro " id="data_cadastro">
                         <input type="hidden" name="data_alteracao" id="data_alteracao">

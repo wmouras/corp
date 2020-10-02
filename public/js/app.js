@@ -3515,6 +3515,35 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -26639,7 +26668,7 @@ var render = function() {
                       },
                       [
                         _vm._v(
-                          "\n                            Nome\n                        "
+                          "\n                            Nome Fantasia\n                        "
                         )
                       ]
                     ),
@@ -26648,10 +26677,10 @@ var render = function() {
                       staticClass:
                         "appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
                       attrs: {
-                        id: "nome",
-                        name: "nome",
+                        id: "nome_fantasia",
+                        name: "nome_fantasia",
                         type: "text",
-                        placeholder: "Insira seu nome"
+                        placeholder: "Insira o nome fantasia"
                       }
                     }),
                     _vm._v(" "),
@@ -26661,158 +26690,250 @@ var render = function() {
                   ]
                 ),
                 _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", [
-                    _vm._v("Razão Social "),
-                    _c("span", { staticClass: "text-danger" }, [_vm._v("*")])
-                  ]),
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "text",
-                      name: "razao_social",
-                      id: "razao_social",
-                      placeholder: "Digite a razão social",
-                      required: ""
-                    }
-                  })
-                ]),
+                _c(
+                  "div",
+                  { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                  [
+                    _c(
+                      "label",
+                      {
+                        staticClass:
+                          "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                        attrs: { for: "grid-first-name" }
+                      },
+                      [
+                        _vm._v(
+                          "\n                            Razão Social\n                        "
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass:
+                        "appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                      attrs: {
+                        name: "nome_fantasia",
+                        id: "nome_fantasia",
+                        type: "text",
+                        placeholder: "Insira a razão social"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "text-red-500 text-xs italic" }, [
+                      _vm._v("Favor preencher este campo.")
+                    ])
+                  ]
+                ),
                 _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", [
-                    _vm._v("Nome Fantasia"),
-                    _c("span", { staticClass: "text-danger" }, [_vm._v("*")])
-                  ]),
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "text",
-                      name: "nome_fantasia",
-                      id: "nome_fantasia",
-                      placeholder: "Digite o nome fantasia",
-                      required: ""
-                    }
-                  })
-                ]),
+                _c(
+                  "div",
+                  { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                  [
+                    _c(
+                      "label",
+                      {
+                        staticClass:
+                          "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                        attrs: { for: "grid-first-name" }
+                      },
+                      [
+                        _vm._v(
+                          "\n                            Tipo Empresa\n                        "
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass:
+                        "appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                      attrs: {
+                        name: "fk_id_tipo_empresa",
+                        id: "fk_id_tipo_empresa",
+                        type: "text",
+                        placeholder: "Escolha o tipo de empresa"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "text-red-500 text-xs italic" }, [
+                      _vm._v("Favor preencher este campo.")
+                    ])
+                  ]
+                ),
                 _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", [
-                    _vm._v("Tipo Empresa "),
-                    _c("span", { staticClass: "text-danger" }, [_vm._v("*")])
-                  ]),
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "text",
-                      name: "fk_id_tipo_empresa",
-                      id: "fk_id_tipo_empresa",
-                      placeholder: "Escolha o tipo",
-                      required: ""
-                    }
-                  })
-                ]),
+                _c(
+                  "div",
+                  { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                  [
+                    _c(
+                      "label",
+                      {
+                        staticClass:
+                          "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                        attrs: { for: "grid-first-name" }
+                      },
+                      [
+                        _vm._v(
+                          "\n                            Tipo do estabelcimento\n                        "
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass:
+                        "appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                      attrs: {
+                        name: "fk_id_tipo_estabelecimento",
+                        id: "fk_id_tipo_estabelecimento",
+                        type: "text",
+                        placeholder: "Escolha o tipo de empresa"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "text-red-500 text-xs italic" }, [
+                      _vm._v("Favor preencher este campo.")
+                    ])
+                  ]
+                ),
                 _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", [
-                    _vm._v("Tipo do estabelcimento "),
-                    _c("span", { staticClass: "text-danger" }, [_vm._v("*")])
-                  ]),
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "text",
-                      name: "fk_id_tipo_estabelecimento",
-                      id: "fk_id_tipo_estabelecimento",
-                      placeholder: "Escolha o tipo",
-                      required: ""
-                    }
-                  })
-                ]),
+                _c(
+                  "div",
+                  { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                  [
+                    _c(
+                      "label",
+                      {
+                        staticClass:
+                          "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                        attrs: { for: "grid-first-name" }
+                      },
+                      [
+                        _vm._v(
+                          "\n                            Capital Social\n                        "
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass:
+                        "appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                      attrs: {
+                        name: "capital_social",
+                        id: "capital_social",
+                        type: "text",
+                        placeholder: "Escolha o tipo de empresa"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "text-red-500 text-xs italic" }, [
+                      _vm._v("Favor preencher este campo.")
+                    ])
+                  ]
+                ),
                 _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", [
-                    _vm._v("Capital Social "),
-                    _c("span", { staticClass: "text-danger" }, [_vm._v("*")])
-                  ]),
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "text",
-                      name: "capital_social",
-                      id: "capital_social",
-                      placeholder: "Digite o valor",
-                      required: ""
-                    }
-                  })
-                ]),
+                _c(
+                  "div",
+                  { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                  [
+                    _c(
+                      "label",
+                      {
+                        staticClass:
+                          "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                        attrs: { for: "grid-first-name" }
+                      },
+                      [
+                        _vm._v(
+                          "\n                            Última alteração de capital\n                        "
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass:
+                        "appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                      attrs: {
+                        name: "dt_ultima_alt_capital",
+                        id: "dt_ultima_alt_capital",
+                        type: "text",
+                        placeholder: "Escolha o tipo de empresa"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "text-red-500 text-xs italic" }, [
+                      _vm._v("Favor preencher este campo.")
+                    ])
+                  ]
+                ),
                 _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", [
-                    _vm._v("Última alktração de capital"),
-                    _c("span", { staticClass: "text-danger" }, [_vm._v("*")])
-                  ]),
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "text",
-                      name: "dt_ultima_alt_capital ",
-                      id: "dt_ultima_alt_capital",
-                      placeholder: "Digite a data",
-                      required: ""
-                    }
-                  })
-                ]),
+                _c(
+                  "div",
+                  { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                  [
+                    _c(
+                      "label",
+                      {
+                        staticClass:
+                          "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                        attrs: { for: "grid-first-name" }
+                      },
+                      [
+                        _vm._v(
+                          "\n                            Última alteração Contratual\n                        "
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass:
+                        "appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                      attrs: {
+                        name: "nr_ultima_alt_contratual",
+                        id: "nr_ultima_alt_contratual",
+                        type: "text",
+                        placeholder: "Escolha o tipo de empresa"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "text-red-500 text-xs italic" }, [
+                      _vm._v("Favor preencher este campo.")
+                    ])
+                  ]
+                ),
                 _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", [
-                    _vm._v("Ùltima alteração contratual "),
-                    _c("span", { staticClass: "text-danger" }, [_vm._v("*")])
-                  ]),
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "text",
-                      name: "nr_ultima_alt_contratual",
-                      id: "nr_ultima_alt_contratual",
-                      placeholder: "Data da últiam alteração do contrato",
-                      required: ""
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", [
-                    _vm._v("Objetivo Social "),
-                    _c("span", { staticClass: "text-danger" }, [_vm._v("*")])
-                  ]),
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "text",
-                      name: "objetivo_social",
-                      id: "objetivo_social",
-                      placeholder: "Digite o objetivo social",
-                      required: ""
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", [
-                    _vm._v("Nome "),
-                    _c("span", { staticClass: "text-danger" }, [_vm._v("*")])
-                  ]),
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "text",
-                      name: "observacoes",
-                      id: "observacoes",
-                      placeholder: "Digite Suas observações",
-                      required: ""
-                    }
-                  })
-                ]),
+                _c(
+                  "div",
+                  { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                  [
+                    _c(
+                      "label",
+                      {
+                        staticClass:
+                          "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                        attrs: { for: "grid-first-name" }
+                      },
+                      [
+                        _vm._v(
+                          "\n                            Objetivo Social\n                        "
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass:
+                        "appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                      attrs: {
+                        name: "objetivo_social",
+                        id: "objetivo_social",
+                        type: "text",
+                        placeholder: "Escolha o tipo de empresa"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "text-red-500 text-xs italic" }, [
+                      _vm._v("Favor preencher este campo.")
+                    ])
+                  ]
+                ),
                 _vm._v(" "),
                 _c("input", {
                   attrs: { type: "hidden", name: "usuario ", id: "usuario" }
