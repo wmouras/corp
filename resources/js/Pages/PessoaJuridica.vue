@@ -14,31 +14,60 @@
 
                         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
-                                Nome
+                                Nome Fantasia
                             </label>
-                            <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="nome" name="nome" type="text" placeholder="Insira seu nome">
+                            <input id="nome_fantasia" name="nome_fantasia" type="text" placeholder="Insira o nome fantasia" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
                             <p class="text-red-500 text-xs italic">Favor preencher este campo.</p>
                         </div>
-
-                        <div class="form-group"><label>Razão Social <span class="text-danger">*</span></label><input type="text"
-                            name="razao_social" id="razao_social" class="form-control" placeholder="Digite a razão social" required></div>
-                        <div class="form-group"><label>Nome Fantasia<span class="text-danger">*</span></label><input type="text"
-                            name="nome_fantasia" id="nome_fantasia" class="form-control" placeholder="Digite o nome fantasia" required></div>
-                        <div class="form-group"><label>Tipo Empresa <span class="text-danger">*</span></label><input type="text"
-                            name="fk_id_tipo_empresa" id="fk_id_tipo_empresa" class="form-control" placeholder="Escolha o tipo" required></div>
-                        <div class="form-group"><label>Tipo do estabelcimento <span class="text-danger">*</span></label><input type="text"
-                            name="fk_id_tipo_estabelecimento" id="fk_id_tipo_estabelecimento" class="form-control" placeholder="Escolha o tipo" required></div>
-                        <div class="form-group"><label>Capital Social <span class="text-danger">*</span></label><input type="text"
-                            name="capital_social" id="capital_social" class="form-control" placeholder="Digite o valor" required></div>
-                        <div class="form-group"><label>Última alktração de capital<span class="text-danger">*</span></label><input type="text"
-                            name="dt_ultima_alt_capital " id="dt_ultima_alt_capital" class="form-control" placeholder="Digite a data" required></div>
-                        <div class="form-group"><label>Ùltima alteração contratual <span class="text-danger">*</span></label><input type="text"
-                            name="nr_ultima_alt_contratual" id="nr_ultima_alt_contratual" class="form-control" placeholder="Data da últiam alteração do contrato" required></div>
-                        <div class="form-group"><label>Objetivo Social <span class="text-danger">*</span></label><input type="text"
-                            name="objetivo_social" id="objetivo_social" class="form-control" placeholder="Digite o objetivo social" required></div>
-                        <div class="form-group"><label>Nome <span class="text-danger">*</span></label><input type="text"
-                            name="observacoes" id="observacoes" class="form-control" placeholder="Digite Suas observações" required></div>
-
+                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+                                Razão Social
+                            </label>
+                            <input name="nome_fantasia" id="nome_fantasia" type="text" placeholder="Insira a razão social" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
+                            <p class="text-red-500 text-xs italic">Favor preencher este campo.</p>
+                        </div>
+                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+                                Tipo Empresa
+                            </label>
+                            <input name="fk_id_tipo_empresa" id="fk_id_tipo_empresa" type="text" placeholder="Escolha o tipo de empresa" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
+                            <p class="text-red-500 text-xs italic">Favor preencher este campo.</p>
+                        </div>
+                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+                                Tipo do estabelcimento
+                            </label>
+                            <input name="fk_id_tipo_estabelecimento" id="fk_id_tipo_estabelecimento" type="text" placeholder="Escolha o tipo de empresa" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
+                            <p class="text-red-500 text-xs italic">Favor preencher este campo.</p>
+                        </div>
+                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+                                Capital Social
+                            </label>
+                            <input name="capital_social" id="capital_social" type="text" placeholder="Escolha o tipo de empresa" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
+                            <p class="text-red-500 text-xs italic">Favor preencher este campo.</p>
+                        </div>
+                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+                                Última alteração de capital
+                            </label>
+                            <input name="dt_ultima_alt_capital" id="dt_ultima_alt_capital" type="text" placeholder="Escolha o tipo de empresa" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
+                            <p class="text-red-500 text-xs italic">Favor preencher este campo.</p>
+                        </div>
+                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+                                Última alteração Contratual
+                            </label>
+                            <input name="nr_ultima_alt_contratual" id="nr_ultima_alt_contratual" type="text" placeholder="Escolha o tipo de empresa" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
+                            <p class="text-red-500 text-xs italic">Favor preencher este campo.</p>
+                        </div>
+                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+                                Objetivo Social
+                            </label>
+                            <input name="objetivo_social" id="objetivo_social" type="text" placeholder="Escolha o tipo de empresa" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
+                            <p class="text-red-500 text-xs italic">Favor preencher este campo.</p>
+                        </div>
                         <input type="hidden" name="usuario " id="usuario">
                         <input type="hidden" name="data_cadastro " id="data_cadastro">
                         <input type="hidden" name="data_alteracao" id="data_alteracao">
