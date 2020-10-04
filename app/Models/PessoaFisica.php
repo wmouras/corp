@@ -19,8 +19,4 @@ class PessoaFisica extends Model
      */
     protected $table = 'tb_pessoa_fisica';
 
-    public function listaTipoEmpresa(){
-        $data = model::select('name','id')->orderBy('name');
-    }
-
 }
