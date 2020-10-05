@@ -19,7 +19,7 @@
                                     Registro
                                 </label>
                                 <input id='codigo_registro' name='codigo_registro' type='text' placeholder='Insira o registro'
-                                    class='appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
+                                    class='appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
 
                             </div>
 
@@ -97,17 +97,19 @@
                             </div>
                             <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
                                 <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='nr_ultima_alt_contratual'>
-                                    Última alteração Contratual
+                                    Número e data da última alteração Contratual
                                 </label>
-                                <input name='nr_ultima_alt_contratual' id='nr_ultima_alt_contratual' type='text' placeholder='Apenas números'
-                                class='appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
+                                <input name='nr_ultima_alt_contratual' id='nr_ultima_alt_contratual' type='text' placeholder='Números' v-mask="'####'" v-model="nrUltAltContratual"
+                                class='appearance-none inline w-24 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
+                                <input name='dt_ultima_alt_contratual' id='dt_ultima_alt_contratual' type='text' placeholder='Apenas números' v-mask="'##/##/####'" v-model="ultAltContratual"
+                                class='appearance-none inline w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 ml-3 mb-3 leading-tight focus:outline-none focus:bg-white'>
 
                             </div>
                             <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
                                 <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='objetivo_social'>
                                     Objetivo Social
                                 </label>
-                                <input name='objetivo_social' id='objetivo_social' type='text' placeholder='Escolha o tipo de empresa' class='appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
+                                <input name='objetivo_social' id='objetivo_social' type='text' placeholder='Insira o objetivo social da empresa' class='appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
 
                             </div>
 
@@ -158,6 +160,8 @@
                 mask: maskDinheiro,
                 capitalSocial: '',
                 ultAltCapital: '',
+                ultAltContratual: '',
+                nrUltAltContratual: '',
                 vmCnpj: '',
 
         }),

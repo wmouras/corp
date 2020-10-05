@@ -8,7 +8,8 @@
                         <!-- Logo -->
                         <div class="flex-shrink-0 flex items-center">
                             <a href="/dashboard">
-                                <jet-application-mark class="block h-9 w-auto" />
+                                <img src="http://creadf.org.br/images/logo.jpg" alt="" srcset="" width="150px">
+                                <!-- <jet-application-mark class="block h-9 w-auto" /> -->
                             </a>
                         </div>
 
