@@ -12,7 +12,7 @@
 
                     <div class='row col-md-6'>
 
-                        <form ref="form" action='/pessoajuridica/salvar' id='frm-pessoa-juridica' name='frm-pessoa-juridica' method='GET' v-on:submit="exibe">
+                        <form ref="form" action='/pessoajuridica/salvar' id='frm-pessoa-juridica' name='frm-pessoa-juridica' method='GET'>
 
                             <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
                                 <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='codigo_registro'>
@@ -54,13 +54,17 @@
                                     Tipo da Empresa
                                 </label>
 
-                                <v-select v-model="tipos.data" class='select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white'
-                                    id='fk_id_tipo_empresa'
-                                    name='fk_id_tipo_empresa'
+                                <v-select v-model="vModelEmpresa" class='select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white'
+                                    id='tipo_empresa'
+                                    name='tipo_empresa'
+                                    item-text="tipo_empresa"
+                                    item-value="id_tipo_empresa"
                                     placeholder='Escolha o tipo da empresa'
                                     :options='tipos'
                                     label='tipo_empresa'
                                     value='id_tipo_empresa'
+                                    :items="tipos"
+                                    @input="getIdTipoEmpresa($data.tipos.data.id_tipo_empresa)"
                                 />
 
                             </div>
@@ -69,16 +73,21 @@
                                     Tipo Estabelecimento
                                 </label>
 
-                                <v-select v-model="tpestabelecimento.data" class='select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white'
-                                    id='fk_id_tipo_estabelecimento'
-                                    name='fk_id_tipo_estabelecimento'
+                                <v-select v-model="vModelEstabelecimento" class='select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white'
+                                    id='tipo_estabelecimento'
+                                    name='tipo_estabelecimento'
+                                    item-text="tipo_estabelecimento"
+                                    item-value="id_tipo_estabelecimento"
                                     placeholder='Escolha o tipo do estabelecimento'
                                     :options='tpestabelecimento'
                                     label='tipo_estabelecimento'
                                     value="id_tipo_estabelecimento"
+                                    :items="tpestabelecimento"
+                                    @input="getIdEstabelecimento($data.tpestabelecimento.data.id_tipo_estabelecimento)"
                                 />
 
                             </div>
+                            <!-- <p>{{this.valorEstabelecimento}}</p> -->
                             <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
                                 <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='capital_social'>
                                     Capital Social
@@ -114,10 +123,14 @@
                             </div>
 
                             <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0 ml-28'>
-                                <button type='button' v-on:click="exibe()" class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-10 ml-28 center'>
+                                <button type='submit' v-on:click="exibe()" class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-10 ml-28 center'>
                                     Salvar
                                 </button>
                             </div>
+
+                            <input type="hidden" name="fk_id_tipo_estabelecimento" id="fk_id_tipo_estabelecimento" value="2"/>
+                            <input type="hidden" name="fk_id_tipo_empresa" id="fk_id_tipo_empresa" value="3"/>
+
                         </form>
 
                     </div>
@@ -144,6 +157,7 @@
         includeThousandsSeparator: true,
         thousandsSeparatorSymbol: '.',
         allowNegative: false,
+        valorEstabelecimento: null,
     });
 
     export default {
@@ -157,6 +171,8 @@
                 frm_pj: null,
                 tipos: [],
                 tpestabelecimento: [],
+                vModelEmpresa: null,
+                vModelEstabelecimento: null,
                 mask: maskDinheiro,
                 capitalSocial: '',
                 ultAltCapital: '',
@@ -166,6 +182,11 @@
 
         }),
         mounted() {
+
+            // event.preventDefault();
+            // this.tpestabelecimento.id_tipo_estabelecimento = this.$refs.form.fk_id_tipo_estabelecimento.value
+            // this.tipos.id_tipo_empresa = this.$refs.form.fk_id_tipo_empresa.value
+
             axios.get('/pessoajuridica/listatipo', { headers: {
                 'Content-Type': 'application/json'
                 }
@@ -176,13 +197,17 @@
                 }
             }).then(response => {this.tpestabelecimento = response.data });
 
+            // this.vModelEstabelecimento = {'id_tipo_estabelecimento': 0, 'tipo_estabelecimento': 'SECAO'};
+            // this.vModelEmpresa = {'id_tipo_empresa': 3, 'tipo_empresa': 'CONSORCIO COM PERSONALIDADE JURIDICA'};
+
         },
         methods: {
-            exibe: function () {
-                // console.log(this.$data.tipos.data.id_tipo_empresa)
-                // console.log(this.$data.tipos.data.id_tipo_estabelecimenbto)
-                console.log(this.$refs.form.codigo_registro.value)
-            }
+            getIdEstabelecimento: function(id) {
+                this.$data.tpestabelecimento.data.id_tipo_estabelecimento = this.$refs.form.fk_id_tipo_estabelecimento.value
+            },
+            getIdTipoEmpresa: function(id) {
+                this.$data.tipos.data.id_tipo_empresa = this.$refs.form.fk_id_tipo_empresa.value
+            },
         }
 
     }

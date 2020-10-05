@@ -3602,6 +3602,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -3613,7 +3626,8 @@ var maskDinheiro = text_mask_addons_dist_createNumberMask__WEBPACK_IMPORTED_MODU
   decimalSymbol: ',',
   includeThousandsSeparator: true,
   thousandsSeparatorSymbol: '.',
-  allowNegative: false
+  allowNegative: false,
+  valorEstabelecimento: null
 });
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'pessoa-juridica',
@@ -3626,6 +3640,8 @@ var maskDinheiro = text_mask_addons_dist_createNumberMask__WEBPACK_IMPORTED_MODU
       frm_pj: null,
       tipos: [],
       tpestabelecimento: [],
+      vModelEmpresa: null,
+      vModelEstabelecimento: null,
       mask: maskDinheiro,
       capitalSocial: '',
       ultAltCapital: '',
@@ -3637,6 +3653,9 @@ var maskDinheiro = text_mask_addons_dist_createNumberMask__WEBPACK_IMPORTED_MODU
   mounted: function mounted() {
     var _this = this;
 
+    // event.preventDefault();
+    // this.tpestabelecimento.id_tipo_estabelecimento = this.$refs.form.fk_id_tipo_estabelecimento.value
+    // this.tipos.id_tipo_empresa = this.$refs.form.fk_id_tipo_empresa.value
     axios.get('/pessoajuridica/listatipo', {
       headers: {
         'Content-Type': 'application/json'
@@ -3650,13 +3669,15 @@ var maskDinheiro = text_mask_addons_dist_createNumberMask__WEBPACK_IMPORTED_MODU
       }
     }).then(function (response) {
       _this.tpestabelecimento = response.data;
-    });
+    }); // this.vModelEstabelecimento = {'id_tipo_estabelecimento': 0, 'tipo_estabelecimento': 'SECAO'};
+    // this.vModelEmpresa = {'id_tipo_empresa': 3, 'tipo_empresa': 'CONSORCIO COM PERSONALIDADE JURIDICA'};
   },
   methods: {
-    exibe: function exibe() {
-      // console.log(this.$data.tipos.data.id_tipo_empresa)
-      // console.log(this.$data.tipos.data.id_tipo_estabelecimenbto)
-      console.log(this.$refs.form.codigo_registro.value);
+    getIdEstabelecimento: function getIdEstabelecimento(id) {
+      this.$data.tpestabelecimento.data.id_tipo_estabelecimento = this.$refs.form.fk_id_tipo_estabelecimento.value;
+    },
+    getIdTipoEmpresa: function getIdTipoEmpresa(id) {
+      this.$data.tipos.data.id_tipo_empresa = this.$refs.form.fk_id_tipo_empresa.value;
     }
   }
 });
@@ -27872,8 +27893,7 @@ var render = function() {
                       id: "frm-pessoa-juridica",
                       name: "frm-pessoa-juridica",
                       method: "GET"
-                    },
-                    on: { submit: _vm.exibe }
+                    }
                   },
                   [
                     _c(
@@ -28045,19 +28065,29 @@ var render = function() {
                           staticClass:
                             "select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white",
                           attrs: {
-                            id: "fk_id_tipo_empresa",
-                            name: "fk_id_tipo_empresa",
+                            id: "tipo_empresa",
+                            name: "tipo_empresa",
+                            "item-text": "tipo_empresa",
+                            "item-value": "id_tipo_empresa",
                             placeholder: "Escolha o tipo da empresa",
                             options: _vm.tipos,
                             label: "tipo_empresa",
-                            value: "id_tipo_empresa"
+                            value: "id_tipo_empresa",
+                            items: _vm.tipos
+                          },
+                          on: {
+                            input: function($event) {
+                              return _vm.getIdTipoEmpresa(
+                                _vm.$data.tipos.data.id_tipo_empresa
+                              )
+                            }
                           },
                           model: {
-                            value: _vm.tipos.data,
+                            value: _vm.vModelEmpresa,
                             callback: function($$v) {
-                              _vm.$set(_vm.tipos, "data", $$v)
+                              _vm.vModelEmpresa = $$v
                             },
-                            expression: "tipos.data"
+                            expression: "vModelEmpresa"
                           }
                         })
                       ],
@@ -28086,19 +28116,30 @@ var render = function() {
                           staticClass:
                             "select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white",
                           attrs: {
-                            id: "fk_id_tipo_estabelecimento",
-                            name: "fk_id_tipo_estabelecimento",
+                            id: "tipo_estabelecimento",
+                            name: "tipo_estabelecimento",
+                            "item-text": "tipo_estabelecimento",
+                            "item-value": "id_tipo_estabelecimento",
                             placeholder: "Escolha o tipo do estabelecimento",
                             options: _vm.tpestabelecimento,
                             label: "tipo_estabelecimento",
-                            value: "id_tipo_estabelecimento"
+                            value: "id_tipo_estabelecimento",
+                            items: _vm.tpestabelecimento
+                          },
+                          on: {
+                            input: function($event) {
+                              return _vm.getIdEstabelecimento(
+                                _vm.$data.tpestabelecimento.data
+                                  .id_tipo_estabelecimento
+                              )
+                            }
                           },
                           model: {
-                            value: _vm.tpestabelecimento.data,
+                            value: _vm.vModelEstabelecimento,
                             callback: function($$v) {
-                              _vm.$set(_vm.tpestabelecimento, "data", $$v)
+                              _vm.vModelEstabelecimento = $$v
                             },
-                            expression: "tpestabelecimento.data"
+                            expression: "vModelEstabelecimento"
                           }
                         })
                       ],
@@ -28344,7 +28385,7 @@ var render = function() {
                           {
                             staticClass:
                               "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-10 ml-28 center",
-                            attrs: { type: "button" },
+                            attrs: { type: "submit" },
                             on: {
                               click: function($event) {
                                 return _vm.exibe()
@@ -28358,7 +28399,25 @@ var render = function() {
                           ]
                         )
                       ]
-                    )
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      attrs: {
+                        type: "hidden",
+                        name: "fk_id_tipo_estabelecimento",
+                        id: "fk_id_tipo_estabelecimento",
+                        value: "2"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      attrs: {
+                        type: "hidden",
+                        name: "fk_id_tipo_empresa",
+                        id: "fk_id_tipo_empresa",
+                        value: "3"
+                      }
+                    })
                   ]
                 )
               ])
@@ -44190,8 +44249,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\corp\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\corp\resources\css\app.css */"./resources/css/app.css");
+__webpack_require__(/*! /var/www/html/corp/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /var/www/html/corp/resources/css/app.css */"./resources/css/app.css");
 
 
 /***/ })

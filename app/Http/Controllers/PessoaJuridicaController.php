@@ -24,7 +24,7 @@ class PessoaJuridicaController extends Controller
     public function salvar( Request $request ){
 
         $alt_capital = date('Y-m-d', strtotime($request->dt_ultima_alt_capital));
-        $alt_contratual = date('Y-m-d', strtotime($request->nr_ultima_alt_contratual));
+        $alt_contratual = date('Y-m-d', strtotime($request->dt_ultima_alt_contratual));
         $cnpj = preg_replace( "/[^0-9]/", "", $request->cnpj );
         $capital_social = preg_replace( "/[^0-9,]/", "", $request->capital_social );
         $request->merge(['usuario' => Auth::id()]);
@@ -32,11 +32,16 @@ class PessoaJuridicaController extends Controller
         $request->merge(['cnpj' => $cnpj]);
         $request->merge(['capital_social' => str_replace(',', '.', $capital_social)]);
         $request->merge(['dt_ultima_alt_capital' => $alt_capital]);
+        $request->merge(['dt_ultima_alt_contratual' => $alt_contratual]);
 
-        dd( $request );
+        // dd( $request );
 
         $result = PessoaJuridica::create( $request->all() );
         dd($result);
+    }
+
+    public function dados(){
+
     }
 
 }
