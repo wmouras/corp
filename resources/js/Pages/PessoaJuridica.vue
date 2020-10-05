@@ -12,7 +12,7 @@
 
                     <div class='row col-md-6'>
 
-                        <form action='/pessoajuridica/salvar' id='frm-pessoa-juridica' name='frm-pessoa-juridica' method='GET'>
+                        <form ref="form" action='/pessoajuridica/salvar' id='frm-pessoa-juridica' name='frm-pessoa-juridica' method='GET' v-on:submit="exibe">
 
                             <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
                                 <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='codigo_registro'>
@@ -69,7 +69,7 @@
                                     Tipo Estabelecimento
                                 </label>
 
-                                <v-select v-model="tpestabelecimento.data" v-on:click="exibe" class='select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white'
+                                <v-select v-model="tpestabelecimento.data" class='select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white'
                                     id='fk_id_tipo_estabelecimento'
                                     name='fk_id_tipo_estabelecimento'
                                     placeholder='Escolha o tipo do estabelecimento'
@@ -112,7 +112,7 @@
                             </div>
 
                             <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0 ml-28'>
-                                <button type='submit' class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-10 ml-28 center'>
+                                <button type='button' v-on:click="exibe()" class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-10 ml-28 center'>
                                     Salvar
                                 </button>
                             </div>
@@ -152,6 +152,7 @@
         },
         data: () => ({
 
+                frm_pj: null,
                 tipos: [],
                 tpestabelecimento: [],
                 mask: maskDinheiro,
@@ -174,7 +175,9 @@
         },
         methods: {
             exibe: function () {
-                alert( 'OK' )
+                // console.log(this.$data.tipos.data.id_tipo_empresa)
+                // console.log(this.$data.tipos.data.id_tipo_estabelecimenbto)
+                console.log(this.$refs.form.codigo_registro.value)
             }
         }
 

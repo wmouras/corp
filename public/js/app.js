@@ -3620,6 +3620,7 @@ var maskDinheiro = text_mask_addons_dist_createNumberMask__WEBPACK_IMPORTED_MODU
   },
   data: function data() {
     return {
+      frm_pj: null,
       tipos: [],
       tpestabelecimento: [],
       mask: maskDinheiro,
@@ -3648,7 +3649,9 @@ var maskDinheiro = text_mask_addons_dist_createNumberMask__WEBPACK_IMPORTED_MODU
   },
   methods: {
     exibe: function exibe() {
-      alert('OK');
+      // console.log(this.$data.tipos.data.id_tipo_empresa)
+      // console.log(this.$data.tipos.data.id_tipo_estabelecimenbto)
+      console.log(this.$refs.form.codigo_registro.value);
     }
   }
 });
@@ -27907,12 +27910,14 @@ var render = function() {
                 _c(
                   "form",
                   {
+                    ref: "form",
                     attrs: {
                       action: "/pessoajuridica/salvar",
                       id: "frm-pessoa-juridica",
                       name: "frm-pessoa-juridica",
                       method: "GET"
-                    }
+                    },
+                    on: { submit: _vm.exibe }
                   },
                   [
                     _c(
@@ -28132,7 +28137,6 @@ var render = function() {
                             label: "tipo_estabelecimento",
                             value: "id_tipo_estabelecimento"
                           },
-                          on: { click: _vm.exibe },
                           model: {
                             value: _vm.tpestabelecimento.data,
                             callback: function($$v) {
@@ -28327,7 +28331,12 @@ var render = function() {
                           {
                             staticClass:
                               "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-10 ml-28 center",
-                            attrs: { type: "submit" }
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                return _vm.exibe()
+                              }
+                            }
                           },
                           [
                             _vm._v(
