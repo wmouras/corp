@@ -12,7 +12,16 @@
 
                     <div class='row col-md-6'>
 
-                        <form action='' id='frm-pessoa-juridica' name='frm-pessoa-juridica' method='POST'>
+                        <form action='/pessoajuridica/salvar' id='frm-pessoa-juridica' name='frm-pessoa-juridica' method='GET'>
+
+                            <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='codigo_registro'>
+                                    Registro
+                                </label>
+                                <input id='codigo_registro' name='codigo_registro' type='text' placeholder='Insira o registro'
+                                    class='appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
+
+                            </div>
 
                             <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
                                 <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='nome_fantasia'>
@@ -23,10 +32,10 @@
 
                             </div>
                             <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
-                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='nome_fantasia'>
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='razao_social'>
                                     Razão Social
                                 </label>
-                                <input name='nome_fantasia' id='nome_fantasia' type='text' placeholder='Insira a razão social'
+                                <input name='razao_social' id='razao_social' type='text' placeholder='Insira a razão social'
                                     class='appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
 
                             </div>
@@ -49,9 +58,9 @@
                                     id='fk_id_tipo_empresa'
                                     name='fk_id_tipo_empresa'
                                     placeholder='Escolha o tipo da empresa'
-                                    :options='this.tipos'
+                                    :options='tipos'
                                     label='tipo_empresa'
-                                    key='id_tipo_empresa'
+                                    value='id_tipo_empresa'
                                 />
 
                             </div>
@@ -60,18 +69,18 @@
                                     Tipo Estabelecimento
                                 </label>
 
-                                <v-select v-once v-model="tpestabelecimento.data" class='select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white'
+                                <v-select v-model="tpestabelecimento.data" v-on:click="exibe" class='select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white'
                                     id='fk_id_tipo_estabelecimento'
                                     name='fk_id_tipo_estabelecimento'
                                     placeholder='Escolha o tipo do estabelecimento'
-                                    :options='this.tpestabelecimento'
+                                    :options='tpestabelecimento'
                                     label='tipo_estabelecimento'
-                                    key='id_tipo_estabelecimento'
+                                    value="id_tipo_estabelecimento"
                                 />
 
                             </div>
                             <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
-                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='grid-first-name'>
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='capital_social'>
                                     Capital Social
                                 </label>
                                 <input name='capital_social' id='capital_social' type='text' placeholder='Insira a vírgula para incluir os centavos' v-mask='mask' v-model="capitalSocial"
@@ -79,7 +88,7 @@
 
                             </div>
                             <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
-                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='grid-first-name'>
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='dt_ultima_alt_capital'>
                                     Última alteração de capital
                                 </label>
                                 <input name='dt_ultima_alt_capital' id='dt_ultima_alt_capital' type='text' placeholder='Apenas números' v-mask="'##/##/####'" v-model="ultAltCapital"
@@ -87,27 +96,23 @@
 
                             </div>
                             <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
-                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='grid-first-name'>
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='nr_ultima_alt_contratual'>
                                     Última alteração Contratual
                                 </label>
-                                <input name='nr_ultima_alt_contratual' id='nr_ultima_alt_contratual' type='text' placeholder='Apenas números' v-mask="'##/##/####'" v-model="ultAltContratual"
+                                <input name='nr_ultima_alt_contratual' id='nr_ultima_alt_contratual' type='text' placeholder='Apenas números'
                                 class='appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
 
                             </div>
                             <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
-                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='grid-first-name'>
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='objetivo_social'>
                                     Objetivo Social
                                 </label>
                                 <input name='objetivo_social' id='objetivo_social' type='text' placeholder='Escolha o tipo de empresa' class='appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
 
                             </div>
 
-                            <input type='hidden' name='usuario ' id='usuario'>
-                            <input type='hidden' name='data_cadastro ' id='data_cadastro'>
-                            <input type='hidden' name='data_alteracao' id='data_alteracao'>
-
                             <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0 ml-28'>
-                                <button class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-10 ml-28 center'>
+                                <button type='submit' class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-10 ml-28 center'>
                                     Salvar
                                 </button>
                             </div>
@@ -152,7 +157,6 @@
                 mask: maskDinheiro,
                 capitalSocial: '',
                 ultAltCapital: '',
-                ultAltContratual: '',
                 vmCnpj: '',
 
         }),
@@ -167,6 +171,11 @@
                 }
             }).then(response => {this.tpestabelecimento = response.data });
 
+        },
+        methods: {
+            exibe: function () {
+                alert( 'OK' )
+            }
         }
 
     }

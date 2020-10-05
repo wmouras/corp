@@ -18,6 +18,7 @@ class PessoaJuridica extends Model
      * @var string
      */
     protected $table = 'tb_pessoa_juridica';
+    protected $fillable = ['fk_id_pessoa', 'codigo_registro', 'razao_social', 'nome_fantasia', 'cnpj', 'fk_id_tipo_empresa', 'fk_id_tipo_estabelecimento', 'capital_social', 'dt_ultima_alt_capital', 'nr_ultima_alt_contratual', 'dt_ultima_alt_contratual', 'objetivo_social', 'observacoes', 'usuario', 'data_cadastro', 'data_alteracao'];
 
     public function cadastroPessoaJuridica(){
 

@@ -16,10 +16,9 @@ use App\Http\Controllers\PessoaJuridicaController;
 
 Route::get('/pessoajuridica/listatipo', [PessoaJuridicaController::class, 'listaTipoEmpresa']);
 Route::get('/pessoajuridica/listatpestabelecimento', [PessoaJuridicaController::class, 'listaTipoEstabelecimento']);
+Route::get('/pessoajuridica/salvar', [PessoaJuridicaController::class, 'salvar'])->middleware(['auth:sanctum', 'verified']);
 
-
-Route::middleware(['auth:sanctum', 'verified'])->get(
-    '/pessoajuridica', function () {
+Route::middleware(['auth:sanctum', 'verified'])->get('/pessoajuridica', function () {
         return Inertia\Inertia::render('PessoaJuridica');
     }
 )->name('pessoajuridica');

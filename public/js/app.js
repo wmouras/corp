@@ -3594,6 +3594,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -3620,7 +3625,6 @@ var maskDinheiro = text_mask_addons_dist_createNumberMask__WEBPACK_IMPORTED_MODU
       mask: maskDinheiro,
       capitalSocial: '',
       ultAltCapital: '',
-      ultAltContratual: '',
       vmCnpj: ''
     };
   },
@@ -3641,6 +3645,11 @@ var maskDinheiro = text_mask_addons_dist_createNumberMask__WEBPACK_IMPORTED_MODU
     }).then(function (response) {
       _this.tpestabelecimento = response.data;
     });
+  },
+  methods: {
+    exibe: function exibe() {
+      alert('OK');
+    }
   }
 });
 
@@ -27899,13 +27908,44 @@ var render = function() {
                   "form",
                   {
                     attrs: {
-                      action: "",
+                      action: "/pessoajuridica/salvar",
                       id: "frm-pessoa-juridica",
                       name: "frm-pessoa-juridica",
-                      method: "POST"
+                      method: "GET"
                     }
                   },
                   [
+                    _c(
+                      "div",
+                      { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                      [
+                        _c(
+                          "label",
+                          {
+                            staticClass:
+                              "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                            attrs: { for: "codigo_registro" }
+                          },
+                          [
+                            _vm._v(
+                              "\n                                Registro\n                            "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass:
+                            "appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                          attrs: {
+                            id: "codigo_registro",
+                            name: "codigo_registro",
+                            type: "text",
+                            placeholder: "Insira o registro"
+                          }
+                        })
+                      ]
+                    ),
+                    _vm._v(" "),
                     _c(
                       "div",
                       { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
@@ -27946,7 +27986,7 @@ var render = function() {
                           {
                             staticClass:
                               "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
-                            attrs: { for: "nome_fantasia" }
+                            attrs: { for: "razao_social" }
                           },
                           [
                             _vm._v(
@@ -27959,8 +27999,8 @@ var render = function() {
                           staticClass:
                             "appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
                           attrs: {
-                            name: "nome_fantasia",
-                            id: "nome_fantasia",
+                            name: "razao_social",
+                            id: "razao_social",
                             type: "text",
                             placeholder: "Insira a razão social"
                           }
@@ -28041,15 +28081,15 @@ var render = function() {
                         ),
                         _vm._v(" "),
                         _c("v-select", {
-                          key: "id_tipo_empresa",
                           staticClass:
                             "select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white",
                           attrs: {
                             id: "fk_id_tipo_empresa",
                             name: "fk_id_tipo_empresa",
                             placeholder: "Escolha o tipo da empresa",
-                            options: this.tipos,
-                            label: "tipo_empresa"
+                            options: _vm.tipos,
+                            label: "tipo_empresa",
+                            value: "id_tipo_empresa"
                           },
                           model: {
                             value: _vm.tipos.data,
@@ -28082,16 +28122,17 @@ var render = function() {
                         ),
                         _vm._v(" "),
                         _c("v-select", {
-                          key: "id_tipo_estabelecimento",
                           staticClass:
                             "select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white",
                           attrs: {
                             id: "fk_id_tipo_estabelecimento",
                             name: "fk_id_tipo_estabelecimento",
                             placeholder: "Escolha o tipo do estabelecimento",
-                            options: this.tpestabelecimento,
-                            label: "tipo_estabelecimento"
+                            options: _vm.tpestabelecimento,
+                            label: "tipo_estabelecimento",
+                            value: "id_tipo_estabelecimento"
                           },
+                          on: { click: _vm.exibe },
                           model: {
                             value: _vm.tpestabelecimento.data,
                             callback: function($$v) {
@@ -28113,7 +28154,7 @@ var render = function() {
                           {
                             staticClass:
                               "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
-                            attrs: { for: "grid-first-name" }
+                            attrs: { for: "capital_social" }
                           },
                           [
                             _vm._v(
@@ -28168,7 +28209,7 @@ var render = function() {
                           {
                             staticClass:
                               "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
-                            attrs: { for: "grid-first-name" }
+                            attrs: { for: "dt_ultima_alt_capital" }
                           },
                           [
                             _vm._v(
@@ -28222,7 +28263,7 @@ var render = function() {
                           {
                             staticClass:
                               "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
-                            attrs: { for: "grid-first-name" }
+                            attrs: { for: "nr_ultima_alt_contratual" }
                           },
                           [
                             _vm._v(
@@ -28232,20 +28273,6 @@ var render = function() {
                         ),
                         _vm._v(" "),
                         _c("input", {
-                          directives: [
-                            {
-                              name: "mask",
-                              rawName: "v-mask",
-                              value: "##/##/####",
-                              expression: "'##/##/####'"
-                            },
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.ultAltContratual,
-                              expression: "ultAltContratual"
-                            }
-                          ],
                           staticClass:
                             "appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
                           attrs: {
@@ -28253,15 +28280,6 @@ var render = function() {
                             id: "nr_ultima_alt_contratual",
                             type: "text",
                             placeholder: "Apenas números"
-                          },
-                          domProps: { value: _vm.ultAltContratual },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.ultAltContratual = $event.target.value
-                            }
                           }
                         })
                       ]
@@ -28276,7 +28294,7 @@ var render = function() {
                           {
                             staticClass:
                               "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
-                            attrs: { for: "grid-first-name" }
+                            attrs: { for: "objetivo_social" }
                           },
                           [
                             _vm._v(
@@ -28298,26 +28316,6 @@ var render = function() {
                       ]
                     ),
                     _vm._v(" "),
-                    _c("input", {
-                      attrs: { type: "hidden", name: "usuario ", id: "usuario" }
-                    }),
-                    _vm._v(" "),
-                    _c("input", {
-                      attrs: {
-                        type: "hidden",
-                        name: "data_cadastro ",
-                        id: "data_cadastro"
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("input", {
-                      attrs: {
-                        type: "hidden",
-                        name: "data_alteracao",
-                        id: "data_alteracao"
-                      }
-                    }),
-                    _vm._v(" "),
                     _c(
                       "div",
                       {
@@ -28328,7 +28326,8 @@ var render = function() {
                           "button",
                           {
                             staticClass:
-                              "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-10 ml-28 center"
+                              "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-10 ml-28 center",
+                            attrs: { type: "submit" }
                           },
                           [
                             _vm._v(
