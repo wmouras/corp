@@ -3471,6 +3471,129 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var text_mask_addons_dist_createNumberMask__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! text-mask-addons/dist/createNumberMask */ "./node_modules/text-mask-addons/dist/createNumberMask.js");
 /* harmony import */ var text_mask_addons_dist_createNumberMask__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(text_mask_addons_dist_createNumberMask__WEBPACK_IMPORTED_MODULE_4__);
+var _this2 = undefined;
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3640,14 +3763,19 @@ var maskDinheiro = text_mask_addons_dist_createNumberMask__WEBPACK_IMPORTED_MODU
       frm_pj: null,
       tipos: [],
       tpestabelecimento: [],
+      uf: [],
+      municipio: [],
       vModelEmpresa: null,
       vModelEstabelecimento: null,
+      vModelUf: null,
+      vModelMunicipio: null,
       mask: maskDinheiro,
       capitalSocial: '',
       ultAltCapital: '',
       ultAltContratual: '',
       nrUltAltContratual: '',
-      vmCnpj: ''
+      vmCnpj: '',
+      vmCep: ''
     };
   },
   mounted: function mounted() {
@@ -3674,10 +3802,18 @@ var maskDinheiro = text_mask_addons_dist_createNumberMask__WEBPACK_IMPORTED_MODU
   },
   methods: {
     getIdEstabelecimento: function getIdEstabelecimento(id) {
-      this.$data.tpestabelecimento.data.id_tipo_estabelecimento = this.$refs.form.fk_id_tipo_estabelecimento.value;
+      _this2.$data.tpestabelecimento.data.id_tipo_estabelecimento = _this2.$refs.form.fk_id_tipo_estabelecimento.value;
     },
     getIdTipoEmpresa: function getIdTipoEmpresa(id) {
-      this.$data.tipos.data.id_tipo_empresa = this.$refs.form.fk_id_tipo_empresa.value;
+      _this2.$data.tipos.data.id_tipo_empresa = _this2.$refs.form.fk_id_tipo_empresa.value;
+    },
+    escolheTab: function escolheTab(div) {
+      _this2.$refs.divDescricao.style.display = "none";
+      _this2.$refs.divContato.style.display = "none";
+      _this2.$refs.divQuadro.style.display = "none";
+      if (div == '1') _this2.$refs.divDescricao.style.display = "block";
+      if (div == '2') _this2.$refs.divContato.style.display = "block";
+      if (div == '3') _this2.$refs.divQuadro.style.display = "block";
     }
   }
 });
@@ -27867,7 +28003,11 @@ var render = function() {
                   staticClass:
                     "font-semibold text-xl text-gray-800 leading-tight"
                 },
-                [_vm._v("\n            Cadastro Pessoa Jurídica\n        ")]
+                [
+                  _vm._v(
+                    "\n                Cadastro Pessoa Jurídica\n            "
+                  )
+                ]
               )
             ]
           },
@@ -27877,553 +28017,924 @@ var render = function() {
     },
     [
       _vm._v(" "),
-      _c("div", { staticClass: "py-12" }, [
-        _c("div", { staticClass: "max-w-7xl mx-auto sm:px-6 lg:px-8" }, [
+      _c("ul", { staticClass: "flex border-b-2 max-w-7xl mx-auto" }, [
+        _c("li", { staticClass: "-mb-px mr-4" }, [
           _c(
-            "div",
-            { staticClass: "bg-white overflow-hidden shadow-xl sm:rounded-lg" },
-            [
-              _c("div", { staticClass: "row col-md-6" }, [
-                _c(
-                  "form",
-                  {
-                    ref: "form",
-                    attrs: {
-                      action: "/pessoajuridica/salvar",
-                      id: "frm-pessoa-juridica",
-                      name: "frm-pessoa-juridica",
-                      method: "GET"
-                    }
-                  },
-                  [
-                    _c(
-                      "div",
-                      { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
-                      [
-                        _c(
-                          "label",
-                          {
-                            staticClass:
-                              "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
-                            attrs: { for: "codigo_registro" }
-                          },
-                          [
-                            _vm._v(
-                              "\n                                Registro\n                            "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("input", {
-                          staticClass:
-                            "appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
-                          attrs: {
-                            id: "codigo_registro",
-                            name: "codigo_registro",
-                            type: "text",
-                            placeholder: "Insira o registro"
-                          }
-                        })
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
-                      [
-                        _c(
-                          "label",
-                          {
-                            staticClass:
-                              "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
-                            attrs: { for: "nome_fantasia" }
-                          },
-                          [
-                            _vm._v(
-                              "\n                                Nome Fantasia\n                            "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("input", {
-                          staticClass:
-                            "appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
-                          attrs: {
-                            id: "nome_fantasia",
-                            name: "nome_fantasia",
-                            type: "text",
-                            placeholder: "Insira o nome fantasia"
-                          }
-                        })
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
-                      [
-                        _c(
-                          "label",
-                          {
-                            staticClass:
-                              "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
-                            attrs: { for: "razao_social" }
-                          },
-                          [
-                            _vm._v(
-                              "\n                                Razão Social\n                            "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("input", {
-                          staticClass:
-                            "appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
-                          attrs: {
-                            name: "razao_social",
-                            id: "razao_social",
-                            type: "text",
-                            placeholder: "Insira a razão social"
-                          }
-                        })
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
-                      [
-                        _c(
-                          "label",
-                          {
-                            staticClass:
-                              "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
-                            attrs: { for: "cnpj" }
-                          },
-                          [
-                            _vm._v(
-                              "\n                                CNPJ\n                            "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "mask",
-                              rawName: "v-mask",
-                              value: "##.###.###/####-##",
-                              expression: "'##.###.###/####-##'"
-                            },
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.vmCnpj,
-                              expression: "vmCnpj"
-                            }
-                          ],
-                          staticClass:
-                            "appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
-                          attrs: {
-                            name: "cnpj",
-                            id: "cnpj",
-                            type: "text",
-                            placeholder: "Apenas números"
-                          },
-                          domProps: { value: _vm.vmCnpj },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.vmCnpj = $event.target.value
-                            }
-                          }
-                        })
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
-                      [
-                        _c(
-                          "label",
-                          {
-                            staticClass:
-                              "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
-                            attrs: { for: "fk_id_tipo_empresa" }
-                          },
-                          [
-                            _vm._v(
-                              "\n                                Tipo da Empresa\n                            "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("v-select", {
-                          staticClass:
-                            "select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white",
-                          attrs: {
-                            id: "tipo_empresa",
-                            name: "tipo_empresa",
-                            "item-text": "tipo_empresa",
-                            "item-value": "id_tipo_empresa",
-                            placeholder: "Escolha o tipo da empresa",
-                            options: _vm.tipos,
-                            label: "tipo_empresa",
-                            value: "id_tipo_empresa",
-                            items: _vm.tipos
-                          },
-                          on: {
-                            input: function($event) {
-                              return _vm.getIdTipoEmpresa(
-                                _vm.$data.tipos.data.id_tipo_empresa
-                              )
-                            }
-                          },
-                          model: {
-                            value: _vm.vModelEmpresa,
-                            callback: function($$v) {
-                              _vm.vModelEmpresa = $$v
-                            },
-                            expression: "vModelEmpresa"
-                          }
-                        })
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
-                      [
-                        _c(
-                          "label",
-                          {
-                            staticClass:
-                              "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
-                            attrs: { for: "fk_id_tipo_estabelecimento" }
-                          },
-                          [
-                            _vm._v(
-                              "\n                                Tipo Estabelecimento\n                            "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("v-select", {
-                          staticClass:
-                            "select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white",
-                          attrs: {
-                            id: "tipo_estabelecimento",
-                            name: "tipo_estabelecimento",
-                            "item-text": "tipo_estabelecimento",
-                            "item-value": "id_tipo_estabelecimento",
-                            placeholder: "Escolha o tipo do estabelecimento",
-                            options: _vm.tpestabelecimento,
-                            label: "tipo_estabelecimento",
-                            value: "id_tipo_estabelecimento",
-                            items: _vm.tpestabelecimento
-                          },
-                          on: {
-                            input: function($event) {
-                              return _vm.getIdEstabelecimento(
-                                _vm.$data.tpestabelecimento.data
-                                  .id_tipo_estabelecimento
-                              )
-                            }
-                          },
-                          model: {
-                            value: _vm.vModelEstabelecimento,
-                            callback: function($$v) {
-                              _vm.vModelEstabelecimento = $$v
-                            },
-                            expression: "vModelEstabelecimento"
-                          }
-                        })
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
-                      [
-                        _c(
-                          "label",
-                          {
-                            staticClass:
-                              "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
-                            attrs: { for: "capital_social" }
-                          },
-                          [
-                            _vm._v(
-                              "\n                                Capital Social\n                            "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "mask",
-                              rawName: "v-mask",
-                              value: _vm.mask,
-                              expression: "mask"
-                            },
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.capitalSocial,
-                              expression: "capitalSocial"
-                            }
-                          ],
-                          staticClass:
-                            "appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
-                          attrs: {
-                            name: "capital_social",
-                            id: "capital_social",
-                            type: "text",
-                            placeholder:
-                              "Insira a vírgula para incluir os centavos"
-                          },
-                          domProps: { value: _vm.capitalSocial },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.capitalSocial = $event.target.value
-                            }
-                          }
-                        })
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
-                      [
-                        _c(
-                          "label",
-                          {
-                            staticClass:
-                              "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
-                            attrs: { for: "dt_ultima_alt_capital" }
-                          },
-                          [
-                            _vm._v(
-                              "\n                                Última alteração de capital\n                            "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "mask",
-                              rawName: "v-mask",
-                              value: "##/##/####",
-                              expression: "'##/##/####'"
-                            },
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.ultAltCapital,
-                              expression: "ultAltCapital"
-                            }
-                          ],
-                          staticClass:
-                            "appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
-                          attrs: {
-                            name: "dt_ultima_alt_capital",
-                            id: "dt_ultima_alt_capital",
-                            type: "text",
-                            placeholder: "Apenas números"
-                          },
-                          domProps: { value: _vm.ultAltCapital },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.ultAltCapital = $event.target.value
-                            }
-                          }
-                        })
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
-                      [
-                        _c(
-                          "label",
-                          {
-                            staticClass:
-                              "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
-                            attrs: { for: "nr_ultima_alt_contratual" }
-                          },
-                          [
-                            _vm._v(
-                              "\n                                Número e data da última alteração Contratual\n                            "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "mask",
-                              rawName: "v-mask",
-                              value: "####",
-                              expression: "'####'"
-                            },
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.nrUltAltContratual,
-                              expression: "nrUltAltContratual"
-                            }
-                          ],
-                          staticClass:
-                            "appearance-none inline w-24 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
-                          attrs: {
-                            name: "nr_ultima_alt_contratual",
-                            id: "nr_ultima_alt_contratual",
-                            type: "text",
-                            placeholder: "Números"
-                          },
-                          domProps: { value: _vm.nrUltAltContratual },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.nrUltAltContratual = $event.target.value
-                            }
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "mask",
-                              rawName: "v-mask",
-                              value: "##/##/####",
-                              expression: "'##/##/####'"
-                            },
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.ultAltContratual,
-                              expression: "ultAltContratual"
-                            }
-                          ],
-                          staticClass:
-                            "appearance-none inline w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 ml-3 mb-3 leading-tight focus:outline-none focus:bg-white",
-                          attrs: {
-                            name: "dt_ultima_alt_contratual",
-                            id: "dt_ultima_alt_contratual",
-                            type: "text",
-                            placeholder: "Apenas números"
-                          },
-                          domProps: { value: _vm.ultAltContratual },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.ultAltContratual = $event.target.value
-                            }
-                          }
-                        })
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
-                      [
-                        _c(
-                          "label",
-                          {
-                            staticClass:
-                              "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
-                            attrs: { for: "objetivo_social" }
-                          },
-                          [
-                            _vm._v(
-                              "\n                                Objetivo Social\n                            "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("input", {
-                          staticClass:
-                            "appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
-                          attrs: {
-                            name: "objetivo_social",
-                            id: "objetivo_social",
-                            type: "text",
-                            placeholder: "Insira o objetivo social da empresa"
-                          }
-                        })
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0 ml-28"
-                      },
-                      [
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-10 ml-28 center",
-                            attrs: { type: "submit" },
-                            on: {
-                              click: function($event) {
-                                return _vm.exibe()
-                              }
-                            }
-                          },
-                          [
-                            _vm._v(
-                              "\n                                Salvar\n                            "
-                            )
-                          ]
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c("input", {
-                      attrs: {
-                        type: "hidden",
-                        name: "fk_id_tipo_estabelecimento",
-                        id: "fk_id_tipo_estabelecimento",
-                        value: "2"
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("input", {
-                      attrs: {
-                        type: "hidden",
-                        name: "fk_id_tipo_empresa",
-                        id: "fk_id_tipo_empresa",
-                        value: "3"
-                      }
-                    })
-                  ]
-                )
-              ])
-            ]
+            "a",
+            {
+              staticClass:
+                "bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-700 font-semibold",
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  return _vm.escolheTab(1)
+                }
+              }
+            },
+            [_vm._v("Descrição")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "mr-4" }, [
+          _c(
+            "a",
+            {
+              staticClass:
+                "bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold",
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  return _vm.escolheTab(2)
+                }
+              }
+            },
+            [_vm._v("Endereço e contado")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "mr-4" }, [
+          _c(
+            "a",
+            {
+              staticClass:
+                "bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold",
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  return _vm.escolheTab(3)
+                }
+              }
+            },
+            [_vm._v("Quadro Técnico")]
           )
         ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "py-1" }, [
+        _c(
+          "div",
+          {
+            ref: "divDescricao",
+            staticClass: "max-w-7xl mx-auto sm:px-6 lg:px-8",
+            attrs: { id: "div_1" }
+          },
+          [
+            _c(
+              "div",
+              {
+                staticClass: "bg-white overflow-hidden shadow-xl sm:rounded-lg"
+              },
+              [
+                _c("div", { staticClass: "row col-md-6" }, [
+                  _c(
+                    "form",
+                    {
+                      ref: "form",
+                      attrs: {
+                        action: "/pessoajuridica/salvar",
+                        id: "frm-pessoa-juridica",
+                        name: "frm-pessoa-juridica",
+                        method: "GET"
+                      }
+                    },
+                    [
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                        [
+                          _c(
+                            "label",
+                            {
+                              staticClass:
+                                "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                              attrs: { for: "codigo_registro" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    Registro\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("input", {
+                            staticClass:
+                              "appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                            attrs: {
+                              id: "codigo_registro",
+                              name: "codigo_registro",
+                              type: "text",
+                              placeholder: "Insira o registro"
+                            }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                        [
+                          _c(
+                            "label",
+                            {
+                              staticClass:
+                                "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                              attrs: { for: "nome_fantasia" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    Nome Fantasia\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("input", {
+                            staticClass:
+                              "appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                            attrs: {
+                              id: "nome_fantasia",
+                              name: "nome_fantasia",
+                              type: "text",
+                              placeholder: "Insira o nome fantasia"
+                            }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                        [
+                          _c(
+                            "label",
+                            {
+                              staticClass:
+                                "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                              attrs: { for: "razao_social" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    Razão Social\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("input", {
+                            staticClass:
+                              "appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                            attrs: {
+                              name: "razao_social",
+                              id: "razao_social",
+                              type: "text",
+                              placeholder: "Insira a razão social"
+                            }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                        [
+                          _c(
+                            "label",
+                            {
+                              staticClass:
+                                "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                              attrs: { for: "cnpj" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    CNPJ\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "mask",
+                                rawName: "v-mask",
+                                value: "##.###.###/####-##",
+                                expression: "'##.###.###/####-##'"
+                              },
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.vmCnpj,
+                                expression: "vmCnpj"
+                              }
+                            ],
+                            staticClass:
+                              "appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                            attrs: {
+                              name: "cnpj",
+                              id: "cnpj",
+                              type: "text",
+                              placeholder: "Apenas números"
+                            },
+                            domProps: { value: _vm.vmCnpj },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.vmCnpj = $event.target.value
+                              }
+                            }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                        [
+                          _c(
+                            "label",
+                            {
+                              staticClass:
+                                "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                              attrs: { for: "fk_id_tipo_empresa" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    Tipo da Empresa\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("v-select", {
+                            staticClass:
+                              "select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white",
+                            attrs: {
+                              id: "tipo_empresa",
+                              name: "tipo_empresa",
+                              "item-text": "tipo_empresa",
+                              "item-value": "id_tipo_empresa",
+                              placeholder: "Escolha o tipo da empresa",
+                              options: _vm.tipos,
+                              label: "tipo_empresa",
+                              value: "id_tipo_empresa",
+                              items: _vm.tipos
+                            },
+                            model: {
+                              value: _vm.vModelEmpresa,
+                              callback: function($$v) {
+                                _vm.vModelEmpresa = $$v
+                              },
+                              expression: "vModelEmpresa"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                        [
+                          _c(
+                            "label",
+                            {
+                              staticClass:
+                                "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                              attrs: { for: "fk_id_tipo_estabelecimento" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    Tipo Estabelecimento\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("v-select", {
+                            staticClass:
+                              "select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white",
+                            attrs: {
+                              id: "tipo_estabelecimento",
+                              name: "tipo_estabelecimento",
+                              "item-text": "tipo_estabelecimento",
+                              "item-value": "id_tipo_estabelecimento",
+                              placeholder: "Escolha o tipo do estabelecimento",
+                              options: _vm.tpestabelecimento,
+                              label: "tipo_estabelecimento",
+                              value: "id_tipo_estabelecimento",
+                              items: _vm.tpestabelecimento
+                            },
+                            model: {
+                              value: _vm.vModelEstabelecimento,
+                              callback: function($$v) {
+                                _vm.vModelEstabelecimento = $$v
+                              },
+                              expression: "vModelEstabelecimento"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                        [
+                          _c(
+                            "label",
+                            {
+                              staticClass:
+                                "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                              attrs: { for: "capital_social" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    Capital Social\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "mask",
+                                rawName: "v-mask",
+                                value: _vm.mask,
+                                expression: "mask"
+                              },
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.capitalSocial,
+                                expression: "capitalSocial"
+                              }
+                            ],
+                            staticClass:
+                              "appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                            attrs: {
+                              name: "capital_social",
+                              id: "capital_social",
+                              type: "text",
+                              placeholder:
+                                "Insira a vírgula para incluir os centavos"
+                            },
+                            domProps: { value: _vm.capitalSocial },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.capitalSocial = $event.target.value
+                              }
+                            }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                        [
+                          _c(
+                            "label",
+                            {
+                              staticClass:
+                                "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                              attrs: { for: "dt_ultima_alt_capital" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    Última alteração de capital\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "mask",
+                                rawName: "v-mask",
+                                value: "##/##/####",
+                                expression: "'##/##/####'"
+                              },
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.ultAltCapital,
+                                expression: "ultAltCapital"
+                              }
+                            ],
+                            staticClass:
+                              "appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                            attrs: {
+                              name: "dt_ultima_alt_capital",
+                              id: "dt_ultima_alt_capital",
+                              type: "text",
+                              placeholder: "Apenas números"
+                            },
+                            domProps: { value: _vm.ultAltCapital },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.ultAltCapital = $event.target.value
+                              }
+                            }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                        [
+                          _c(
+                            "label",
+                            {
+                              staticClass:
+                                "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                              attrs: { for: "nr_ultima_alt_contratual" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    Número e data da última alteração Contratual\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "mask",
+                                rawName: "v-mask",
+                                value: "####",
+                                expression: "'####'"
+                              },
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.nrUltAltContratual,
+                                expression: "nrUltAltContratual"
+                              }
+                            ],
+                            staticClass:
+                              "appearance-none inline w-24 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                            attrs: {
+                              name: "nr_ultima_alt_contratual",
+                              id: "nr_ultima_alt_contratual",
+                              type: "text",
+                              placeholder: "Números"
+                            },
+                            domProps: { value: _vm.nrUltAltContratual },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.nrUltAltContratual = $event.target.value
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "mask",
+                                rawName: "v-mask",
+                                value: "##/##/####",
+                                expression: "'##/##/####'"
+                              },
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.ultAltContratual,
+                                expression: "ultAltContratual"
+                              }
+                            ],
+                            staticClass:
+                              "appearance-none inline w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 ml-3 mb-3 leading-tight focus:outline-none focus:bg-white",
+                            attrs: {
+                              name: "dt_ultima_alt_contratual",
+                              id: "dt_ultima_alt_contratual",
+                              type: "text",
+                              placeholder: "Apenas números"
+                            },
+                            domProps: { value: _vm.ultAltContratual },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.ultAltContratual = $event.target.value
+                              }
+                            }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                        [
+                          _c(
+                            "label",
+                            {
+                              staticClass:
+                                "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                              attrs: { for: "objetivo_social" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    Objetivo Social\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("input", {
+                            staticClass:
+                              "appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                            attrs: {
+                              name: "objetivo_social",
+                              id: "objetivo_social",
+                              type: "text",
+                              placeholder: "Insira o objetivo social da empresa"
+                            }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0 ml-28"
+                        },
+                        [
+                          _c(
+                            "button",
+                            {
+                              staticClass:
+                                "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-10 ml-28 center",
+                              attrs: { type: "submit" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.exibe()
+                                }
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    Salvar\n                                "
+                              )
+                            ]
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("input", {
+                        attrs: {
+                          type: "hidden",
+                          name: "fk_id_tipo_estabelecimento",
+                          id: "fk_id_tipo_estabelecimento"
+                        },
+                        domProps: { value: _vm.vModelEstabelecimento }
+                      }),
+                      _vm._v(" "),
+                      _c("input", {
+                        attrs: {
+                          type: "hidden",
+                          name: "fk_id_tipo_empresa",
+                          id: "fk_id_tipo_empresa"
+                        },
+                        domProps: { value: _vm.vModelEmpresa }
+                      })
+                    ]
+                  )
+                ])
+              ]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            ref: "divContato",
+            staticClass: "max-w-7xl mx-auto sm:px-6 lg:px-8",
+            staticStyle: { display: "none" },
+            attrs: { id: "div_2" }
+          },
+          [
+            _c(
+              "div",
+              {
+                staticClass: "bg-white overflow-hidden shadow-xl sm:rounded-lg"
+              },
+              [
+                _c("div", { staticClass: "row col-md-6" }, [
+                  _c(
+                    "form",
+                    {
+                      ref: "form",
+                      attrs: {
+                        action: "/pessoajuridica/endereco",
+                        id: "frm-pessoa-endereco",
+                        name: "frm-pessoa-endereco",
+                        method: "GET"
+                      }
+                    },
+                    [
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                        [
+                          _c(
+                            "label",
+                            {
+                              staticClass:
+                                "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                              attrs: { for: "cep" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    CEP\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "mask",
+                                rawName: "v-mask",
+                                value: "##.###-###",
+                                expression: "'##.###-###'"
+                              },
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.vmCep,
+                                expression: "vmCep"
+                              }
+                            ],
+                            staticClass:
+                              "appearance-none block w-26 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                            attrs: {
+                              name: "cep",
+                              id: "cep",
+                              type: "text",
+                              placeholder: "Insira o CEP"
+                            },
+                            domProps: { value: _vm.vmCep },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.vmCep = $event.target.value
+                              }
+                            }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row-auto max-w-full" }, [
+                        _c(
+                          "div",
+                          { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                          [
+                            _c(
+                              "label",
+                              {
+                                staticClass:
+                                  "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                                attrs: { for: "endereco" }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                    Endereço\n                                "
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("input", {
+                              staticClass:
+                                "appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                              attrs: {
+                                id: "endereco",
+                                name: "endereco",
+                                type: "text",
+                                placeholder: "Endereço"
+                              }
+                            })
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                          [
+                            _c(
+                              "label",
+                              {
+                                staticClass:
+                                  "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                                attrs: { for: "numero" }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                    Número\n                                "
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("input", {
+                              staticClass:
+                                "appearance-none block w-20 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                              attrs: {
+                                id: "numero",
+                                name: "numero",
+                                type: "text",
+                                placeholder: "Nº"
+                              }
+                            })
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                        [
+                          _c(
+                            "label",
+                            {
+                              staticClass:
+                                "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                              attrs: { for: "cnpj" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    Bairro\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("input", {
+                            staticClass:
+                              "appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                            attrs: {
+                              name: "cnpj",
+                              id: "cnpj",
+                              type: "text",
+                              placeholder: "Bairro"
+                            }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                        [
+                          _c(
+                            "label",
+                            {
+                              staticClass:
+                                "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                              attrs: { for: "fk_id_uf" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    UF\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("v-select", {
+                            staticClass:
+                              "select-text block w-44 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white",
+                            attrs: {
+                              id: "uf",
+                              name: "uf",
+                              "item-text": "uf",
+                              "item-value": "id_uf",
+                              placeholder: "Selecione o estado",
+                              options: _vm.uf,
+                              label: "uf",
+                              value: "id_uf",
+                              items: _vm.uf
+                            },
+                            model: {
+                              value: _vm.vModelUf,
+                              callback: function($$v) {
+                                _vm.vModelUf = $$v
+                              },
+                              expression: "vModelUf"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                        [
+                          _c(
+                            "label",
+                            {
+                              staticClass:
+                                "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                              attrs: { for: "fk_id_tipo_empresa" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    Cidade\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("v-select", {
+                            staticClass:
+                              "select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white",
+                            attrs: {
+                              id: "municipio",
+                              name: "municipio",
+                              "item-text": "ds_municipio",
+                              "item-value": "id_municipio",
+                              placeholder: "Escolha o município",
+                              options: _vm.tipos,
+                              label: "ds_muncipio",
+                              value: "id_municipio",
+                              items: _vm.tipos
+                            },
+                            model: {
+                              value: _vm.vModelMunicipio,
+                              callback: function($$v) {
+                                _vm.vModelMunicipio = $$v
+                              },
+                              expression: "vModelMunicipio"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0 ml-28"
+                        },
+                        [
+                          _c(
+                            "button",
+                            {
+                              staticClass:
+                                "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-10 ml-28 center",
+                              attrs: { type: "submit" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.exibe()
+                                }
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    Salvar\n                                "
+                              )
+                            ]
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("input", {
+                        attrs: {
+                          type: "hidden",
+                          name: "fk_id_uf",
+                          id: "fk_id_uf",
+                          value: "2"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("input", {
+                        attrs: {
+                          type: "hidden",
+                          name: "fk_id_municipio",
+                          id: "fk_id_municipio",
+                          value: "3"
+                        }
+                      })
+                    ]
+                  )
+                ])
+              ]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c("div", {
+          ref: "divQuadro",
+          staticClass: "max-w-7xl mx-auto sm:px-6 lg:px-8",
+          attrs: { stye: "display: none;", id: "div_3" }
+        })
       ])
     ]
   )
