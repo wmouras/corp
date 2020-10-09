@@ -3471,8 +3471,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var text_mask_addons_dist_createNumberMask__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! text-mask-addons/dist/createNumberMask */ "./node_modules/text-mask-addons/dist/createNumberMask.js");
 /* harmony import */ var text_mask_addons_dist_createNumberMask__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(text_mask_addons_dist_createNumberMask__WEBPACK_IMPORTED_MODULE_4__);
-var _this2 = undefined;
-
 //
 //
 //
@@ -3802,18 +3800,18 @@ var maskDinheiro = text_mask_addons_dist_createNumberMask__WEBPACK_IMPORTED_MODU
   },
   methods: {
     getIdEstabelecimento: function getIdEstabelecimento(id) {
-      _this2.$data.tpestabelecimento.data.id_tipo_estabelecimento = _this2.$refs.form.fk_id_tipo_estabelecimento.value;
+      $data.tpestabelecimento.data.id_tipo_estabelecimento = this.$refs.form.fk_id_tipo_estabelecimento.value;
     },
     getIdTipoEmpresa: function getIdTipoEmpresa(id) {
-      _this2.$data.tipos.data.id_tipo_empresa = _this2.$refs.form.fk_id_tipo_empresa.value;
+      $data.tipos.data.id_tipo_empresa = this.$refs.form.fk_id_tipo_empresa.value;
     },
     escolheTab: function escolheTab(div) {
-      _this2.$refs.divDescricao.style.display = "none";
-      _this2.$refs.divContato.style.display = "none";
-      _this2.$refs.divQuadro.style.display = "none";
-      if (div == '1') _this2.$refs.divDescricao.style.display = "block";
-      if (div == '2') _this2.$refs.divContato.style.display = "block";
-      if (div == '3') _this2.$refs.divQuadro.style.display = "block";
+      this.$refs.divDescricao.style.display = "none";
+      this.$refs.divContato.style.display = "none";
+      this.$refs.divQuadro.style.display = "none";
+      if (div == '1') this.$refs.divDescricao.style.display = "block";
+      if (div == '2') this.$refs.divContato.style.display = "block";
+      if (div == '3') this.$refs.divQuadro.style.display = "block";
     }
   }
 });
@@ -44760,8 +44758,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/html/corp/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/html/corp/resources/css/app.css */"./resources/css/app.css");
+__webpack_require__(/*! C:\xampp\htdocs\corp\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\corp\resources\css\app.css */"./resources/css/app.css");
 
 
 /***/ })

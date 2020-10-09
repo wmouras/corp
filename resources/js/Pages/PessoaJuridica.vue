@@ -328,13 +328,13 @@
 
         },
         methods: {
-            getIdEstabelecimento: (id) => {
-                this.$data.tpestabelecimento.data.id_tipo_estabelecimento = this.$refs.form.fk_id_tipo_estabelecimento.value
+            getIdEstabelecimento: function (id) {
+                $data.tpestabelecimento.data.id_tipo_estabelecimento = this.$refs.form.fk_id_tipo_estabelecimento.value
             },
-            getIdTipoEmpresa: (id) => {
-                this.$data.tipos.data.id_tipo_empresa = this.$refs.form.fk_id_tipo_empresa.value
+            getIdTipoEmpresa: function (id) {
+                $data.tipos.data.id_tipo_empresa = this.$refs.form.fk_id_tipo_empresa.value
            },
-           escolheTab: (div) => {
+           escolheTab: function (div) {
 
                 this.$refs.divDescricao.style.display = "none"
                 this.$refs.divContato.style.display = "none"
