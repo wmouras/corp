@@ -7,10 +7,19 @@ use App\Models\TipoEmpresa;
 use App\Models\PessoaJuridica;
 use App\Models\TipoEstabelecimento;
 use Illuminate\Support\Facades\Auth;
+use Inertia\Inertia;
 
 class PessoaJuridicaController extends Controller
 {
     //
+
+    public function lista(){
+
+        // dd( PessoaJuridica::all() );
+        return response()->json( PessoaJuridica::all() );
+
+    }
+
     public function listaTipoEmpresa(){
         $tipoEmpresa = new TipoEmpresa();
         return $tipoEmpresa->listaTipoEmpresa();
@@ -40,7 +49,9 @@ class PessoaJuridicaController extends Controller
         dd($result);
     }
 
-    public function dados(){
+    public function dados($id){
+
+        return Inertia::render('pj/PessoaJuridica', ['pj' => PessoaJuridica::where('fk_id_pessoa', $id)->get()[0]]);
 
     }
 

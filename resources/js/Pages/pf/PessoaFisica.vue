@@ -24,7 +24,7 @@
 
                     <div class='row col-md-6'>
 
-                        <form ref="form" action='/pessoajuridica/salvar' id='frm-pessoa-juridica' name='frm-pessoa-juridica' method='GET'>
+                        <form ref="form" action='/pessoafisica/salvar' id='frm-pessoa-fisica' name='frm-pessoa-fisica' method='GET'>
 
                             <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
                                 <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='codigo_registro'>
@@ -158,9 +158,9 @@
 
                     <div class='row col-md-6'>
 
-                        <form ref="form" action='/pessoajuridica/endereco' id='frm-pessoa-endereco' name='frm-pessoa-endereco' method='GET'>
+                        <form ref="form" action='/pessoafisica/endereco' id='frm-pessoa-endereco' name='frm-pessoa-endereco' method='GET'>
 
-                            <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
+                            <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0 block'>
                                 <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='cep'>
                                     CEP
                                 </label>
@@ -169,7 +169,7 @@
 
                             </div>
 
-                            <div class="row-auto max-w-full">
+                            <div class="row-auto max-w-full flex">
                             <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
                                 <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='endereco'>
                                     Endereço
@@ -188,56 +188,24 @@
 
                             </div>
                             </div>
+                            <div class="row-auto max-w-full flex">
                             <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
-                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='cnpj'>
-                                    Bairro
-                                </label>
-                                <input name='cnpj' id='cnpj' type='text' placeholder='Bairro'
-                                class='appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
-
-                            </div>
-
-                            <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
-                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='fk_id_uf'>
-                                    UF
-                                </label>
-
-                                <v-select v-model="vModelUf" class='select-text block w-44 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white'
-                                    id='uf'
-                                    name='uf'
-                                    item-text="uf"
-                                    item-value="id_uf"
-                                    placeholder='Selecione o estado'
-                                    :options='uf'
-                                    label='uf'
-                                    value="id_uf"
-                                    :items="uf"
-
-                                />
-
-                            </div>
-
-                            <!-- @input="getIdEstabelecimento($data.uf.data.id_uf)"
-                                @input="getIdTipoEmpresa($data.municipio.data.id_municipio)"-->
-
-                            <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
-                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='fk_id_tipo_empresa'>
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='cidade'>
                                     Cidade
                                 </label>
+                                <input name='cidade' id='cidade' type='text' placeholder='Cidade'
+                                class='appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
 
-                                <v-select v-model="vModelMunicipio" class='select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white'
-                                    id='municipio'
-                                    name='municipio'
-                                    item-text="ds_municipio"
-                                    item-value="id_municipio"
-                                    placeholder='Escolha o município'
-                                    :options='tipos'
-                                    label='ds_muncipio'
-                                    value='id_municipio'
-                                    :items="tipos"
+                            </div>
 
-                                />
+                            <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='uf'>
+                                    Estado
+                                </label>
+                                <input name='uf' id='uf' type='text' placeholder='UF'
+                                class='appearance-none block w-20 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
 
+                            </div>
                             </div>
 
                             <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0 ml-28'>
@@ -264,7 +232,7 @@
 </template>
 
 <script>
-    import AppLayout from './../Layouts/AppLayout';
+    import AppLayout from './../../Layouts/AppLayout';
     import vSelect from 'vue-select';
     import VueMask from 'v-mask'
 
@@ -282,28 +250,19 @@
     });
 
     export default {
-        name: 'pessoa-juridica',
+        name: 'pessoa-fisica',
         components: {
             AppLayout,
             vSelect,
         },
         data: () => ({
 
-                frm_pj: null,
-                tipos: [],
+                frm_cpf: null,
+                lista: [],
                 tpestabelecimento: [],
-                uf: [],
-                municipio: [],
-                vModelEmpresa: null,
-                vModelEstabelecimento: null,
-                vModelUf: null,
-                vModelMunicipio: null,
+                vModelProfissional: null,
                 mask: maskDinheiro,
-                capitalSocial: '',
-                ultAltCapital: '',
-                ultAltContratual: '',
-                nrUltAltContratual: '',
-                vmCnpj: '',
+                vmCpf: '',
                 vmCep: '',
 
         }),
@@ -313,18 +272,13 @@
             // this.tpestabelecimento.id_tipo_estabelecimento = this.$refs.form.fk_id_tipo_estabelecimento.value
             // this.tipos.id_tipo_empresa = this.$refs.form.fk_id_tipo_empresa.value
 
-            axios.get('/pessoajuridica/listatipo', { headers: {
+            axios.get('/pessoafisica/lista', { headers: {
                 'Content-Type': 'application/json'
                 }
-            }).then(response => {this.tipos = response.data });
-
-            axios.get('/pessoajuridica/listatpestabelecimento', { headers: {
-                'Content-Type': 'application/json'
-                }
-            }).then(response => {this.tpestabelecimento = response.data });
+            }).then(response => {this.lsita = response.data });
 
             // this.vModelEstabelecimento = {'id_tipo_estabelecimento': 0, 'tipo_estabelecimento': 'SECAO'};
-            // this.vModelEmpresa = {'id_tipo_empresa': 3, 'tipo_empresa': 'CONSORCIO COM PERSONALIDADE JURIDICA'};
+            // this.vModelEmpresa = {'id_tipo_empresa': 3, 'tipo_empresa': 'CONSORCIO COM PERSONALIDADE fisica'};
 
         },
         methods: {
@@ -334,7 +288,7 @@
             getIdTipoEmpresa: (id) => {
                 this.$data.tipos.data.id_tipo_empresa = this.$refs.form.fk_id_tipo_empresa.value
            },
-           escolheTab: (div) => {
+           escolheTab: function (div) {
 
                 this.$refs.divDescricao.style.display = "none"
                 this.$refs.divContato.style.display = "none"
