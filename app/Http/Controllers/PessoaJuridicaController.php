@@ -22,12 +22,12 @@ class PessoaJuridicaController extends Controller
 
     public function listaTipoEmpresa(){
         $tipoEmpresa = new TipoEmpresa();
-        return $tipoEmpresa->listaTipoEmpresa();
+        return response()->json($tipoEmpresa->listaTipoEmpresa());
     }
 
     public function listaTipoEstabelecimento(){
         $tipo = new TipoEstabelecimento();
-        return $tipo->listaTipoEstabelecimento();
+        return response()->json($tipo->listaTipoEstabelecimento());
     }
 
     public function salvar( Request $request ){
@@ -56,8 +56,9 @@ class PessoaJuridicaController extends Controller
         $pj = PessoaJuridica::where('fk_id_pessoa', $id)->get()[0];
         $pj['empresa'] = $tpEmp->getTipoEmpresa( $pj['fk_id_tipo_empresa'] );
         $pj['estabelecimento'] = $tpEst->getTipoEstabelecimento( $pj['fk_id_tipo_estabelecimento'] );
+        $aRetorno = array('pj' => $pj);
 
-        return Inertia::render('pj/PessoaJuridica', ['pj' => $pj]);
+        return Inertia::render('pj/PessoaJuridica', $aRetorno);
 
     }
 

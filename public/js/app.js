@@ -4957,6 +4957,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -4976,9 +4977,6 @@ var maskDinheiro = text_mask_addons_dist_createNumberMask__WEBPACK_IMPORTED_MODU
   components: {
     AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__["default"],
     vSelect: vue_select__WEBPACK_IMPORTED_MODULE_1___default.a
-  },
-  props: {
-    pessoa: Object
   },
   data: function data() {
     return {
@@ -5002,10 +5000,14 @@ var maskDinheiro = text_mask_addons_dist_createNumberMask__WEBPACK_IMPORTED_MODU
       }
     };
   },
-  mounted: function mounted() {
+  created: function created() {
     var _this = this;
 
+    // console.log( this.$page );
     this.pj = this.$page.pj;
+    console.log(this.pj); // this.tpempresa = this.$page.empresa;
+    // this.tpestabelecimento = this.$page.estabelecimento;
+
     axios.get('/pessoajuridica/listatipo', {
       headers: {
         'Content-Type': 'application/json'
@@ -5020,7 +5022,6 @@ var maskDinheiro = text_mask_addons_dist_createNumberMask__WEBPACK_IMPORTED_MODU
     }).then(function (response) {
       _this.tpestabelecimento = response.data;
     });
-    console.log(this.pj);
   },
   methods: {
     escolheTab: function escolheTab(div) {
@@ -31358,11 +31359,10 @@ var render = function() {
                           ),
                           _vm._v(" "),
                           _c("v-select", {
+                            key: _vm.tpempresa.id_tipo_empresa,
                             staticClass:
                               "select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white",
                             attrs: {
-                              id: "tipo_empresa",
-                              name: "tipo_empresa",
                               "item-text": "tipo_empresa",
                               "item-value": "id_tipo_empresa",
                               placeholder: "Escolha o tipo da empresa",
@@ -31402,6 +31402,7 @@ var render = function() {
                           ),
                           _vm._v(" "),
                           _c("v-select", {
+                            key: _vm.tpestabelecimento.id_tipo_estabelecimento,
                             staticClass:
                               "select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white",
                             attrs: {
