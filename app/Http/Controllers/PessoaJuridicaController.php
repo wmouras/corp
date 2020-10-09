@@ -50,8 +50,14 @@ class PessoaJuridicaController extends Controller
     }
 
     public function dados($id){
+        $tpEst = new TipoEstabelecimento();
+        $tpEmp = new TipoEmpresa();
 
-        return Inertia::render('pj/PessoaJuridica', ['pj' => PessoaJuridica::where('fk_id_pessoa', $id)->get()[0]]);
+        $pj = PessoaJuridica::where('fk_id_pessoa', $id)->get()[0];
+        $pj['empresa'] = $tpEmp->getTipoEmpresa( $pj['fk_id_tipo_empresa'] );
+        $pj['estabelecimento'] = $tpEst->getTipoEstabelecimento( $pj['fk_id_tipo_estabelecimento'] );
+
+        return Inertia::render('pj/PessoaJuridica', ['pj' => $pj]);
 
     }
 

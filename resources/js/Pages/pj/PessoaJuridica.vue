@@ -66,16 +66,15 @@
                                     Tipo da Empresa
                                 </label>
 
-                                <v-select v-model="pj.empresa" class='select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white'
-                                    id='tipo_empresa'
-                                    name='tipo_empresa'
+                                <v-select v-model="tpempresa" class='select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white'
                                     item-text="tipo_empresa"
                                     item-value="id_tipo_empresa"
                                     placeholder='Escolha o tipo da empresa'
-                                    :options="tpempresa"
+                                    :options="pj.empresa"
                                     label="tipo_empresa"
                                     value="id_tipo_empresa"
-                                    :items="tpempresa"
+                                    :items="pj.empresa"
+                                    :key="id_tipo_empresa"
 
                                 />
 
@@ -85,7 +84,7 @@
                                     Tipo Estabelecimento
                                 </label>
 
-                                <v-select v-model="pj.estabelecimento" class='select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white'
+                                <v-select v-model="tpestabelecimento" class='select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white'
                                     id='tipo_estabelecimento'
                                     name='tipo_estabelecimento'
                                     item-text="tipo_estabelecimento"
@@ -95,6 +94,7 @@
                                     label='tipo_estabelecimento'
                                     value="id_tipo_estabelecimento"
                                     :items="tpestabelecimento"
+                                    :key="pj.id_tipo_estabelecimento"
                                 />
 
                             </div>
@@ -290,7 +290,6 @@
                 }
             }).then(response => {this.tpestabelecimento = response.data });
 
-            console.log( this.pj )
         },
         methods: {
 
