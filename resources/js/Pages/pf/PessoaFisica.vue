@@ -72,20 +72,40 @@
                             </div>
 
                             <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
-                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='deficiente'>
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='tipo_empresa'>
                                     Deficiente?
                                 </label>
-                                <input v-model='pf.deficiente' id='deficiente' name='deficiente' type='text' placeholder='Insira o deficiente'
-                                    class='appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
+
+                                <v-select v-model="pf.deficiente" class='select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white'
+                                    item-text="text"
+                                    item-value="id"
+                                    placeholder='Possui alguma deficiência'
+                                    :options="oDeficiente"
+                                    label="text"
+                                    value="id"
+                                    :items="oDeficiente"
+                                    :key="oDeficiente.id"
+
+                                />
 
                             </div>
 
                             <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
-                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='fk_cd_nacionalidade'>
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='tipo_empresa'>
                                     Nacionalidade
                                 </label>
-                                <input v-model='pf.fk_cd_nacionalidade' id='fk_cd_nacionalidade' name='fk_cd_nacionalidade' type='text' placeholder='Insira o fk_cd_nacionalidade'
-                                    class='appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
+
+                                <v-select v-model="pf.nacionalidade" class='select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white'
+                                    item-text="nacionalidade"
+                                    item-value="cd_acionalidade"
+                                    placeholder='Nacionalidade'
+                                    :options="oNacionalidade"
+                                    label="nacionalidade"
+                                    value="cd_acionalidade"
+                                    :items="oNacionalidade"
+                                    :key="oNacionalidade.cd_nacionalidade"
+
+                                />
 
                             </div>
 
@@ -126,13 +146,25 @@
                             </div>
 
                             <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
-                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='sexo'>
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='tipo_empresa'>
                                     Sexo
                                 </label>
-                                <input v-model='pf.sexo' id='sexo' name='sexo' type='text' placeholder='Insira o sexo'
-                                    class='appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
 
-                            </div><div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
+                                <v-select v-model="pf.sexo" class='select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white'
+                                    item-text="text"
+                                    item-value="id"
+                                    placeholder='Sexo'
+                                    :options="oSexo"
+                                    label="text"
+                                    value="id"
+                                    :items="oSexo"
+                                    :key="oSexo.id"
+
+                                />
+
+                            </div>
+
+                            <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
                                 <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='tipo_sangue'>
                                     tipo sanguíneo
                                 </label>
@@ -170,9 +202,8 @@
                                 <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='observacao'>
                                     Observação
                                 </label>
-                                <input v-model='pf.observacao' id='observacao' name='observacao' type='text' placeholder='Insira o observacao'
-                                    class='appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
 
+                                <textarea v-model='pf.observacao' id='observacao' name='observacao'  placeholder='Insira o observacao' class='appearance-none block w-full h-32 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white resize border rounded focus:outline-none focus:shadow-outline'></textarea>
                             </div>
 
                         </form>
@@ -197,7 +228,7 @@
                                 <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='cep'>
                                     CEP
                                 </label>
-                                <input name='cep' id='cep' type='text' placeholder='Insira o CEP' v-mask="'##.###-###'" v-model="vmCep"
+                                <input name='cep' id='cep' type='text' placeholder='Insira o CEP' v-mask="'##.###-###'"
                                     class='appearance-none block w-26 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
 
                             </div>
@@ -279,32 +310,68 @@
         },
         data: () => ({
 
-                pf:{
-                    cpf: '',
-                    data_emissao_identidade: '',
-                    data_nascimento: '',
-                    deficiente: '',
-                    fk_cd_nacionalidade: '',
-                    fk_cidade_titulo_eleitor: '',
-                    fk_id_naturalidade: '',
-                    foto: '',
-                    identidade: '',
-                    mae: '',
-                    nome: '',
-                    observacao: '',
-                    pai: '',
-                    secao_titulo_eleitor: '',
-                    sexo: '',
-                    tipo_sangue: '',
-                    titulo_eleitor: '',
-                    zona_titulo_eleitor: '',
-                    }
+            oSexo       : [{'id': '1', 'text':'Masculino'}, {'id': '2', 'text':'Feminino'}],
+            oDeficiente : [{'id': 'S', 'text':'SIM'}, {'id': 'N', 'text':'NÃO'}],
+            oNacionalidade: [],
+            pf:{
+                cpf: '',
+                data_emissao_identidade: '',
+                data_nascimento: '',
+                deficiente: [],
+                fk_cd_nacionalidade: '',
+                fk_id_naturalidade: '',
+                foto: '',
+                identidade: '',
+                mae: '',
+                nome: '',
+                observacao: '',
+                pai: '',
+                secao_titulo_eleitor: '',
+                sexo: [],
+                tipo_sangue: '',
+                titulo_eleitor: '',
+                zona_titulo_eleitor: '',
+            }
 
         }),
         created() {
 
-            this.pf = this.$page.pf;
-            console.log( this.pf );
+            axios.get('/pessoafisica/nacionalidade', { headers: {
+                'Content-Type': 'application/json'
+                }
+            }).then(response => {this.oNacionalidade = response.data });
+
+            if(this.$page.pf.fk_id_pessoa != NaN)
+            {
+                this.pf = this.$page.pf;
+
+                if( this.pf.sexo == 1 )
+                {
+                    this.pf.sexo = [{'id': '1', 'text':'Masculino'}]
+                }
+                if( this.pf.sexo == 2 )
+                {
+                    this.pf.sexo = [{'id': '2', 'text':'Feminino'}]
+                }
+                else
+                {
+                    [{'id': '1', 'text':'Masculino'}, {'id': '2', 'text':'Feminino'}]
+                }
+
+                if(this.pf.defiente == 'n'){
+                    this.pf.defiente= [{'id': 'N', 'text':'Não'}]
+                }
+                if(this.pf.defiente == 's')
+                {
+                    this.pf.defiente= [{'id': 'S', 'text':'SIM'}]
+                }
+                else
+                {
+                    oDeficiente : [{'id': 'S', 'text':'SIM'}, {'id': 'N', 'text':'NÃO'}]
+                }
+            }
+
+            console.log( this.$page.pf );
 
         },
         methods: {

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\PessoaFisica;
+use App\Models\Nacionalidade;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
@@ -22,6 +23,12 @@ class PessoaFisicaController extends Controller
 
         return response()->json($p);
 
+    }
+
+    public function listaNacionalidade()
+    {
+        $nacionalidade = new Nacionalidade();
+        return response()->json($nacionalidade->listaNacionalidade());
     }
 
     public function salvar( Request $request ){
@@ -44,9 +51,13 @@ class PessoaFisicaController extends Controller
 
     public function dados($id){
         $id = Crypt::decryptString($id);
+        $nacionalidade = new Nacionalidade();
 
         $pf = PessoaFisica::where('fk_id_pessoa', $id)->get()[0];
+        $pf['nacionalidade'] = $nacionalidade->getNacionalidade( $pf['fk_cd_nacionalidade'] );
+
         $aRetorno = array('pf' => $pf);
+
         session(['id_pessoa' => Crypt::encryptString($id)]);
 
         return Inertia::render('pf/PessoaFisica', $aRetorno);

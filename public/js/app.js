@@ -4665,6 +4665,37 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -4677,13 +4708,27 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
+      oSexo: [{
+        'id': '1',
+        'text': 'Masculino'
+      }, {
+        'id': '2',
+        'text': 'Feminino'
+      }],
+      oDeficiente: [{
+        'id': 'S',
+        'text': 'SIM'
+      }, {
+        'id': 'N',
+        'text': 'NÃO'
+      }],
+      oNacionalidade: [],
       pf: {
         cpf: '',
         data_emissao_identidade: '',
         data_nascimento: '',
-        deficiente: '',
+        deficiente: [],
         fk_cd_nacionalidade: '',
-        fk_cidade_titulo_eleitor: '',
         fk_id_naturalidade: '',
         foto: '',
         identidade: '',
@@ -4692,7 +4737,7 @@ __webpack_require__.r(__webpack_exports__);
         observacao: '',
         pai: '',
         secao_titulo_eleitor: '',
-        sexo: '',
+        sexo: [],
         tipo_sangue: '',
         titulo_eleitor: '',
         zona_titulo_eleitor: ''
@@ -4700,8 +4745,65 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   created: function created() {
-    this.pf = this.$page.pf;
-    console.log(this.pf);
+    var _this = this;
+
+    axios.get('/pessoafisica/nacionalidade', {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(function (response) {
+      _this.oNacionalidade = response.data;
+    });
+
+    if (this.$page.pf.fk_id_pessoa != NaN) {
+      this.pf = this.$page.pf;
+
+      if (this.pf.sexo == 1) {
+        this.pf.sexo = [{
+          'id': '1',
+          'text': 'Masculino'
+        }];
+      }
+
+      if (this.pf.sexo == 2) {
+        this.pf.sexo = [{
+          'id': '2',
+          'text': 'Feminino'
+        }];
+      } else {
+        [{
+          'id': '1',
+          'text': 'Masculino'
+        }, {
+          'id': '2',
+          'text': 'Feminino'
+        }];
+      }
+
+      if (this.pf.defiente == 'n') {
+        this.pf.defiente = [{
+          'id': 'N',
+          'text': 'Não'
+        }];
+      }
+
+      if (this.pf.defiente == 's') {
+        this.pf.defiente = [{
+          'id': 'S',
+          'text': 'SIM'
+        }];
+      } else {
+        oDeficiente: [{
+          'id': 'S',
+          'text': 'SIM'
+        }, {
+          'id': 'N',
+          'text': 'NÃO'
+        }];
+      }
+    }
+
+    console.log(this.$page.pf);
   },
   methods: {
     escolheTab: function escolheTab(div) {
@@ -30585,7 +30687,7 @@ var render = function() {
                             {
                               staticClass:
                                 "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
-                              attrs: { for: "deficiente" }
+                              attrs: { for: "tipo_empresa" }
                             },
                             [
                               _vm._v(
@@ -30594,38 +30696,29 @@ var render = function() {
                             ]
                           ),
                           _vm._v(" "),
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.pf.deficiente,
-                                expression: "pf.deficiente"
-                              }
-                            ],
+                          _c("v-select", {
+                            key: _vm.oDeficiente.id,
                             staticClass:
-                              "appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                              "select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white",
                             attrs: {
-                              id: "deficiente",
-                              name: "deficiente",
-                              type: "text",
-                              placeholder: "Insira o deficiente"
+                              "item-text": "text",
+                              "item-value": "id",
+                              placeholder: "Possui alguma deficiência",
+                              options: _vm.oDeficiente,
+                              label: "text",
+                              value: "id",
+                              items: _vm.oDeficiente
                             },
-                            domProps: { value: _vm.pf.deficiente },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.pf,
-                                  "deficiente",
-                                  $event.target.value
-                                )
-                              }
+                            model: {
+                              value: _vm.pf.deficiente,
+                              callback: function($$v) {
+                                _vm.$set(_vm.pf, "deficiente", $$v)
+                              },
+                              expression: "pf.deficiente"
                             }
                           })
-                        ]
+                        ],
+                        1
                       ),
                       _vm._v(" "),
                       _c(
@@ -30637,7 +30730,7 @@ var render = function() {
                             {
                               staticClass:
                                 "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
-                              attrs: { for: "fk_cd_nacionalidade" }
+                              attrs: { for: "tipo_empresa" }
                             },
                             [
                               _vm._v(
@@ -30646,38 +30739,29 @@ var render = function() {
                             ]
                           ),
                           _vm._v(" "),
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.pf.fk_cd_nacionalidade,
-                                expression: "pf.fk_cd_nacionalidade"
-                              }
-                            ],
+                          _c("v-select", {
+                            key: _vm.oNacionalidade.cd_nacionalidade,
                             staticClass:
-                              "appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                              "select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white",
                             attrs: {
-                              id: "fk_cd_nacionalidade",
-                              name: "fk_cd_nacionalidade",
-                              type: "text",
-                              placeholder: "Insira o fk_cd_nacionalidade"
+                              "item-text": "nacionalidade",
+                              "item-value": "cd_acionalidade",
+                              placeholder: "Nacionalidade",
+                              options: _vm.oNacionalidade,
+                              label: "nacionalidade",
+                              value: "cd_acionalidade",
+                              items: _vm.oNacionalidade
                             },
-                            domProps: { value: _vm.pf.fk_cd_nacionalidade },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.pf,
-                                  "fk_cd_nacionalidade",
-                                  $event.target.value
-                                )
-                              }
+                            model: {
+                              value: _vm.pf.nacionalidade,
+                              callback: function($$v) {
+                                _vm.$set(_vm.pf, "nacionalidade", $$v)
+                              },
+                              expression: "pf.nacionalidade"
                             }
                           })
-                        ]
+                        ],
+                        1
                       ),
                       _vm._v(" "),
                       _c(
@@ -30885,7 +30969,7 @@ var render = function() {
                             {
                               staticClass:
                                 "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
-                              attrs: { for: "sexo" }
+                              attrs: { for: "tipo_empresa" }
                             },
                             [
                               _vm._v(
@@ -30894,35 +30978,31 @@ var render = function() {
                             ]
                           ),
                           _vm._v(" "),
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.pf.sexo,
-                                expression: "pf.sexo"
-                              }
-                            ],
+                          _c("v-select", {
+                            key: _vm.oSexo.id,
                             staticClass:
-                              "appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                              "select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white",
                             attrs: {
-                              id: "sexo",
-                              name: "sexo",
-                              type: "text",
-                              placeholder: "Insira o sexo"
+                              "item-text": "text",
+                              "item-value": "id",
+                              placeholder: "Sexo",
+                              options: _vm.oSexo,
+                              label: "text",
+                              value: "id",
+                              items: _vm.oSexo
                             },
-                            domProps: { value: _vm.pf.sexo },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(_vm.pf, "sexo", $event.target.value)
-                              }
+                            model: {
+                              value: _vm.pf.sexo,
+                              callback: function($$v) {
+                                _vm.$set(_vm.pf, "sexo", $$v)
+                              },
+                              expression: "pf.sexo"
                             }
                           })
-                        ]
+                        ],
+                        1
                       ),
+                      _vm._v(" "),
                       _c(
                         "div",
                         { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
@@ -31154,7 +31234,7 @@ var render = function() {
                             ]
                           ),
                           _vm._v(" "),
-                          _c("input", {
+                          _c("textarea", {
                             directives: [
                               {
                                 name: "model",
@@ -31164,11 +31244,10 @@ var render = function() {
                               }
                             ],
                             staticClass:
-                              "appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                              "appearance-none block w-full h-32 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white resize border rounded focus:outline-none focus:shadow-outline",
                             attrs: {
                               id: "observacao",
                               name: "observacao",
-                              type: "text",
                               placeholder: "Insira o observacao"
                             },
                             domProps: { value: _vm.pf.observacao },
@@ -31250,12 +31329,6 @@ var render = function() {
                                 rawName: "v-mask",
                                 value: "##.###-###",
                                 expression: "'##.###-###'"
-                              },
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.vmCep,
-                                expression: "vmCep"
                               }
                             ],
                             staticClass:
@@ -31265,15 +31338,6 @@ var render = function() {
                               id: "cep",
                               type: "text",
                               placeholder: "Insira o CEP"
-                            },
-                            domProps: { value: _vm.vmCep },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.vmCep = $event.target.value
-                              }
                             }
                           })
                         ]
