@@ -2,7 +2,7 @@
     <app-layout>
         <template #header>
             <h2 class='font-semibold text-xl text-gray-800 leading-tight'>
-                Cadastro Pessoa Jurídica
+                Cadastro Pessoa Física
             </h2>
         </template>
 
@@ -27,120 +27,153 @@
                         <form ref="form" action='/pessoafisica/salvar' id='frm-pessoa-fisica' name='frm-pessoa-fisica' method='GET'>
 
                             <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
-                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='codigo_registro'>
-                                    Registro
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='cpf'>
+                                    CPF
                                 </label>
-                                <input id='codigo_registro' name='codigo_registro' type='text' placeholder='Insira o registro'
+                                <input v-model='pf.cpf' id='cpf' name='cpf' type='text' placeholder='Insira o cpf' v-mask="'###.###.###-##'"
                                     class='appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
 
                             </div>
 
                             <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
-                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='nome_fantasia'>
-                                    Nome Fantasia
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='nome'>
+                                    Nome
                                 </label>
-                                <input id='nome_fantasia' name='nome_fantasia' type='text' placeholder='Insira o nome fantasia'
-                                    class='appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
-
-                            </div>
-                            <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
-                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='razao_social'>
-                                    Razão Social
-                                </label>
-                                <input name='razao_social' id='razao_social' type='text' placeholder='Insira a razão social'
+                                <input v-model='pf.nome' id='nome' name='nome' type='text' placeholder='Insira o nome'
                                     class='appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
 
                             </div>
 
                             <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
-                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='cnpj'>
-                                    CNPJ
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='identidade'>
+                                    Identidade (RG)
                                 </label>
-                                <input name='cnpj' id='cnpj' type='text' placeholder='Apenas números' v-mask="'##.###.###/####-##'" v-model="vmCnpj"
-                                class='appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
+                                <input v-model='pf.identidade' id='identidade' name='identidade' type='text' placeholder='Insira o identidade'
+                                    class='appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
 
                             </div>
 
                             <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
-                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='fk_id_tipo_empresa'>
-                                    Tipo da Empresa
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='data_emissao_identidade'>
+                                    Data de emissao da RG
                                 </label>
-
-                                <v-select v-model="vModelEmpresa" class='select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white'
-                                    id='tipo_empresa'
-                                    name='tipo_empresa'
-                                    item-text="tipo_empresa"
-                                    item-value="id_tipo_empresa"
-                                    placeholder='Escolha o tipo da empresa'
-                                    :options='tipos'
-                                    label='tipo_empresa'
-                                    value='id_tipo_empresa'
-                                    :items="tipos"
-
-                                />
+                                <input v-model='pf.data_emissao_identidade' v-mask="'##/##/####'" id='data_emissao_identidade' name='data_emissao_identidade' type='text' placeholder='Insira o data_emissao_identidade'
+                                    class='appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
 
                             </div>
+
                             <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
-                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='fk_id_tipo_estabelecimento'>
-                                    Tipo Estabelecimento
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='data_nascimento'>
+                                    Data nascimento
                                 </label>
-
-                                <v-select v-model="vModelEstabelecimento" class='select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white'
-                                    id='tipo_estabelecimento'
-                                    name='tipo_estabelecimento'
-                                    item-text="tipo_estabelecimento"
-                                    item-value="id_tipo_estabelecimento"
-                                    placeholder='Escolha o tipo do estabelecimento'
-                                    :options='tpestabelecimento'
-                                    label='tipo_estabelecimento'
-                                    value="id_tipo_estabelecimento"
-                                    :items="tpestabelecimento"
-                                />
+                                <input v-model='pf.data_nascimento' v-mask="'##/##/####'" id='data_nascimento' name='data_nascimento' type='text' placeholder='Insira o data_nascimento'
+                                    class='appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
 
                             </div>
-                            <!-- <p>{{this.valorEstabelecimento}}</p> -->
+
                             <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
-                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='capital_social'>
-                                    Capital Social
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='deficiente'>
+                                    Deficiente?
                                 </label>
-                                <input name='capital_social' id='capital_social' type='text' placeholder='Insira a vírgula para incluir os centavos' v-mask='mask' v-model="capitalSocial"
-                                class='appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
+                                <input v-model='pf.deficiente' id='deficiente' name='deficiente' type='text' placeholder='Insira o deficiente'
+                                    class='appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
 
                             </div>
+
                             <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
-                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='dt_ultima_alt_capital'>
-                                    Última alteração de capital
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='fk_cd_nacionalidade'>
+                                    Nacionalidade
                                 </label>
-                                <input name='dt_ultima_alt_capital' id='dt_ultima_alt_capital' type='text' placeholder='Apenas números' v-mask="'##/##/####'" v-model="ultAltCapital"
-                                class='appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
+                                <input v-model='pf.fk_cd_nacionalidade' id='fk_cd_nacionalidade' name='fk_cd_nacionalidade' type='text' placeholder='Insira o fk_cd_nacionalidade'
+                                    class='appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
 
                             </div>
+
                             <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
-                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='nr_ultima_alt_contratual'>
-                                    Número e data da última alteração Contratual
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='fk_id_naturalidade'>
+                                    Naturalidade
                                 </label>
-                                <input name='nr_ultima_alt_contratual' id='nr_ultima_alt_contratual' type='text' placeholder='Números' v-mask="'####'" v-model="nrUltAltContratual"
-                                class='appearance-none inline w-24 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
-                                <input name='dt_ultima_alt_contratual' id='dt_ultima_alt_contratual' type='text' placeholder='Apenas números' v-mask="'##/##/####'" v-model="ultAltContratual"
-                                class='appearance-none inline w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 ml-3 mb-3 leading-tight focus:outline-none focus:bg-white'>
+                                <input v-model='pf.fk_id_naturalidade' id='fk_id_naturalidade' name='fk_id_naturalidade' type='text' placeholder='Insira o fk_id_naturalidade'
+                                    class='appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
 
                             </div>
+
                             <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
-                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='objetivo_social'>
-                                    Objetivo Social
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='foto'>
+                                    Foto
                                 </label>
-                                <input name='objetivo_social' id='objetivo_social' type='text' placeholder='Insira o objetivo social da empresa' class='appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
+                                <input v-model='pf.foto' id='foto' name='foto' type='text' placeholder='Insira o foto'
+                                    class='appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
 
                             </div>
 
-                            <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0 ml-28'>
-                                <button type='submit' v-on:click="exibe()" class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-10 ml-28 center'>
-                                    Salvar
-                                </button>
+                            <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='mae'>
+                                    Nome da mae
+                                </label>
+                                <input v-model='pf.mae' id='mae' name='mae' type='text' placeholder='Insira o mae'
+                                    class='appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
+
                             </div>
 
-                            <input type="hidden" name="fk_id_tipo_estabelecimento" id="fk_id_tipo_estabelecimento" :value="vModelEstabelecimento"/>
-                            <input type="hidden" name="fk_id_tipo_empresa" id="fk_id_tipo_empresa" :value="vModelEmpresa"/>
+                            <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='pai'>
+                                    Nome do pai
+                                </label>
+                                <input v-model='pf.pai' id='pai' name='pai' type='text' placeholder='Insira o pai'
+                                    class='appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
+
+                            </div>
+
+                            <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='sexo'>
+                                    Sexo
+                                </label>
+                                <input v-model='pf.sexo' id='sexo' name='sexo' type='text' placeholder='Insira o sexo'
+                                    class='appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
+
+                            </div><div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='tipo_sangue'>
+                                    tipo sanguíneo
+                                </label>
+                                <input v-model='pf.tipo_sangue' id='tipo_sangue' name='tipo_sangue' type='text' placeholder='Insira o tipo_sangue'
+                                    class='appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
+
+                            </div><div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='titulo_eleitor'>
+                                    título eleitor
+                                </label>
+                                <input v-model='pf.titulo_eleitor' v-mask="'#### #### ## ##'" id='titulo_eleitor' name='titulo_eleitor' type='text' placeholder='Insira o titulo_eleitor'
+                                    class='appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
+
+                            </div>
+
+                            <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='zona_titulo_eleitor'>
+                                    zona título eleitor
+                                </label>
+                                <input v-model='pf.zona_titulo_eleitor' id='zona_titulo_eleitor' name='zona_titulo_eleitor' type='text' placeholder='Insira o zona_titulo_eleitor'
+                                    class='appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
+
+                            </div>
+
+                            <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='secao_titulo_eleitor'>
+                                    Seção título eleitor
+                                </label>
+                                <input v-model='pf.secao_titulo_eleitor' id='secao_titulo_eleitor' name='secao_titulo_eleitor' type='text' placeholder='Insira o secao_titulo_eleitor'
+                                    class='appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
+
+                            </div>
+
+                            <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='observacao'>
+                                    Observação
+                                </label>
+                                <input v-model='pf.observacao' id='observacao' name='observacao' type='text' placeholder='Insira o observacao'
+                                    class='appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
+
+                            </div>
 
                         </form>
 
@@ -238,17 +271,6 @@
 
     import 'vue-select/dist/vue-select.css';
 
-    import createNumberMask from 'text-mask-addons/dist/createNumberMask';
-    const maskDinheiro = createNumberMask({
-        prefix: 'R$ ',
-        allowDecimal: true,
-        decimalSymbol: ',',
-        includeThousandsSeparator: true,
-        thousandsSeparatorSymbol: '.',
-        allowNegative: false,
-        valorEstabelecimento: null,
-    });
-
     export default {
         name: 'pessoa-fisica',
         components: {
@@ -257,37 +279,36 @@
         },
         data: () => ({
 
-                frm_cpf: null,
-                lista: [],
-                tpestabelecimento: [],
-                vModelProfissional: null,
-                mask: maskDinheiro,
-                vmCpf: '',
-                vmCep: '',
+                pf:{
+                    cpf: '',
+                    data_emissao_identidade: '',
+                    data_nascimento: '',
+                    deficiente: '',
+                    fk_cd_nacionalidade: '',
+                    fk_cidade_titulo_eleitor: '',
+                    fk_id_naturalidade: '',
+                    foto: '',
+                    identidade: '',
+                    mae: '',
+                    nome: '',
+                    observacao: '',
+                    pai: '',
+                    secao_titulo_eleitor: '',
+                    sexo: '',
+                    tipo_sangue: '',
+                    titulo_eleitor: '',
+                    zona_titulo_eleitor: '',
+                    }
 
         }),
-        mounted() {
+        created() {
 
-            // event.preventDefault();
-            // this.tpestabelecimento.id_tipo_estabelecimento = this.$refs.form.fk_id_tipo_estabelecimento.value
-            // this.tipos.id_tipo_empresa = this.$refs.form.fk_id_tipo_empresa.value
-
-            axios.get('/pessoafisica/lista', { headers: {
-                'Content-Type': 'application/json'
-                }
-            }).then(response => {this.lsita = response.data });
-
-            // this.vModelEstabelecimento = {'id_tipo_estabelecimento': 0, 'tipo_estabelecimento': 'SECAO'};
-            // this.vModelEmpresa = {'id_tipo_empresa': 3, 'tipo_empresa': 'CONSORCIO COM PERSONALIDADE fisica'};
+            this.pf = this.$page.pf;
+            console.log( this.pf );
 
         },
         methods: {
-            getIdEstabelecimento: (id) => {
-                this.$data.tpestabelecimento.data.id_tipo_estabelecimento = this.$refs.form.fk_id_tipo_estabelecimento.value
-            },
-            getIdTipoEmpresa: (id) => {
-                this.$data.tipos.data.id_tipo_empresa = this.$refs.form.fk_id_tipo_empresa.value
-           },
+
            escolheTab: function (div) {
 
                 this.$refs.divDescricao.style.display = "none"
