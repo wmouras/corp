@@ -21,4 +21,9 @@ class TipoEmpresa extends Model
         // dd( model::select('id_tipo_empresa', 'tipo_empresa')->orderBy('tipo_empresa')->get() );
         return response()->json( model::select('id_tipo_empresa', 'tipo_empresa')->orderBy('tipo_empresa')->get() );
     }
+
+    public function getTipoEmpresa($id){
+
+        return model::where('id_tipo_empresa', $id)->get();
+    }
 }

@@ -19,4 +19,8 @@ class TipoEstabelecimento extends Model
     public function listaTipoEstabelecimento(){
         return response()->json( model::select('id_tipo_estabelecimento', 'tipo_estabelecimento')->orderBy('tipo_estabelecimento')->get() );
     }
+
+    public function getTipoEstabelecimento( $id ){
+        return model::where('id_tipo_estabelecimento', $id)->get();
+    }
 }
