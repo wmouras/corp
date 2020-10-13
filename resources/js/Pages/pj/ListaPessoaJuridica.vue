@@ -115,7 +115,6 @@
         data: () => ({
 
             pjs: [],
-            url: 'http://corporativo.local/pj/pessoajuridica/dados/21',
             pesquisa: {
                 codigo_registro: '',
                 razao_social: '',
@@ -127,7 +126,7 @@
         }),
         mounted(){
 
-             axios.get('/pj/pessoajuridica/lista', { headers: {
+            axios.get('/pj/pessoajuridica/lista', { headers: {
                 'Content-Type': 'application/json'
                 }
             }).then(response => {this.pjs = response.data });

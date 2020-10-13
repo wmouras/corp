@@ -66,7 +66,7 @@
                                     Tipo da Empresa
                                 </label>
 
-                                <v-select v-model="tpempresa" class='select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white'
+                                <v-select v-model="pj.empresa" class='select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white'
                                     item-text="tipo_empresa"
                                     item-value="id_tipo_empresa"
                                     placeholder='Escolha o tipo da empresa'
@@ -74,7 +74,11 @@
                                     label="tipo_empresa"
                                     value="id_tipo_empresa"
                                     :items="tpempresa"
+<<<<<<< HEAD
                                     :key="id_tipo_empresa"
+=======
+                                    :key="tpempresa.id_tipo_empresa"
+>>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
 
                                 />
 
@@ -84,7 +88,7 @@
                                     Tipo Estabelecimento
                                 </label>
 
-                                <v-select v-model="tpestabelecimento" class='select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white'
+                                <v-select v-model="pj.estabelecimento" class='select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white'
                                     id='tipo_estabelecimento'
                                     name='tipo_estabelecimento'
                                     item-text="tipo_estabelecimento"
@@ -94,7 +98,12 @@
                                     label='tipo_estabelecimento'
                                     value="id_tipo_estabelecimento"
                                     :items="tpestabelecimento"
+<<<<<<< HEAD
                                     :key="id_tipo_estabelecimento"
+=======
+                                    :key="tpestabelecimento.id_tipo_estabelecimento"
+
+>>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
                                 />
 
                             </div>
@@ -250,9 +259,6 @@
             AppLayout,
             vSelect,
         },
-        props: {
-            pessoa: Object,
-        },
         data: () => ({
 
             mask: maskDinheiro,
@@ -276,9 +282,17 @@
 
 
         }),
-        mounted() {
+        created() {
 
+<<<<<<< HEAD
             // this.pj = this.$page.pj;
+=======
+            // console.log( this.$page );
+            this.pj = this.$page.pj;
+            console.log( this.pj );
+            // this.tpempresa = this.$page.empresa;
+            // this.tpestabelecimento = this.$page.estabelecimento;
+>>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
 
             axios.get('/pessoajuridica/listatipo', { headers: {
                 'Content-Type': 'application/json'

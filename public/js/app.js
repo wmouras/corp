@@ -4231,6 +4231,8 @@ __webpack_require__.r(__webpack_exports__);
 /*!**************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/pf/ListaPessoaFisica.vue?vue&type=script&lang=js& ***!
   \**************************************************************************************************************************************************************************/
+<<<<<<< HEAD
+=======
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -4238,6 +4240,341 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.vue");
 /* harmony import */ var v_mask__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! v-mask */ "./node_modules/v-mask/dist/v-mask.esm.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'ListaPessoaFisica',
+  components: {
+    AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  data: function data() {
+    return {
+      pfs: [],
+      pesquisa: {
+        identidade: '',
+        nome: '',
+        cpf: ''
+      }
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    axios.get('/pf/pessoafisica/lista', {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(function (response) {
+      _this.pfs = response.data;
+    });
+  },
+  methods: {
+    editarPessoaFisica: function editarPessoaFisica(id_pessoa) {
+      window.location.assign('/pf/pessoafisica/dados/' + id_pessoa);
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/pf/PessoaFisica.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/pf/PessoaFisica.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************/
+>>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.vue");
+<<<<<<< HEAD
+/* harmony import */ var v_mask__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! v-mask */ "./node_modules/v-mask/dist/v-mask.esm.js");
+=======
+/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-select */ "./node_modules/vue-select/dist/vue-select.js");
+/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_select__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var v_mask__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! v-mask */ "./node_modules/v-mask/dist/v-mask.esm.js");
+/* harmony import */ var vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-select/dist/vue-select.css */ "./node_modules/vue-select/dist/vue-select.css");
+/* harmony import */ var vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_3__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+>>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
 //
 //
 //
@@ -4432,6 +4769,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+<<<<<<< HEAD
 //
 //
 //
@@ -4536,10 +4874,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+=======
+>>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
 
 
 
 
+<<<<<<< HEAD
 
 var maskDinheiro = text_mask_addons_dist_createNumberMask__WEBPACK_IMPORTED_MODULE_4___default()({
   prefix: 'R$ ',
@@ -4552,10 +4893,15 @@ var maskDinheiro = text_mask_addons_dist_createNumberMask__WEBPACK_IMPORTED_MODU
 });
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'pj',
+=======
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'pessoa-fisica',
+>>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
   components: {
     AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__["default"],
     vSelect: vue_select__WEBPACK_IMPORTED_MODULE_1___default.a
   },
+<<<<<<< HEAD
   props: {
     pessoa: Object
   },
@@ -4597,10 +4943,55 @@ var maskDinheiro = text_mask_addons_dist_createNumberMask__WEBPACK_IMPORTED_MODU
 
     this.pj = this.$page.pj;
     axios.get('/pessoajuridica/listatipo', {
+=======
+  data: function data() {
+    return {
+      oSexo: [{
+        'id': '1',
+        'text': 'Masculino'
+      }, {
+        'id': '2',
+        'text': 'Feminino'
+      }],
+      oDeficiente: [{
+        'id': 'S',
+        'text': 'SIM'
+      }, {
+        'id': 'N',
+        'text': 'NÃO'
+      }],
+      oNacionalidade: [],
+      pf: {
+        cpf: '',
+        data_emissao_identidade: '',
+        data_nascimento: '',
+        deficiente: [],
+        fk_cd_nacionalidade: '',
+        fk_id_naturalidade: '',
+        foto: '',
+        identidade: '',
+        mae: '',
+        nome: '',
+        observacao: '',
+        pai: '',
+        secao_titulo_eleitor: '',
+        sexo: [],
+        tipo_sangue: '',
+        titulo_eleitor: '',
+        zona_titulo_eleitor: ''
+      }
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    axios.get('/pessoafisica/nacionalidade', {
+>>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
       headers: {
         'Content-Type': 'application/json'
       }
     }).then(function (response) {
+<<<<<<< HEAD
       _this.tpempresa = response.data;
     });
     axios.get('/pessoajuridica/listatpestabelecimento', {
@@ -4610,6 +5001,60 @@ var maskDinheiro = text_mask_addons_dist_createNumberMask__WEBPACK_IMPORTED_MODU
     }).then(function (response) {
       _this.tpestabelecimento = response.data;
     });
+=======
+      _this.oNacionalidade = response.data;
+    });
+
+    if (this.$page.pf.fk_id_pessoa != NaN) {
+      this.pf = this.$page.pf;
+
+      if (this.pf.sexo == 1) {
+        this.pf.sexo = [{
+          'id': '1',
+          'text': 'Masculino'
+        }];
+      }
+
+      if (this.pf.sexo == 2) {
+        this.pf.sexo = [{
+          'id': '2',
+          'text': 'Feminino'
+        }];
+      } else {
+        [{
+          'id': '1',
+          'text': 'Masculino'
+        }, {
+          'id': '2',
+          'text': 'Feminino'
+        }];
+      }
+
+      if (this.pf.defiente == 'n') {
+        this.pf.defiente = [{
+          'id': 'N',
+          'text': 'Não'
+        }];
+      }
+
+      if (this.pf.defiente == 's') {
+        this.pf.defiente = [{
+          'id': 'S',
+          'text': 'SIM'
+        }];
+      } else {
+        oDeficiente: [{
+          'id': 'S',
+          'text': 'SIM'
+        }, {
+          'id': 'N',
+          'text': 'NÃO'
+        }];
+      }
+    }
+
+    console.log(this.$page.pf);
+>>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
   },
   methods: {
     escolheTab: function escolheTab(div) {
@@ -4619,8 +5064,11 @@ var maskDinheiro = text_mask_addons_dist_createNumberMask__WEBPACK_IMPORTED_MODU
       if (div == '1') this.$refs.divDescricao.style.display = "block";
       if (div == '2') this.$refs.divContato.style.display = "block";
       if (div == '3') this.$refs.divQuadro.style.display = "block";
+<<<<<<< HEAD
     },
     salvarDescricao: function salvarDescricao() {// console.log( this.pj );
+=======
+>>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
     }
   }
 });
@@ -4753,7 +5201,6 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       pjs: [],
-      url: 'http://corporativo.local/pj/pessoajuridica/dados/21',
       pesquisa: {
         codigo_registro: '',
         razao_social: '',
@@ -5027,6 +5474,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -5046,9 +5494,6 @@ var maskDinheiro = text_mask_addons_dist_createNumberMask__WEBPACK_IMPORTED_MODU
   components: {
     AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__["default"],
     vSelect: vue_select__WEBPACK_IMPORTED_MODULE_1___default.a
-  },
-  props: {
-    pessoa: Object
   },
   data: function data() {
     return {
@@ -5072,10 +5517,18 @@ var maskDinheiro = text_mask_addons_dist_createNumberMask__WEBPACK_IMPORTED_MODU
       }
     };
   },
-  mounted: function mounted() {
+  created: function created() {
     var _this = this;
 
+<<<<<<< HEAD
     // this.pj = this.$page.pj;
+=======
+    // console.log( this.$page );
+    this.pj = this.$page.pj;
+    console.log(this.pj); // this.tpempresa = this.$page.empresa;
+    // this.tpestabelecimento = this.$page.estabelecimento;
+
+>>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
     axios.get('/pessoajuridica/listatipo', {
       headers: {
         'Content-Type': 'application/json'
@@ -32161,6 +32614,1362 @@ var render = function() {
                               click: function($event) {
                                 $event.preventDefault()
                                 return _vm.deletePhoto($event)
+<<<<<<< HEAD
+=======
+                              }
+                            }
+                          },
+                          [
+                            _vm._v(
+                              "\n                Remove Photo\n            "
+                            )
+                          ]
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _c("jet-input-error", {
+                      staticClass: "mt-2",
+                      attrs: { message: _vm.form.error("photo") }
+                    })
+                  ],
+                  1
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-span-6 sm:col-span-4" },
+              [
+                _c("jet-label", { attrs: { for: "name", value: "Name" } }),
+                _vm._v(" "),
+                _c("jet-input", {
+                  staticClass: "mt-1 block w-full",
+                  attrs: { id: "name", type: "text", autocomplete: "name" },
+                  model: {
+                    value: _vm.form.name,
+                    callback: function($$v) {
+                      _vm.$set(_vm.form, "name", $$v)
+                    },
+                    expression: "form.name"
+                  }
+                }),
+                _vm._v(" "),
+                _c("jet-input-error", {
+                  staticClass: "mt-2",
+                  attrs: { message: _vm.form.error("name") }
+                })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-span-6 sm:col-span-4" },
+              [
+                _c("jet-label", { attrs: { for: "email", value: "Email" } }),
+                _vm._v(" "),
+                _c("jet-input", {
+                  staticClass: "mt-1 block w-full",
+                  attrs: { id: "email", type: "email" },
+                  model: {
+                    value: _vm.form.email,
+                    callback: function($$v) {
+                      _vm.$set(_vm.form, "email", $$v)
+                    },
+                    expression: "form.email"
+                  }
+                }),
+                _vm._v(" "),
+                _c("jet-input-error", {
+                  staticClass: "mt-2",
+                  attrs: { message: _vm.form.error("email") }
+                })
+              ],
+              1
+            )
+          ]
+        },
+        proxy: true
+      },
+      {
+        key: "actions",
+        fn: function() {
+          return [
+            _c(
+              "jet-action-message",
+              {
+                staticClass: "mr-3",
+                attrs: { on: _vm.form.recentlySuccessful }
+              },
+              [_vm._v("\n            Saved.\n        ")]
+            ),
+            _vm._v(" "),
+            _c(
+              "jet-button",
+              {
+                class: { "opacity-25": _vm.form.processing },
+                attrs: { disabled: _vm.form.processing }
+              },
+              [_vm._v("\n            Save\n        ")]
+            )
+          ]
+        },
+        proxy: true
+      }
+    ])
+  })
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/pf/ListaPessoaFisica.vue?vue&type=template&id=4405fb31&":
+/*!******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/pf/ListaPessoaFisica.vue?vue&type=template&id=4405fb31& ***!
+  \******************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "app-layout",
+    {
+      scopedSlots: _vm._u([
+        {
+          key: "header",
+          fn: function() {
+            return [
+              _c(
+                "h2",
+                {
+                  staticClass:
+                    "font-semibold text-xl text-gray-800 leading-tight"
+                },
+                [_vm._v("\n            Pessoa Física\n        ")]
+              )
+            ]
+          },
+          proxy: true
+        }
+      ])
+    },
+    [
+      _vm._v(" "),
+      _c("div", { staticClass: "py-1" }, [
+        _c(
+          "div",
+          {
+            ref: "divDescricao",
+            staticClass: "max-w-7xl mx-auto sm:px-6 lg:px-8",
+            attrs: { id: "div_1" }
+          },
+          [
+            _c(
+              "div",
+              {
+                staticClass: "bg-white overflow-hidden shadow-xl sm:rounded-lg"
+              },
+              [
+                _c("div", { staticClass: "row col-md-6 flex inline" }, [
+                  _c(
+                    "div",
+                    { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                    [
+                      _c(
+                        "label",
+                        {
+                          staticClass:
+                            "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                          attrs: { for: "codigo_registro" }
+                        },
+                        [
+                          _vm._v(
+                            "\n                            Registro:\n                        "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.pesquisa.identidade,
+                            expression: "pesquisa.identidade"
+                          }
+                        ],
+                        staticClass:
+                          "appearance-none block w-50 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                        attrs: {
+                          id: "codigo_registro",
+                          name: "codigo_registro",
+                          type: "text",
+                          placeholder: "Insira o registro"
+                        },
+                        domProps: { value: _vm.pesquisa.identidade },
+                        on: {
+                          keyup: function($event) {
+                            if (
+                              !$event.type.indexOf("key") &&
+                              _vm._k(
+                                $event.keyCode,
+                                "enter",
+                                13,
+                                $event.key,
+                                "Enter"
+                              )
+                            ) {
+                              return null
+                            }
+                            return $event.target.nextElementSibling.focus()
+                          },
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.pesquisa,
+                              "identidade",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                    [
+                      _c(
+                        "label",
+                        {
+                          staticClass:
+                            "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                          attrs: { for: "nome" }
+                        },
+                        [
+                          _vm._v(
+                            "\n                            Nome:\n                        "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.pesquisa.nome,
+                            expression: "pesquisa.nome"
+                          }
+                        ],
+                        staticClass:
+                          "appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                        attrs: {
+                          id: "nome_fantasia",
+                          name: "nome",
+                          type: "text",
+                          placeholder: "Insira o nome"
+                        },
+                        domProps: { value: _vm.pesquisa.nome },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.pesquisa, "nome", $event.target.value)
+                          }
+                        }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                    [
+                      _c(
+                        "label",
+                        {
+                          staticClass:
+                            "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                          attrs: { for: "cpf" }
+                        },
+                        [
+                          _vm._v(
+                            "\n                            CPF:\n                        "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.pesquisa.cpf,
+                            expression: "pesquisa.cpf"
+                          },
+                          {
+                            name: "mask",
+                            rawName: "v-mask",
+                            value: "##.###.###/####-##",
+                            expression: "'##.###.###/####-##'"
+                          }
+                        ],
+                        staticClass:
+                          "appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                        attrs: {
+                          name: "cpf",
+                          id: "cpf",
+                          type: "text",
+                          placeholder: "Apenas números"
+                        },
+                        domProps: { value: _vm.pesquisa.cpf },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.pesquisa, "cpf", $event.target.value)
+                          }
+                        }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0 mt-6" },
+                    [
+                      _c(
+                        "button",
+                        {
+                          staticClass:
+                            "appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                          attrs: { type: "button" }
+                        },
+                        [
+                          _c("i", { staticClass: "fas fa-search" }),
+                          _c("span", { staticClass: "ml-3" }, [
+                            _vm._v("Pesquisar")
+                          ])
+                        ]
+                      )
+                    ]
+                  )
+                ])
+              ]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            ref: "divDescricao",
+            staticClass: "max-w-7xl mx-auto sm:px-6 lg:px-8",
+            attrs: { id: "div_1" }
+          },
+          [
+            _c(
+              "table",
+              { staticClass: "w-full whitespace-no-wrap" },
+              [
+                _c("tr", { staticClass: "text-left font-bold" }, [
+                  _c("th", { staticClass: "px-6 pt-6 pb-4" }, [
+                    _vm._v("Registro")
+                  ]),
+                  _vm._v(" "),
+                  _c("th", { staticClass: "px-6 pt-6 pb-4" }, [_vm._v("Nome")]),
+                  _vm._v(" "),
+                  _c("th", { staticClass: "px-6 pt-6 pb-4" }, [_vm._v("CPF")]),
+                  _vm._v(" "),
+                  _c("th", { staticClass: "px-6 pt-6 pb-4" }, [
+                    _vm._v("E-mail")
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "th",
+                    { staticClass: "px-6 pt-6 pb-4", attrs: { colspan: "2" } },
+                    [_vm._v("Ação")]
+                  )
+                ]),
+                _vm._v(" "),
+                _vm._l(_vm.pfs, function(pf) {
+                  return _c(
+                    "tr",
+                    {
+                      key: pf.fk_id_pessoa,
+                      staticClass: "hover:bg-gray-100 focus-within:bg-gray-100"
+                    },
+                    [
+                      _c("td", { staticClass: "border-t" }, [
+                        _c(
+                          "span",
+                          {
+                            staticClass:
+                              "px-6 py-4 flex items-center focus:text-indigo-500"
+                          },
+                          [
+                            _vm._v(
+                              "\n\n                    " +
+                                _vm._s(pf.codigo_registro) +
+                                "\n\n                    "
+                            )
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "border-t" }, [
+                        _c(
+                          "span",
+                          {
+                            staticClass: "px-6 py-4 flex items-center",
+                            attrs: { tabindex: "-1" }
+                          },
+                          [
+                            _vm._v(
+                              "\n                    " +
+                                _vm._s(pf.nome) +
+                                "\n                    "
+                            )
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "border-t" }, [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: pf.cpf,
+                              expression: "pf.cpf"
+                            },
+                            {
+                              name: "mask",
+                              rawName: "v-mask",
+                              value: "###.###.###-##",
+                              expression: "'###.###.###-##'"
+                            }
+                          ],
+                          staticClass: "px-6 py-4 flex items-center",
+                          attrs: { disabled: "", type: "text", tabindex: "-2" },
+                          domProps: { value: pf.cpf },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(pf, "cpf", $event.target.value)
+                            }
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "border-t" }, [
+                        _c(
+                          "span",
+                          {
+                            staticClass: "px-6 py-4 flex items-center",
+                            attrs: { tabindex: "-3" }
+                          },
+                          [
+                            _vm._v(
+                              "\n                    Teste@teste.com\n                    "
+                            )
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "border-t w-px" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass:
+                              "px-6 py-4 flex items-center cursor-pointer",
+                            attrs: { tabindex: "-4" },
+                            on: {
+                              click: function($event) {
+                                return _vm.editarPessoaFisica(pf.fk_id_pessoa)
+                              }
+                            }
+                          },
+                          [
+                            _vm._v(
+                              "\n                    Editar\n                    "
+                            )
+                          ]
+                        )
+                      ])
+                    ]
+                  )
+                }),
+                _vm._v(" "),
+                _vm.pfs.length === 0
+                  ? _c("tr", [
+                      _c(
+                        "td",
+                        {
+                          staticClass: "border-t px-6 py-4",
+                          attrs: { colspan: "4" }
+                        },
+                        [_vm._v("Sem resultados para essa pesquisa.")]
+                      )
+                    ])
+                  : _vm._e()
+              ],
+              2
+            )
+          ]
+        )
+      ])
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/pf/PessoaFisica.vue?vue&type=template&id=1e028ec4&":
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/pf/PessoaFisica.vue?vue&type=template&id=1e028ec4& ***!
+  \*************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "app-layout",
+    {
+      scopedSlots: _vm._u([
+        {
+          key: "header",
+          fn: function() {
+            return [
+              _c(
+                "h2",
+                {
+                  staticClass:
+                    "font-semibold text-xl text-gray-800 leading-tight"
+                },
+                [
+                  _vm._v(
+                    "\n                Cadastro Pessoa Física\n            "
+                  )
+                ]
+              )
+            ]
+          },
+          proxy: true
+        }
+      ])
+    },
+    [
+      _vm._v(" "),
+      _c("ul", { staticClass: "flex border-b-2 max-w-7xl mx-auto" }, [
+        _c("li", { staticClass: "-mb-px mr-4" }, [
+          _c(
+            "a",
+            {
+              staticClass:
+                "bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-700 font-semibold",
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  return _vm.escolheTab(1)
+                }
+              }
+            },
+            [_vm._v("Descrição")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "mr-4" }, [
+          _c(
+            "a",
+            {
+              staticClass:
+                "bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold",
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  return _vm.escolheTab(2)
+                }
+              }
+            },
+            [_vm._v("Endereço e contado")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "mr-4" }, [
+          _c(
+            "a",
+            {
+              staticClass:
+                "bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold",
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  return _vm.escolheTab(3)
+                }
+              }
+            },
+            [_vm._v("Quadro Técnico")]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "py-1" }, [
+        _c(
+          "div",
+          {
+            ref: "divDescricao",
+            staticClass: "max-w-7xl mx-auto sm:px-6 lg:px-8",
+            attrs: { id: "div_1" }
+          },
+          [
+            _c(
+              "div",
+              {
+                staticClass: "bg-white overflow-hidden shadow-xl sm:rounded-lg"
+              },
+              [
+                _c("div", { staticClass: "row col-md-6" }, [
+                  _c(
+                    "form",
+                    {
+                      ref: "form",
+                      attrs: {
+                        action: "/pessoafisica/salvar",
+                        id: "frm-pessoa-fisica",
+                        name: "frm-pessoa-fisica",
+                        method: "GET"
+                      }
+                    },
+                    [
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                        [
+                          _c(
+                            "label",
+                            {
+                              staticClass:
+                                "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                              attrs: { for: "cpf" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    CPF\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.pf.cpf,
+                                expression: "pf.cpf"
+                              },
+                              {
+                                name: "mask",
+                                rawName: "v-mask",
+                                value: "###.###.###-##",
+                                expression: "'###.###.###-##'"
+                              }
+                            ],
+                            staticClass:
+                              "appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                            attrs: {
+                              id: "cpf",
+                              name: "cpf",
+                              type: "text",
+                              placeholder: "Insira o cpf"
+                            },
+                            domProps: { value: _vm.pf.cpf },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(_vm.pf, "cpf", $event.target.value)
+                              }
+                            }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                        [
+                          _c(
+                            "label",
+                            {
+                              staticClass:
+                                "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                              attrs: { for: "nome" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    Nome\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.pf.nome,
+                                expression: "pf.nome"
+                              }
+                            ],
+                            staticClass:
+                              "appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                            attrs: {
+                              id: "nome",
+                              name: "nome",
+                              type: "text",
+                              placeholder: "Insira o nome"
+                            },
+                            domProps: { value: _vm.pf.nome },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(_vm.pf, "nome", $event.target.value)
+                              }
+                            }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                        [
+                          _c(
+                            "label",
+                            {
+                              staticClass:
+                                "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                              attrs: { for: "identidade" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    Identidade (RG)\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.pf.identidade,
+                                expression: "pf.identidade"
+                              }
+                            ],
+                            staticClass:
+                              "appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                            attrs: {
+                              id: "identidade",
+                              name: "identidade",
+                              type: "text",
+                              placeholder: "Insira o identidade"
+                            },
+                            domProps: { value: _vm.pf.identidade },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.pf,
+                                  "identidade",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                        [
+                          _c(
+                            "label",
+                            {
+                              staticClass:
+                                "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                              attrs: { for: "data_emissao_identidade" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    Data de emissao da RG\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.pf.data_emissao_identidade,
+                                expression: "pf.data_emissao_identidade"
+                              },
+                              {
+                                name: "mask",
+                                rawName: "v-mask",
+                                value: "##/##/####",
+                                expression: "'##/##/####'"
+                              }
+                            ],
+                            staticClass:
+                              "appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                            attrs: {
+                              id: "data_emissao_identidade",
+                              name: "data_emissao_identidade",
+                              type: "text",
+                              placeholder: "Insira o data_emissao_identidade"
+                            },
+                            domProps: { value: _vm.pf.data_emissao_identidade },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.pf,
+                                  "data_emissao_identidade",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                        [
+                          _c(
+                            "label",
+                            {
+                              staticClass:
+                                "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                              attrs: { for: "data_nascimento" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    Data nascimento\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.pf.data_nascimento,
+                                expression: "pf.data_nascimento"
+                              },
+                              {
+                                name: "mask",
+                                rawName: "v-mask",
+                                value: "##/##/####",
+                                expression: "'##/##/####'"
+                              }
+                            ],
+                            staticClass:
+                              "appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                            attrs: {
+                              id: "data_nascimento",
+                              name: "data_nascimento",
+                              type: "text",
+                              placeholder: "Insira o data_nascimento"
+                            },
+                            domProps: { value: _vm.pf.data_nascimento },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.pf,
+                                  "data_nascimento",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                        [
+                          _c(
+                            "label",
+                            {
+                              staticClass:
+                                "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                              attrs: { for: "tipo_empresa" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    Deficiente?\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("v-select", {
+                            key: _vm.oDeficiente.id,
+                            staticClass:
+                              "select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white",
+                            attrs: {
+                              "item-text": "text",
+                              "item-value": "id",
+                              placeholder: "Possui alguma deficiência",
+                              options: _vm.oDeficiente,
+                              label: "text",
+                              value: "id",
+                              items: _vm.oDeficiente
+                            },
+                            model: {
+                              value: _vm.pf.deficiente,
+                              callback: function($$v) {
+                                _vm.$set(_vm.pf, "deficiente", $$v)
+                              },
+                              expression: "pf.deficiente"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                        [
+                          _c(
+                            "label",
+                            {
+                              staticClass:
+                                "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                              attrs: { for: "tipo_empresa" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    Nacionalidade\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("v-select", {
+                            key: _vm.oNacionalidade.cd_nacionalidade,
+                            staticClass:
+                              "select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white",
+                            attrs: {
+                              "item-text": "nacionalidade",
+                              "item-value": "cd_acionalidade",
+                              placeholder: "Nacionalidade",
+                              options: _vm.oNacionalidade,
+                              label: "nacionalidade",
+                              value: "cd_acionalidade",
+                              items: _vm.oNacionalidade
+                            },
+                            model: {
+                              value: _vm.pf.nacionalidade,
+                              callback: function($$v) {
+                                _vm.$set(_vm.pf, "nacionalidade", $$v)
+                              },
+                              expression: "pf.nacionalidade"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                        [
+                          _c(
+                            "label",
+                            {
+                              staticClass:
+                                "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                              attrs: { for: "fk_id_naturalidade" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    Naturalidade\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.pf.fk_id_naturalidade,
+                                expression: "pf.fk_id_naturalidade"
+                              }
+                            ],
+                            staticClass:
+                              "appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                            attrs: {
+                              id: "fk_id_naturalidade",
+                              name: "fk_id_naturalidade",
+                              type: "text",
+                              placeholder: "Insira o fk_id_naturalidade"
+                            },
+                            domProps: { value: _vm.pf.fk_id_naturalidade },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.pf,
+                                  "fk_id_naturalidade",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                        [
+                          _c(
+                            "label",
+                            {
+                              staticClass:
+                                "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                              attrs: { for: "foto" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    Foto\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.pf.foto,
+                                expression: "pf.foto"
+                              }
+                            ],
+                            staticClass:
+                              "appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                            attrs: {
+                              id: "foto",
+                              name: "foto",
+                              type: "text",
+                              placeholder: "Insira o foto"
+                            },
+                            domProps: { value: _vm.pf.foto },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(_vm.pf, "foto", $event.target.value)
+                              }
+                            }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                        [
+                          _c(
+                            "label",
+                            {
+                              staticClass:
+                                "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                              attrs: { for: "mae" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    Nome da mae\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.pf.mae,
+                                expression: "pf.mae"
+                              }
+                            ],
+                            staticClass:
+                              "appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                            attrs: {
+                              id: "mae",
+                              name: "mae",
+                              type: "text",
+                              placeholder: "Insira o mae"
+                            },
+                            domProps: { value: _vm.pf.mae },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(_vm.pf, "mae", $event.target.value)
+                              }
+                            }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                        [
+                          _c(
+                            "label",
+                            {
+                              staticClass:
+                                "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                              attrs: { for: "pai" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    Nome do pai\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.pf.pai,
+                                expression: "pf.pai"
+                              }
+                            ],
+                            staticClass:
+                              "appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                            attrs: {
+                              id: "pai",
+                              name: "pai",
+                              type: "text",
+                              placeholder: "Insira o pai"
+                            },
+                            domProps: { value: _vm.pf.pai },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(_vm.pf, "pai", $event.target.value)
+                              }
+                            }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                        [
+                          _c(
+                            "label",
+                            {
+                              staticClass:
+                                "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                              attrs: { for: "tipo_empresa" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    Sexo\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("v-select", {
+                            key: _vm.oSexo.id,
+                            staticClass:
+                              "select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white",
+                            attrs: {
+                              "item-text": "text",
+                              "item-value": "id",
+                              placeholder: "Sexo",
+                              options: _vm.oSexo,
+                              label: "text",
+                              value: "id",
+                              items: _vm.oSexo
+                            },
+                            model: {
+                              value: _vm.pf.sexo,
+                              callback: function($$v) {
+                                _vm.$set(_vm.pf, "sexo", $$v)
+                              },
+                              expression: "pf.sexo"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                        [
+                          _c(
+                            "label",
+                            {
+                              staticClass:
+                                "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                              attrs: { for: "tipo_sangue" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    tipo sanguíneo\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.pf.tipo_sangue,
+                                expression: "pf.tipo_sangue"
+                              }
+                            ],
+                            staticClass:
+                              "appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                            attrs: {
+                              id: "tipo_sangue",
+                              name: "tipo_sangue",
+                              type: "text",
+                              placeholder: "Insira o tipo_sangue"
+                            },
+                            domProps: { value: _vm.pf.tipo_sangue },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.pf,
+                                  "tipo_sangue",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ]
+                      ),
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                        [
+                          _c(
+                            "label",
+                            {
+                              staticClass:
+                                "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                              attrs: { for: "titulo_eleitor" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    título eleitor\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.pf.titulo_eleitor,
+                                expression: "pf.titulo_eleitor"
+                              },
+                              {
+                                name: "mask",
+                                rawName: "v-mask",
+                                value: "#### #### ## ##",
+                                expression: "'#### #### ## ##'"
+                              }
+                            ],
+                            staticClass:
+                              "appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                            attrs: {
+                              id: "titulo_eleitor",
+                              name: "titulo_eleitor",
+                              type: "text",
+                              placeholder: "Insira o titulo_eleitor"
+                            },
+                            domProps: { value: _vm.pf.titulo_eleitor },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.pf,
+                                  "titulo_eleitor",
+                                  $event.target.value
+                                )
+>>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
                               }
                             }
                           },
@@ -32338,6 +34147,7 @@ var render = function() {
                           attrs: { for: "codigo_registro" }
                         },
                         [
+<<<<<<< HEAD
                           _vm._v(
                             "\n                            Registro:\n                        "
                           )
@@ -32381,6 +34191,103 @@ var render = function() {
                           input: function($event) {
                             if ($event.target.composing) {
                               return
+=======
+                          _c(
+                            "label",
+                            {
+                              staticClass:
+                                "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                              attrs: { for: "zona_titulo_eleitor" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    zona título eleitor\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.pf.zona_titulo_eleitor,
+                                expression: "pf.zona_titulo_eleitor"
+                              }
+                            ],
+                            staticClass:
+                              "appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                            attrs: {
+                              id: "zona_titulo_eleitor",
+                              name: "zona_titulo_eleitor",
+                              type: "text",
+                              placeholder: "Insira o zona_titulo_eleitor"
+                            },
+                            domProps: { value: _vm.pf.zona_titulo_eleitor },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.pf,
+                                  "zona_titulo_eleitor",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                        [
+                          _c(
+                            "label",
+                            {
+                              staticClass:
+                                "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                              attrs: { for: "secao_titulo_eleitor" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    Seção título eleitor\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.pf.secao_titulo_eleitor,
+                                expression: "pf.secao_titulo_eleitor"
+                              }
+                            ],
+                            staticClass:
+                              "appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                            attrs: {
+                              id: "secao_titulo_eleitor",
+                              name: "secao_titulo_eleitor",
+                              type: "text",
+                              placeholder: "Insira o secao_titulo_eleitor"
+                            },
+                            domProps: { value: _vm.pf.secao_titulo_eleitor },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.pf,
+                                  "secao_titulo_eleitor",
+                                  $event.target.value
+                                )
+                              }
+>>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
                             }
                             _vm.$set(
                               _vm.pesquisa,
@@ -32405,6 +34312,7 @@ var render = function() {
                           attrs: { for: "nome_fantasia" }
                         },
                         [
+<<<<<<< HEAD
                           _vm._v(
                             "\n                            Nome:\n                        "
                           )
@@ -32529,6 +34437,53 @@ var render = function() {
                           _c("i", { staticClass: "fas fa-plus" }),
                           _c("span", { staticClass: "ml-3" }, [_vm._v("Novo")])
                         ]
+=======
+                          _c(
+                            "label",
+                            {
+                              staticClass:
+                                "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                              attrs: { for: "observacao" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    Observação\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("textarea", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.pf.observacao,
+                                expression: "pf.observacao"
+                              }
+                            ],
+                            staticClass:
+                              "appearance-none block w-full h-32 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white resize border rounded focus:outline-none focus:shadow-outline",
+                            attrs: {
+                              id: "observacao",
+                              name: "observacao",
+                              placeholder: "Insira o observacao"
+                            },
+                            domProps: { value: _vm.pf.observacao },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.pf,
+                                  "observacao",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ]
+>>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
                       )
                     ]
                   )
@@ -32580,7 +34535,52 @@ var render = function() {
                       staticClass: "hover:bg-gray-100 focus-within:bg-gray-100"
                     },
                     [
+<<<<<<< HEAD
                       _c("td", { staticClass: "border-t" }, [
+=======
+                      _c(
+                        "div",
+                        {
+                          staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0 block"
+                        },
+                        [
+                          _c(
+                            "label",
+                            {
+                              staticClass:
+                                "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                              attrs: { for: "cep" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    CEP\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "mask",
+                                rawName: "v-mask",
+                                value: "##.###-###",
+                                expression: "'##.###-###'"
+                              }
+                            ],
+                            staticClass:
+                              "appearance-none block w-26 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                            attrs: {
+                              name: "cep",
+                              id: "cep",
+                              type: "text",
+                              placeholder: "Insira o CEP"
+                            }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row-auto max-w-full flex" }, [
+>>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
                         _c(
                           "span",
                           {
@@ -32588,11 +34588,38 @@ var render = function() {
                               "px-6 py-4 flex items-center focus:text-indigo-500"
                           },
                           [
+<<<<<<< HEAD
                             _vm._v(
                               "\n\n                    " +
                                 _vm._s(pj.nome_fantasia) +
                                 "\n\n                    "
                             )
+=======
+                            _c(
+                              "label",
+                              {
+                                staticClass:
+                                  "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                                attrs: { for: "endereco" }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                        Endereço\n                                    "
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("input", {
+                              staticClass:
+                                "appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                              attrs: {
+                                id: "endereco",
+                                name: "endereco",
+                                type: "text",
+                                placeholder: "Endereço"
+                              }
+                            })
+>>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
                           ]
                         )
                       ]),
@@ -32605,15 +34632,43 @@ var render = function() {
                             attrs: { tabindex: "-1" }
                           },
                           [
+<<<<<<< HEAD
                             _vm._v(
                               "\n                    " +
                                 _vm._s(pj.razao_social) +
                                 "\n                    "
                             )
+=======
+                            _c(
+                              "label",
+                              {
+                                staticClass:
+                                  "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                                attrs: { for: "numero" }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                        Número\n                                    "
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("input", {
+                              staticClass:
+                                "appearance-none block w-20 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                              attrs: {
+                                id: "numero",
+                                name: "numero",
+                                type: "text",
+                                placeholder: "Nº"
+                              }
+                            })
+>>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
                           ]
                         )
                       ]),
                       _vm._v(" "),
+<<<<<<< HEAD
                       _c("td", { staticClass: "border-t" }, [
                         _c("input", {
                           directives: [
@@ -32637,6 +34692,97 @@ var render = function() {
                             input: function($event) {
                               if ($event.target.composing) {
                                 return
+=======
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                        [
+                          _c(
+                            "label",
+                            {
+                              staticClass:
+                                "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                              attrs: { for: "complemento" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    Complemento\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("input", {
+                            staticClass:
+                              "appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                            attrs: {
+                              name: "complemento",
+                              id: "complemento",
+                              type: "text",
+                              placeholder: "Complemento"
+                            }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                        [
+                          _c(
+                            "label",
+                            {
+                              staticClass:
+                                "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                              attrs: { for: "bairro" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    Bairo\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("input", {
+                            staticClass:
+                              "appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                            attrs: {
+                              name: "bairro",
+                              id: "bairro",
+                              type: "text",
+                              placeholder: "Bairro"
+                            }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "max-w-2xl flex" }, [
+                        _c(
+                          "div",
+                          { staticClass: "w-24 md:w-1/2 px-3 mb-6 md:mb-0" },
+                          [
+                            _c(
+                              "label",
+                              {
+                                staticClass:
+                                  "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                                attrs: { for: "uf" }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                        Estado\n                                    "
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("input", {
+                              staticClass:
+                                "appearance-none block w-64 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                              attrs: {
+                                name: "uf",
+                                id: "uf",
+                                type: "text",
+                                placeholder: "UF"
+>>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
                               }
                               _vm.$set(pj, "cnpj", $event.target.value)
                             }
@@ -32652,13 +34798,41 @@ var render = function() {
                             attrs: { tabindex: "-3" }
                           },
                           [
+<<<<<<< HEAD
                             _vm._v(
                               "\n                    Teste\n                    "
                             )
+=======
+                            _c(
+                              "label",
+                              {
+                                staticClass:
+                                  "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                                attrs: { for: "cidade" }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                        Cidade\n                                    "
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("input", {
+                              staticClass:
+                                "appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                              attrs: {
+                                name: "cidade",
+                                id: "cidade",
+                                type: "text",
+                                placeholder: "Cidade"
+                              }
+                            })
+>>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
                           ]
                         )
                       ]),
                       _vm._v(" "),
+<<<<<<< HEAD
                       _c("td", { staticClass: "border-t w-px" }, [
                         _c(
                           "a",
@@ -32669,6 +34843,22 @@ var render = function() {
                             on: {
                               click: function($event) {
                                 return _vm.editarPessoafisica(pj.fk_id_pessoa)
+=======
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                        [
+                          _c(
+                            "button",
+                            {
+                              staticClass:
+                                "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-12 center",
+                              attrs: { type: "submit" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.exibe()
+                                }
+>>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
                               }
                             }
                           },
@@ -33567,7 +35757,11 @@ var render = function() {
                           ),
                           _vm._v(" "),
                           _c("v-select", {
+<<<<<<< HEAD
                             key: _vm.id_tipo_empresa,
+=======
+                            key: _vm.tpempresa.id_tipo_empresa,
+>>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
                             staticClass:
                               "select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white",
                             attrs: {
@@ -33610,7 +35804,11 @@ var render = function() {
                           ),
                           _vm._v(" "),
                           _c("v-select", {
+<<<<<<< HEAD
                             key: _vm.id_tipo_estabelecimento,
+=======
+                            key: _vm.tpestabelecimento.id_tipo_estabelecimento,
+>>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
                             staticClass:
                               "select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white",
                             attrs: {

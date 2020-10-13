@@ -8,6 +8,7 @@ use App\Models\PessoaJuridica;
 use App\Models\TipoEstabelecimento;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Crypt;
 
 
 /** 
@@ -42,7 +43,18 @@ class PessoaJuridicaController extends Controller
     {
 
         // dd( PessoaJuridica::all() );
+<<<<<<< HEAD
         return response()->json(PessoaJuridica::all());
+=======
+        $pjs = PessoaJuridica::select('fk_id_pessoa', 'nome_fantasia', 'razao_social', 'cnpj', 'codigo_registro')->get();
+        foreach($pjs as $pj)
+        {
+            $pj->fk_id_pessoa = Crypt::encryptString($pj->fk_id_pessoa);
+            $p[] = $pj;
+        }
+
+        return response()->json($p);//PessoaJuridica::select('fk_id_pessoa', 'nome_fantasia', 'razao_social', 'cnpj', 'codigo_registro')->get() );
+>>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
 
     }
     
@@ -54,7 +66,7 @@ class PessoaJuridicaController extends Controller
     public function listaTipoEmpresa()
     {
         $tipoEmpresa = new TipoEmpresa();
-        return $tipoEmpresa->listaTipoEmpresa();
+        return response()->json($tipoEmpresa->listaTipoEmpresa());
     }
 
     /**
@@ -65,7 +77,7 @@ class PessoaJuridicaController extends Controller
     public function listaTipoEstabelecimento()
     {
         $tipo = new TipoEstabelecimento();
-        return $tipo->listaTipoEstabelecimento();
+        return response()->json($tipo->listaTipoEstabelecimento());
     }
 
     /**
@@ -77,20 +89,25 @@ class PessoaJuridicaController extends Controller
     public function salvar(Request $request)
     {
 
+        $idPessoa = Crypt::decryptString($request->session()->get('id_pessoa'));
         $alt_capital = date('Y-m-d', strtotime($request->dt_ultima_alt_capital));
         $alt_contratual = date('Y-m-d', strtotime($request->dt_ultima_alt_contratual));
         $cnpj = preg_replace("/[^0-9]/", "", $request->cnpj);
         $capital_social = preg_replace("/[^0-9,]/", "", $request->capital_social);
         $request->merge(['usuario' => Auth::id()]);
-        $request->merge(['fk_id_pessoa' => 21]);
+        $request->merge(['fk_id_pessoa' => $idPessoa]);
         $request->merge(['cnpj' => $cnpj]);
         $request->merge(['capital_social' => str_replace(',', '.', $capital_social)]);
         $request->merge(['dt_ultima_alt_capital' => $alt_capital]);
         $request->merge(['dt_ultima_alt_contratual' => $alt_contratual]);
 
+<<<<<<< HEAD
         // dd( $request );
 
         $result = PessoaJuridica::create($request->all());
+=======
+        $result = PessoaJuridica::updateOrCreate( $request->all(), ['fk_id_pessoa' => $idPessoa] );
+>>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
         dd($result);
     }
 
@@ -104,12 +121,20 @@ class PessoaJuridicaController extends Controller
     {
         $tpEst = new TipoEstabelecimento();
         $tpEmp = new TipoEmpresa();
+        $id = Crypt::decryptString($id);
 
         $pj = PessoaJuridica::where('fk_id_pessoa', $id)->get()[0];
+<<<<<<< HEAD
         $pj['empresa'] = $tpEmp->getTipoEmpresa($pj['fk_id_tipo_empresa']);
         $pj['estabelecimento'] = $tpEst->getTipoEstabelecimento($pj['fk_id_tipo_estabelecimento']);
+=======
+        $pj['empresa'] = $tpEmp->getTipoEmpresa( $pj['fk_id_tipo_empresa'] );
+        $pj['estabelecimento'] = $tpEst->getTipoEstabelecimento( $pj['fk_id_tipo_estabelecimento'] );
+        $aRetorno = array('pj' => $pj);
+        session(['id_pessoa' => Crypt::encryptString($id)]);
+>>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
 
-        return Inertia::render('pj/PessoaJuridica', ['pj' => $pj]);
+        return Inertia::render('pj/PessoaJuridica', $aRetorno);
 
     }
 

@@ -17,13 +17,10 @@ class TipoEmpresa extends Model
     protected $table = 'tb_tipo_empresa';
 
     public function listaTipoEmpresa(){
-
-        // dd( model::select('id_tipo_empresa', 'tipo_empresa')->orderBy('tipo_empresa')->get() );
-        return response()->json( model::select('id_tipo_empresa', 'tipo_empresa')->orderBy('tipo_empresa')->get() );
+        return model::select('id_tipo_empresa', 'tipo_empresa')->orderBy('tipo_empresa')->get();
     }
 
     public function getTipoEmpresa($id){
-
-        return model::where('id_tipo_empresa', $id)->get();
+        return model::select('id_tipo_empresa', 'tipo_empresa')->where('id_tipo_empresa', $id)->get();
     }
 }
