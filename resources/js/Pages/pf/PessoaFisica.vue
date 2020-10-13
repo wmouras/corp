@@ -234,46 +234,67 @@
                             </div>
 
                             <div class="row-auto max-w-full flex">
-                            <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
-                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='endereco'>
-                                    Endereço
-                                </label>
-                                <input id='endereco' name='endereco' type='text' placeholder='Endereço'
-                                    class='appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
+                                <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
+                                    <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='endereco'>
+                                        Endereço
+                                    </label>
+                                    <input id='endereco' name='endereco' type='text' placeholder='Endereço'
+                                        class='appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
 
+                                </div>
+
+                                <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
+                                    <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='numero'>
+                                        Número
+                                    </label>
+                                    <input id='numero' name='numero' type='text' placeholder='Nº'
+                                        class='appearance-none block w-20 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
+
+                                </div>
                             </div>
 
                             <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
-                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='numero'>
-                                    Número
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='complemento'>
+                                    Complemento
                                 </label>
-                                <input id='numero' name='numero' type='text' placeholder='Nº'
-                                    class='appearance-none block w-20 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
-
-                            </div>
-                            </div>
-                            <div class="row-auto max-w-full flex">
-                            <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
-                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='cidade'>
-                                    Cidade
-                                </label>
-                                <input name='cidade' id='cidade' type='text' placeholder='Cidade'
+                                <input name='complemento' id='complemento' type='text' placeholder='Complemento'
                                 class='appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
 
                             </div>
 
                             <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
-                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='uf'>
-                                    Estado
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='bairro'>
+                                    Bairo
                                 </label>
-                                <input name='uf' id='uf' type='text' placeholder='UF'
-                                class='appearance-none block w-20 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
+                                <input name='bairro' id='bairro' type='text' placeholder='Bairro'
+                                class='appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
 
                             </div>
+
+                            <div class="max-w-2xl flex">
+
+                                <div class='w-24 md:w-1/2 px-3 mb-6 md:mb-0'>
+                                    <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='uf'>
+                                        Estado
+                                    </label>
+                                    <input name='uf' id='uf' type='text' placeholder='UF'
+                                    class='appearance-none block w-64 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
+
+                                </div>
+
+                                <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
+                                    <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='cidade'>
+                                        Cidade
+                                    </label>
+                                    <input name='cidade' id='cidade' type='text' placeholder='Cidade'
+                                    class='appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'>
+
+                                </div>
+
                             </div>
 
-                            <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0 ml-28'>
-                                <button type='submit' v-on:click="exibe()" class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-10 ml-28 center'>
+                            <div class='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
+                                <button type='submit' v-on:click="exibe()" class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-12 center'>
                                     Salvar
                                 </button>
                             </div>

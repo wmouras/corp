@@ -4696,6 +4696,27 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -31357,7 +31378,7 @@ var render = function() {
                               },
                               [
                                 _vm._v(
-                                  "\n                                    Endereço\n                                "
+                                  "\n                                        Endereço\n                                    "
                                 )
                               ]
                             ),
@@ -31388,7 +31409,7 @@ var render = function() {
                               },
                               [
                                 _vm._v(
-                                  "\n                                    Número\n                                "
+                                  "\n                                        Número\n                                    "
                                 )
                               ]
                             ),
@@ -31407,7 +31428,100 @@ var render = function() {
                         )
                       ]),
                       _vm._v(" "),
-                      _c("div", { staticClass: "row-auto max-w-full flex" }, [
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                        [
+                          _c(
+                            "label",
+                            {
+                              staticClass:
+                                "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                              attrs: { for: "complemento" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    Complemento\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("input", {
+                            staticClass:
+                              "appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                            attrs: {
+                              name: "complemento",
+                              id: "complemento",
+                              type: "text",
+                              placeholder: "Complemento"
+                            }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                        [
+                          _c(
+                            "label",
+                            {
+                              staticClass:
+                                "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                              attrs: { for: "bairro" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    Bairo\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("input", {
+                            staticClass:
+                              "appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                            attrs: {
+                              name: "bairro",
+                              id: "bairro",
+                              type: "text",
+                              placeholder: "Bairro"
+                            }
+                          })
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "max-w-2xl flex" }, [
+                        _c(
+                          "div",
+                          { staticClass: "w-24 md:w-1/2 px-3 mb-6 md:mb-0" },
+                          [
+                            _c(
+                              "label",
+                              {
+                                staticClass:
+                                  "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                                attrs: { for: "uf" }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                        Estado\n                                    "
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("input", {
+                              staticClass:
+                                "appearance-none block w-64 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                              attrs: {
+                                name: "uf",
+                                id: "uf",
+                                type: "text",
+                                placeholder: "UF"
+                              }
+                            })
+                          ]
+                        ),
+                        _vm._v(" "),
                         _c(
                           "div",
                           { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
@@ -31421,7 +31535,7 @@ var render = function() {
                               },
                               [
                                 _vm._v(
-                                  "\n                                    Cidade\n                                "
+                                  "\n                                        Cidade\n                                    "
                                 )
                               ]
                             ),
@@ -31437,51 +31551,18 @@ var render = function() {
                               }
                             })
                           ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
-                          [
-                            _c(
-                              "label",
-                              {
-                                staticClass:
-                                  "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
-                                attrs: { for: "uf" }
-                              },
-                              [
-                                _vm._v(
-                                  "\n                                    Estado\n                                "
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c("input", {
-                              staticClass:
-                                "appearance-none block w-20 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
-                              attrs: {
-                                name: "uf",
-                                id: "uf",
-                                type: "text",
-                                placeholder: "UF"
-                              }
-                            })
-                          ]
                         )
                       ]),
                       _vm._v(" "),
                       _c(
                         "div",
-                        {
-                          staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0 ml-28"
-                        },
+                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
                         [
                           _c(
                             "button",
                             {
                               staticClass:
-                                "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-10 ml-28 center",
+                                "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-12 center",
                               attrs: { type: "submit" },
                               on: {
                                 click: function($event) {
