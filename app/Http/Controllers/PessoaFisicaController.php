@@ -2,41 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Endereco;
 use App\Models\PessoaFisica;
 use App\Models\Nacionalidade;
 use Illuminate\Http\Request;
-<<<<<<< HEAD
-use App\Models\PessoaFisica;
-use Illuminate\Support\Facades\Auth;
-use Inertia\Inertia;
-
-class PessoaFisicaController extends Controller
-{
-    //
-    public function dados($id)
-    {
-
-        $pf = PessoaFisica::where('fk_id_pessoa', $id)->get()[0];
-        return Inertia::render('pj/PessoaFisica', ['pf' => $pf]);
-
-    }
-
-    public function lista()
-    {
-
-        return response()->json(PessoaFisica::all());
-
-    }
-
-    public function dados($id)
-    {
-      
-        $pf = PessoaFisica::where('fk_id_pessoa', $id)->get()[0];
-        return Inertia::render('pj/PessoaFisica', ['pj' => $pj]);
-
-    }
-
-=======
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Crypt;
@@ -84,16 +53,17 @@ class PessoaFisicaController extends Controller
     public function dados($id){
         $id = Crypt::decryptString($id);
         $nacionalidade = new Nacionalidade();
+        $endereco = new Endereco();
 
         $pf = PessoaFisica::where('fk_id_pessoa', $id)->get()[0];
         $pf['nacionalidade'] = $nacionalidade->getNacionalidade( $pf['fk_cd_nacionalidade'] );
 
         $aRetorno = array('pf' => $pf);
+        $aRetorno['pf']['enderecos'] = $endereco->getEnderecoPessoa( $id );
 
         session(['id_pessoa' => Crypt::encryptString($id)]);
 
         return Inertia::render('pf/PessoaFisica', $aRetorno);
 
     }
->>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
 }

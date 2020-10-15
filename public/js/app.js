@@ -4231,8 +4231,6 @@ __webpack_require__.r(__webpack_exports__);
 /*!**************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/pf/ListaPessoaFisica.vue?vue&type=script&lang=js& ***!
   \**************************************************************************************************************************************************************************/
-<<<<<<< HEAD
-=======
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -4240,6 +4238,12 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.vue");
 /* harmony import */ var v_mask__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! v-mask */ "./node_modules/v-mask/dist/v-mask.esm.js");
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -4378,347 +4382,6 @@ __webpack_require__.r(__webpack_exports__);
 /*!*********************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/pf/PessoaFisica.vue?vue&type=script&lang=js& ***!
   \*********************************************************************************************************************************************************************/
->>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.vue");
-<<<<<<< HEAD
-/* harmony import */ var v_mask__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! v-mask */ "./node_modules/v-mask/dist/v-mask.esm.js");
-=======
-/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-select */ "./node_modules/vue-select/dist/vue-select.js");
-/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_select__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var v_mask__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! v-mask */ "./node_modules/v-mask/dist/v-mask.esm.js");
-/* harmony import */ var vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-select/dist/vue-select.css */ "./node_modules/vue-select/dist/vue-select.css");
-/* harmony import */ var vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_3__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
->>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'ListaPessoaFisica',
-  components: {
-    AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__["default"]
-  },
-  data: function data() {
-    return {
-      pjs: [],
-      url: 'http://corporativo.local/pj/pessoafisica/dados/21',
-      pesquisa: {
-        codigo_registro: '',
-        razao_social: '',
-        nome_fantasia: '',
-        cnpj: '',
-        dt_registro: ''
-      }
-    };
-  },
-  mounted: function mounted() {
-    var _this = this;
-
-    axios.get('/pf/pessoafisica/lista', {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    }).then(function (response) {
-      _this.pjs = response.data;
-    });
-  },
-  methods: {
-    editarPessoafisica: function editarPessoafisica(id_pessoa) {
-      window.location.assign('/pf/pessoafisica/dados/' + id_pessoa);
-    }
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/pf/PessoaFisica.vue?vue&type=script&lang=js&":
-/*!*********************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/pf/PessoaFisica.vue?vue&type=script&lang=js& ***!
-  \*********************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -4730,8 +4393,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var v_mask__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! v-mask */ "./node_modules/v-mask/dist/v-mask.esm.js");
 /* harmony import */ var vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-select/dist/vue-select.css */ "./node_modules/vue-select/dist/vue-select.css");
 /* harmony import */ var vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var text_mask_addons_dist_createNumberMask__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! text-mask-addons/dist/createNumberMask */ "./node_modules/text-mask-addons/dist/createNumberMask.js");
-/* harmony import */ var text_mask_addons_dist_createNumberMask__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(text_mask_addons_dist_createNumberMask__WEBPACK_IMPORTED_MODULE_4__);
 //
 //
 //
@@ -4769,7 +4430,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-<<<<<<< HEAD
 //
 //
 //
@@ -4874,76 +4534,211 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-=======
->>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
 
-<<<<<<< HEAD
-
-var maskDinheiro = text_mask_addons_dist_createNumberMask__WEBPACK_IMPORTED_MODULE_4___default()({
-  prefix: 'R$ ',
-  allowDecimal: true,
-  decimalSymbol: ',',
-  includeThousandsSeparator: true,
-  thousandsSeparatorSymbol: '.',
-  allowNegative: false,
-  valorEstabelecimento: null
-});
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'pj',
-=======
-/* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'pessoa-fisica',
->>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
   components: {
     AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__["default"],
     vSelect: vue_select__WEBPACK_IMPORTED_MODULE_1___default.a
   },
-<<<<<<< HEAD
   props: {
     pessoa: Object
   },
-  data: function data() {
-    return {
-      mask: maskDinheiro,
-      pf: {
-        fk_id_pessoa: '',
-        sequencial: '',
-        nome: '',
-        cpf: '',
-        identidade: '',
-        data_emissao_identidade: '',
-        data_nascimento: '',
-        foto: '',
-        pai: '',
-        mae: '',
-        sexo: '',
-        tipo_sangue: '',
-        fk_cd_nacionalidade: '',
-        fk_id_naturalidade: '',
-        deficiente: '',
-        titulo_eleitor: '',
-        zona_titulo_eleitor: '',
-        secao_titulo_eleitor: '',
-        fk_cidade_titulo_eleitor: '',
-        observacao: '',
-        usuario: '',
-        data_cadastro: '',
-        data_alteracao: ''
-      },
-      endereco: {
-        cep: ''
-      }
-    };
-  },
-  mounted: function mounted() {
-    var _this = this;
-
-    this.pj = this.$page.pj;
-    axios.get('/pessoajuridica/listatipo', {
-=======
   data: function data() {
     return {
       oSexo: [{
@@ -4961,6 +4756,7 @@ var maskDinheiro = text_mask_addons_dist_createNumberMask__WEBPACK_IMPORTED_MODU
         'text': 'NÃO'
       }],
       oNacionalidade: [],
+      estado: [],
       pf: {
         cpf: '',
         data_emissao_identidade: '',
@@ -4979,6 +4775,18 @@ var maskDinheiro = text_mask_addons_dist_createNumberMask__WEBPACK_IMPORTED_MODU
         tipo_sangue: '',
         titulo_eleitor: '',
         zona_titulo_eleitor: ''
+      },
+      endereco: {
+        numero: '',
+        id_endereco: '',
+        fk_id_tipo_endereco: '',
+        fk_id_cidade: '',
+        endereco_valido: '',
+        endereco: '',
+        complemento: '',
+        cep: '',
+        bairro: '',
+        estado: ''
       }
     };
   },
@@ -4986,23 +4794,18 @@ var maskDinheiro = text_mask_addons_dist_createNumberMask__WEBPACK_IMPORTED_MODU
     var _this = this;
 
     axios.get('/pessoafisica/nacionalidade', {
->>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
       headers: {
         'Content-Type': 'application/json'
       }
     }).then(function (response) {
-<<<<<<< HEAD
-      _this.tpempresa = response.data;
-    });
-    axios.get('/pessoajuridica/listatpestabelecimento', {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    }).then(function (response) {
-      _this.tpestabelecimento = response.data;
-    });
-=======
       _this.oNacionalidade = response.data;
+    });
+    axios.get('https://servicodados.ibge.gov.br/api/v1/localidades/estados', {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(function (response) {
+      _this.estado = response.data;
     });
 
     if (this.$page.pf.fk_id_pessoa != NaN) {
@@ -5052,9 +4855,6 @@ var maskDinheiro = text_mask_addons_dist_createNumberMask__WEBPACK_IMPORTED_MODU
         }];
       }
     }
-
-    console.log(this.$page.pf);
->>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
   },
   methods: {
     escolheTab: function escolheTab(div) {
@@ -5064,12 +4864,29 @@ var maskDinheiro = text_mask_addons_dist_createNumberMask__WEBPACK_IMPORTED_MODU
       if (div == '1') this.$refs.divDescricao.style.display = "block";
       if (div == '2') this.$refs.divContato.style.display = "block";
       if (div == '3') this.$refs.divQuadro.style.display = "block";
-<<<<<<< HEAD
     },
-    salvarDescricao: function salvarDescricao() {// console.log( this.pj );
-=======
->>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
-    }
+    getEnderecoCep: function getEnderecoCep() {
+      var _this2 = this;
+
+      var cepEndereco = this.endereco.cep.replace(/[^\d-]/g, '');
+
+      if (cepEndereco.length < 25) {
+        alert('http://ws.creadf.dev.br/api/endereco/' + cepEndereco + '/');
+      }
+
+      axios.get('http://ws.creadf.dev.br/api/endereco/' + cepEndereco + '/', {
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+          'Referrer-Policy': 'no-referrer'
+        }
+      }).then(function (response) {
+        _this2.endereco = response.data;
+      });
+      console.log(this.pf.endereco);
+    },
+    salvarPessoaFisica: function salvarPessoaFisica() {},
+    salvarEnderecoPessoa: function salvarEnderecoPessoa() {}
   }
 });
 
@@ -5474,7 +5291,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 
@@ -5520,15 +5336,11 @@ var maskDinheiro = text_mask_addons_dist_createNumberMask__WEBPACK_IMPORTED_MODU
   created: function created() {
     var _this = this;
 
-<<<<<<< HEAD
-    // this.pj = this.$page.pj;
-=======
     // console.log( this.$page );
     this.pj = this.$page.pj;
     console.log(this.pj); // this.tpempresa = this.$page.empresa;
     // this.tpestabelecimento = this.$page.estabelecimento;
 
->>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
     axios.get('/pessoajuridica/listatipo', {
       headers: {
         'Content-Type': 'application/json'
@@ -32614,8 +32426,6 @@ var render = function() {
                               click: function($event) {
                                 $event.preventDefault()
                                 return _vm.deletePhoto($event)
-<<<<<<< HEAD
-=======
                               }
                             }
                           },
@@ -32755,7 +32565,7 @@ var render = function() {
                   staticClass:
                     "font-semibold text-xl text-gray-800 leading-tight"
                 },
-                [_vm._v("\n            Pessoa Física\n        ")]
+                [_vm._v("\n\n            Pessoa Física\n\n        ")]
               )
             ]
           },
@@ -32967,6 +32777,19 @@ var render = function() {
                             _vm._v("Pesquisar")
                           ])
                         ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass:
+                            "appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 ml-10 mb-3 leading-tight focus:outline-none focus:bg-white",
+                          attrs: { type: "button" }
+                        },
+                        [
+                          _c("i", { staticClass: "fas fa-plus" }),
+                          _c("span", { staticClass: "ml-3" }, [_vm._v("Novo")])
+                        ]
                       )
                     ]
                   )
@@ -33025,9 +32848,9 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n\n                    " +
+                              "\n                    " +
                                 _vm._s(pf.codigo_registro) +
-                                "\n\n                    "
+                                "\n                    "
                             )
                           ]
                         )
@@ -33096,30 +32919,15 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("td", { staticClass: "border-t w-px" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass:
-                              "px-6 py-4 flex items-center cursor-pointer",
-                            attrs: { tabindex: "-4" },
-                            on: {
-                              click: function($event) {
-                                return _vm.editarPessoaFisica(pf.fk_id_pessoa)
-                              }
-                            }
-                          },
-                          [
-                            _vm._v(
-                              "\n                    Editar\n                    "
-                            )
-                          ]
+                        _vm._v(
+                          "\n                    Editar\n                    "
                         )
                       ])
                     ]
                   )
                 }),
                 _vm._v(" "),
-                _vm.pfs.length === 0
+                _vm.pfs.length == 0
                   ? _c("tr", [
                       _c(
                         "td",
@@ -33196,7 +33004,7 @@ var render = function() {
             "a",
             {
               staticClass:
-                "bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-700 font-semibold",
+                "bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 cursor-pointer text-blue-700 font-semibold",
               on: {
                 click: function($event) {
                   $event.preventDefault()
@@ -33213,7 +33021,7 @@ var render = function() {
             "a",
             {
               staticClass:
-                "bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold",
+                "bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 cursor-pointer font-semibold",
               on: {
                 click: function($event) {
                   $event.preventDefault()
@@ -33230,7 +33038,7 @@ var render = function() {
             "a",
             {
               staticClass:
-                "bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold",
+                "bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 cursor-pointer font-semibold",
               on: {
                 click: function($event) {
                   $event.preventDefault()
@@ -33249,6 +33057,7 @@ var render = function() {
           {
             ref: "divDescricao",
             staticClass: "max-w-7xl mx-auto sm:px-6 lg:px-8",
+            staticStyle: { display: "none" },
             attrs: { id: "div_1" }
           },
           [
@@ -33268,6 +33077,12 @@ var render = function() {
                         id: "frm-pessoa-fisica",
                         name: "frm-pessoa-fisica",
                         method: "GET"
+                      },
+                      on: {
+                        submit: function($event) {
+                          $event.preventDefault()
+                          return _vm.salvarPessoaFisica($event)
+                        }
                       }
                     },
                     [
@@ -33969,229 +33784,16 @@ var render = function() {
                                   "titulo_eleitor",
                                   $event.target.value
                                 )
->>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
                               }
                             }
-                          },
-                          [
-                            _vm._v(
-                              "\n                Remove Photo\n            "
-                            )
-                          ]
-                        )
-                      : _vm._e(),
-                    _vm._v(" "),
-                    _c("jet-input-error", {
-                      staticClass: "mt-2",
-                      attrs: { message: _vm.form.error("photo") }
-                    })
-                  ],
-                  1
-                )
-              : _vm._e(),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "col-span-6 sm:col-span-4" },
-              [
-                _c("jet-label", { attrs: { for: "name", value: "Name" } }),
-                _vm._v(" "),
-                _c("jet-input", {
-                  staticClass: "mt-1 block w-full",
-                  attrs: { id: "name", type: "text", autocomplete: "name" },
-                  model: {
-                    value: _vm.form.name,
-                    callback: function($$v) {
-                      _vm.$set(_vm.form, "name", $$v)
-                    },
-                    expression: "form.name"
-                  }
-                }),
-                _vm._v(" "),
-                _c("jet-input-error", {
-                  staticClass: "mt-2",
-                  attrs: { message: _vm.form.error("name") }
-                })
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "col-span-6 sm:col-span-4" },
-              [
-                _c("jet-label", { attrs: { for: "email", value: "Email" } }),
-                _vm._v(" "),
-                _c("jet-input", {
-                  staticClass: "mt-1 block w-full",
-                  attrs: { id: "email", type: "email" },
-                  model: {
-                    value: _vm.form.email,
-                    callback: function($$v) {
-                      _vm.$set(_vm.form, "email", $$v)
-                    },
-                    expression: "form.email"
-                  }
-                }),
-                _vm._v(" "),
-                _c("jet-input-error", {
-                  staticClass: "mt-2",
-                  attrs: { message: _vm.form.error("email") }
-                })
-              ],
-              1
-            )
-          ]
-        },
-        proxy: true
-      },
-      {
-        key: "actions",
-        fn: function() {
-          return [
-            _c(
-              "jet-action-message",
-              {
-                staticClass: "mr-3",
-                attrs: { on: _vm.form.recentlySuccessful }
-              },
-              [_vm._v("\n            Saved.\n        ")]
-            ),
-            _vm._v(" "),
-            _c(
-              "jet-button",
-              {
-                class: { "opacity-25": _vm.form.processing },
-                attrs: { disabled: _vm.form.processing }
-              },
-              [_vm._v("\n            Save\n        ")]
-            )
-          ]
-        },
-        proxy: true
-      }
-    ])
-  })
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/pf/ListaPessoaFisica.vue?vue&type=template&id=4405fb31&":
-/*!******************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/pf/ListaPessoaFisica.vue?vue&type=template&id=4405fb31& ***!
-  \******************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "app-layout",
-    {
-      scopedSlots: _vm._u([
-        {
-          key: "header",
-          fn: function() {
-            return [
-              _c(
-                "h2",
-                {
-                  staticClass:
-                    "font-semibold text-xl text-gray-800 leading-tight"
-                },
-                [_vm._v("\n            Pessoa Jurídica\n        ")]
-              )
-            ]
-          },
-          proxy: true
-        }
-      ])
-    },
-    [
-      _vm._v(" "),
-      _c("div", { staticClass: "py-1" }, [
-        _c(
-          "div",
-          {
-            ref: "divDescricao",
-            staticClass: "max-w-7xl mx-auto sm:px-6 lg:px-8",
-            attrs: { id: "div_1" }
-          },
-          [
-            _c(
-              "div",
-              {
-                staticClass: "bg-white overflow-hidden shadow-xl sm:rounded-lg"
-              },
-              [
-                _c("div", { staticClass: "row col-md-6 flex inline" }, [
-                  _c(
-                    "div",
-                    { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
-                    [
-                      _c(
-                        "label",
-                        {
-                          staticClass:
-                            "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
-                          attrs: { for: "codigo_registro" }
-                        },
-                        [
-<<<<<<< HEAD
-                          _vm._v(
-                            "\n                            Registro:\n                        "
-                          )
+                          })
                         ]
                       ),
                       _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.pesquisa.codigo_registro,
-                            expression: "pesquisa.codigo_registro"
-                          }
-                        ],
-                        staticClass:
-                          "appearance-none block w-50 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
-                        attrs: {
-                          id: "codigo_registro",
-                          name: "codigo_registro",
-                          type: "text",
-                          placeholder: "Insira o registro"
-                        },
-                        domProps: { value: _vm.pesquisa.codigo_registro },
-                        on: {
-                          keyup: function($event) {
-                            if (
-                              !$event.type.indexOf("key") &&
-                              _vm._k(
-                                $event.keyCode,
-                                "enter",
-                                13,
-                                $event.key,
-                                "Enter"
-                              )
-                            ) {
-                              return null
-                            }
-                            return $event.target.nextElementSibling.focus()
-                          },
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-=======
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                        [
                           _c(
                             "label",
                             {
@@ -34287,157 +33889,15 @@ var render = function() {
                                   $event.target.value
                                 )
                               }
->>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
                             }
-                            _vm.$set(
-                              _vm.pesquisa,
-                              "codigo_registro",
-                              $event.target.value
-                            )
-                          }
-                        }
-                      })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
-                    [
-                      _c(
-                        "label",
-                        {
-                          staticClass:
-                            "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
-                          attrs: { for: "nome_fantasia" }
-                        },
-                        [
-<<<<<<< HEAD
-                          _vm._v(
-                            "\n                            Nome:\n                        "
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.pesquisa.nome_fantasia,
-                            expression: "pesquisa.nome_fantasia"
-                          }
-                        ],
-                        staticClass:
-                          "appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
-                        attrs: {
-                          id: "nome",
-                          name: "nome_fantasia",
-                          type: "text",
-                          placeholder: "Insira o nome fantasia"
-                        },
-                        domProps: { value: _vm.pesquisa.nome_fantasia },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.pesquisa,
-                              "nome_fantasia",
-                              $event.target.value
-                            )
-                          }
-                        }
-                      })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
-                    [
-                      _c(
-                        "label",
-                        {
-                          staticClass:
-                            "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
-                          attrs: { for: "cnpj" }
-                        },
-                        [
-                          _vm._v(
-                            "\n                            CPF:\n                        "
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.pesquisa.cnpj,
-                            expression: "pesquisa.cnpj"
-                          },
-                          {
-                            name: "mask",
-                            rawName: "v-mask",
-                            value: "###.###.###-##",
-                            expression: "'###.###.###-##'"
-                          }
-                        ],
-                        staticClass:
-                          "appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
-                        attrs: {
-                          name: "cnpj",
-                          id: "cnpj",
-                          type: "text",
-                          placeholder: "Apenas números"
-                        },
-                        domProps: { value: _vm.pesquisa.cnpj },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(_vm.pesquisa, "cnpj", $event.target.value)
-                          }
-                        }
-                      })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0 mt-6" },
-                    [
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
-                          attrs: { type: "button" }
-                        },
-                        [
-                          _c("i", { staticClass: "fas fa-search" }),
-                          _c("span", { staticClass: "ml-3" }, [
-                            _vm._v("Pesquisar")
-                          ])
+                          })
                         ]
                       ),
                       _vm._v(" "),
                       _c(
-                        "button",
-                        {
-                          staticClass:
-                            "appearance-none block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 ml-10 mb-3 leading-tight focus:outline-none focus:bg-white",
-                          attrs: { type: "button" }
-                        },
+                        "div",
+                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
                         [
-                          _c("i", { staticClass: "fas fa-plus" }),
-                          _c("span", { staticClass: "ml-3" }, [_vm._v("Novo")])
-                        ]
-=======
                           _c(
                             "label",
                             {
@@ -34483,7 +33943,6 @@ var render = function() {
                             }
                           })
                         ]
->>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
                       )
                     ]
                   )
@@ -34496,64 +33955,51 @@ var render = function() {
         _c(
           "div",
           {
-            ref: "divDescricao",
+            ref: "divContato",
             staticClass: "max-w-7xl mx-auto sm:px-6 lg:px-8",
-            attrs: { id: "div_1" }
+            staticStyle: { display: "block" },
+            attrs: { id: "div_2" }
           },
           [
             _c(
-              "table",
-              { staticClass: "w-full whitespace-no-wrap" },
+              "div",
+              {
+                staticClass: "bg-white overflow-hidden shadow-xl sm:rounded-lg"
+              },
               [
-                _c("tr", { staticClass: "text-left font-bold" }, [
-                  _c("th", { staticClass: "px-6 pt-6 pb-4" }, [
-                    _vm._v("Fantasia")
-                  ]),
-                  _vm._v(" "),
-                  _c("th", { staticClass: "px-6 pt-6 pb-4" }, [
-                    _vm._v("Razão Social")
-                  ]),
-                  _vm._v(" "),
-                  _c("th", { staticClass: "px-6 pt-6 pb-4" }, [_vm._v("CNPJ")]),
-                  _vm._v(" "),
-                  _c("th", { staticClass: "px-6 pt-6 pb-4" }, [
-                    _vm._v("E-mail")
-                  ]),
-                  _vm._v(" "),
+                _c("div", { staticClass: "row col-md-6" }, [
                   _c(
-                    "th",
-                    { staticClass: "px-6 pt-6 pb-4", attrs: { colspan: "2" } },
-                    [_vm._v("Ação")]
-                  )
-                ]),
-                _vm._v(" "),
-                _vm._l(_vm.pjs, function(pj) {
-                  return _c(
-                    "tr",
+                    "form",
                     {
-                      key: pj.fk_id_pessoa,
-                      staticClass: "hover:bg-gray-100 focus-within:bg-gray-100"
+                      ref: "frmEndereco",
+                      attrs: {
+                        action: "/pessoajuridica/endereco",
+                        id: "frm-pessoa-endereco",
+                        name: "frm-pessoa-endereco",
+                        method: "GET"
+                      },
+                      on: {
+                        submit: function($event) {
+                          $event.preventDefault()
+                          return _vm.salvarEnderecoPessoa($event)
+                        }
+                      }
                     },
                     [
-<<<<<<< HEAD
-                      _c("td", { staticClass: "border-t" }, [
-=======
                       _c(
                         "div",
-                        {
-                          staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0 block"
-                        },
+                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
                         [
                           _c(
                             "label",
                             {
                               staticClass:
                                 "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
-                              attrs: { for: "cep" }
+                              attrs: { for: "endereco_valido" }
                             },
                             [
                               _vm._v(
-                                "\n                                    CEP\n                                "
+                                "\n                                    Endereco Principal (correspondência)\n                                "
                               )
                             ]
                           ),
@@ -34561,141 +34007,293 @@ var render = function() {
                           _c("input", {
                             directives: [
                               {
-                                name: "mask",
-                                rawName: "v-mask",
-                                value: "##.###-###",
-                                expression: "'##.###-###'"
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.endereco.endereco_valido,
+                                expression: "endereco.endereco_valido"
                               }
                             ],
                             staticClass:
-                              "appearance-none block w-26 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                              "appearance-none block w-14 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
                             attrs: {
-                              name: "cep",
-                              id: "cep",
-                              type: "text",
-                              placeholder: "Insira o CEP"
+                              id: "endereco_valido",
+                              name: "endereco_valido",
+                              type: "checkbox"
+                            },
+                            domProps: {
+                              checked: Array.isArray(
+                                _vm.endereco.endereco_valido
+                              )
+                                ? _vm._i(_vm.endereco.endereco_valido, null) >
+                                  -1
+                                : _vm.endereco.endereco_valido
+                            },
+                            on: {
+                              change: function($event) {
+                                var $$a = _vm.endereco.endereco_valido,
+                                  $$el = $event.target,
+                                  $$c = $$el.checked ? true : false
+                                if (Array.isArray($$a)) {
+                                  var $$v = null,
+                                    $$i = _vm._i($$a, $$v)
+                                  if ($$el.checked) {
+                                    $$i < 0 &&
+                                      _vm.$set(
+                                        _vm.endereco,
+                                        "endereco_valido",
+                                        $$a.concat([$$v])
+                                      )
+                                  } else {
+                                    $$i > -1 &&
+                                      _vm.$set(
+                                        _vm.endereco,
+                                        "endereco_valido",
+                                        $$a
+                                          .slice(0, $$i)
+                                          .concat($$a.slice($$i + 1))
+                                      )
+                                  }
+                                } else {
+                                  _vm.$set(_vm.endereco, "endereco_valido", $$c)
+                                }
+                              }
                             }
                           })
                         ]
                       ),
                       _vm._v(" "),
-                      _c("div", { staticClass: "row-auto max-w-full flex" }, [
->>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
-                        _c(
-                          "span",
-                          {
-                            staticClass:
-                              "px-6 py-4 flex items-center focus:text-indigo-500"
-                          },
-                          [
-<<<<<<< HEAD
-                            _vm._v(
-                              "\n\n                    " +
-                                _vm._s(pj.nome_fantasia) +
-                                "\n\n                    "
-                            )
-=======
-                            _c(
-                              "label",
-                              {
-                                staticClass:
-                                  "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
-                                attrs: { for: "endereco" }
-                              },
-                              [
-                                _vm._v(
-                                  "\n                                        Endereço\n                                    "
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c("input", {
-                              staticClass:
-                                "appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
-                              attrs: {
-                                id: "endereco",
-                                name: "endereco",
-                                type: "text",
-                                placeholder: "Endereço"
-                              }
-                            })
->>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("td", { staticClass: "border-t" }, [
-                        _c(
-                          "span",
-                          {
-                            staticClass: "px-6 py-4 flex items-center",
-                            attrs: { tabindex: "-1" }
-                          },
-                          [
-<<<<<<< HEAD
-                            _vm._v(
-                              "\n                    " +
-                                _vm._s(pj.razao_social) +
-                                "\n                    "
-                            )
-=======
-                            _c(
-                              "label",
-                              {
-                                staticClass:
-                                  "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
-                                attrs: { for: "numero" }
-                              },
-                              [
-                                _vm._v(
-                                  "\n                                        Número\n                                    "
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c("input", {
-                              staticClass:
-                                "appearance-none block w-20 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
-                              attrs: {
-                                id: "numero",
-                                name: "numero",
-                                type: "text",
-                                placeholder: "Nº"
-                              }
-                            })
->>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-<<<<<<< HEAD
-                      _c("td", { staticClass: "border-t" }, [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: pj.cnpj,
-                              expression: "pj.cnpj"
-                            },
-                            {
-                              name: "mask",
-                              rawName: "v-mask",
-                              value: "##.###.###/####-##",
-                              expression: "'##.###.###/####-##'"
-                            }
-                          ],
-                          staticClass: "px-6 py-4 flex items-center",
-                          attrs: { disabled: "", type: "text", tabindex: "-2" },
-                          domProps: { value: pj.cnpj },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-=======
                       _c(
                         "div",
-                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                        {
+                          staticClass: "flex w-full md:w-1/3 px-3 mb-6 md:mb-0"
+                        },
+                        [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "flex-auto md:w-1/3 px-3 mb-6 md:mb-0"
+                            },
+                            [
+                              _c(
+                                "label",
+                                {
+                                  staticClass:
+                                    "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                                  attrs: { for: "cep" }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                    CEP\n                                "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.endereco.cep,
+                                    expression: "endereco.cep"
+                                  },
+                                  {
+                                    name: "mask",
+                                    rawName: "v-mask",
+                                    value: "##.###-###",
+                                    expression: "'##.###-###'"
+                                  }
+                                ],
+                                staticClass:
+                                  "appearance-none block w-44 bg-gray-50 text-center text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                                attrs: {
+                                  id: "cep",
+                                  name: "cep",
+                                  type: "text",
+                                  placeholder: "Insira o cep"
+                                },
+                                domProps: { value: _vm.endereco.cep },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.endereco,
+                                      "cep",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "flex-auto md:w-0 px-0 py-3 mb-1 md:mb-0 left"
+                            },
+                            [
+                              _c(
+                                "label",
+                                {
+                                  staticClass:
+                                    "block uppercase tracking-wide text-gray-700 text-xs font-bold ",
+                                  attrs: { for: "search" }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                     \n                                "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "button",
+                                {
+                                  staticClass:
+                                    "bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-1 rounded-full h-9 w-9",
+                                  attrs: { id: "search" },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.getEnderecoCep()
+                                    }
+                                  }
+                                },
+                                [_c("i", { staticClass: "fa fa-redo" })]
+                              )
+                            ]
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-full flex md:w-1/2 md:mb-0" },
+                        [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "flex-auto md:w-full px-3 mb-6 md:mb-0"
+                            },
+                            [
+                              _c(
+                                "label",
+                                {
+                                  staticClass:
+                                    "w-full block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                                  attrs: { for: "endereco" }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                    Logradouro\n                                "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.endereco.endereco,
+                                    expression: "endereco.endereco"
+                                  }
+                                ],
+                                staticClass:
+                                  "appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                                attrs: {
+                                  id: "endereco",
+                                  name: "endereco",
+                                  type: "text",
+                                  placeholder: "Insira o logradouro"
+                                },
+                                domProps: { value: _vm.endereco.endereco },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.endereco,
+                                      "endereco",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "flex-auto md:w-1/2 px-3 mb-6 md:mb-0"
+                            },
+                            [
+                              _c(
+                                "label",
+                                {
+                                  staticClass:
+                                    "w-20 block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                                  attrs: { for: "numero" }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                    Número\n                                "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.endereco.numero,
+                                    expression: "endereco.numero"
+                                  },
+                                  {
+                                    name: "mask",
+                                    rawName: "v-mask",
+                                    value: "######",
+                                    expression: "'######'"
+                                  }
+                                ],
+                                staticClass:
+                                  "appearance-none block w-24 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                                attrs: {
+                                  id: "numero",
+                                  name: "numero",
+                                  type: "text",
+                                  placeholder: "Insira o número"
+                                },
+                                domProps: { value: _vm.endereco.numero },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.endereco,
+                                      "numero",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ]
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/3 px-3 mb-6 md:mb-0" },
                         [
                           _c(
                             "label",
@@ -34712,13 +34310,34 @@ var render = function() {
                           ),
                           _vm._v(" "),
                           _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.endereco.complemento,
+                                expression: "endereco.complemento"
+                              }
+                            ],
                             staticClass:
-                              "appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                              "appearance-none w-full block bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
                             attrs: {
-                              name: "complemento",
                               id: "complemento",
+                              name: "complemento",
                               type: "text",
-                              placeholder: "Complemento"
+                              placeholder: "Insira o complemento"
+                            },
+                            domProps: { value: _vm.endereco.complemento },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.endereco,
+                                  "complemento",
+                                  $event.target.value
+                                )
+                              }
                             }
                           })
                         ]
@@ -34726,7 +34345,120 @@ var render = function() {
                       _vm._v(" "),
                       _c(
                         "div",
-                        { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
+                        { staticClass: "w-full flex md:w-1/3 md:mb-0" },
+                        [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "flex-auto md:w-1/6 px-3 mb-6 md:mb-0"
+                            },
+                            [
+                              _c(
+                                "label",
+                                {
+                                  staticClass:
+                                    "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                                  attrs: { for: "id_uf" }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                    Estado\n                                 "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.endereco.estado,
+                                    expression: "endereco.estado"
+                                  }
+                                ],
+                                staticClass:
+                                  "appearance-none w-full block bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                                attrs: {
+                                  id: "complemento",
+                                  name: "complemento",
+                                  type: "text",
+                                  placeholder: "Insira o complemento"
+                                },
+                                domProps: { value: _vm.endereco.estado },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.endereco,
+                                      "estado",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "flex-auto md:w-1/3 md:mb-0" },
+                            [
+                              _c(
+                                "label",
+                                {
+                                  staticClass:
+                                    "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
+                                  attrs: { for: "fk_id_cidade" }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                    Cidade\n                                "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.endereco.fk_id_cidade,
+                                    expression: "endereco.fk_id_cidade"
+                                  }
+                                ],
+                                staticClass:
+                                  "appearance-none block w-44 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                                attrs: {
+                                  id: "fk_id_cidade",
+                                  name: "fk_id_cidade",
+                                  type: "text",
+                                  placeholder: "Escolha a cidade"
+                                },
+                                domProps: { value: _vm.endereco.fk_id_cidade },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.endereco,
+                                      "fk_id_cidade",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ]
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "w-full md:w-1/3 px-3 mb-6 md:mb-0" },
                         [
                           _c(
                             "label",
@@ -34737,113 +34469,45 @@ var render = function() {
                             },
                             [
                               _vm._v(
-                                "\n                                    Bairo\n                                "
+                                "\n                                    Bairro\n                                "
                               )
                             ]
                           ),
                           _vm._v(" "),
                           _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.endereco.bairro,
+                                expression: "endereco.bairro"
+                              }
+                            ],
                             staticClass:
-                              "appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                              "appearance-none w-full block w-65 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
                             attrs: {
-                              name: "bairro",
                               id: "bairro",
+                              name: "bairro",
                               type: "text",
-                              placeholder: "Bairro"
+                              placeholder: "Insira o bairro"
+                            },
+                            domProps: { value: _vm.endereco.bairro },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.endereco,
+                                  "bairro",
+                                  $event.target.value
+                                )
+                              }
                             }
                           })
                         ]
                       ),
                       _vm._v(" "),
-                      _c("div", { staticClass: "max-w-2xl flex" }, [
-                        _c(
-                          "div",
-                          { staticClass: "w-24 md:w-1/2 px-3 mb-6 md:mb-0" },
-                          [
-                            _c(
-                              "label",
-                              {
-                                staticClass:
-                                  "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
-                                attrs: { for: "uf" }
-                              },
-                              [
-                                _vm._v(
-                                  "\n                                        Estado\n                                    "
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c("input", {
-                              staticClass:
-                                "appearance-none block w-64 bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
-                              attrs: {
-                                name: "uf",
-                                id: "uf",
-                                type: "text",
-                                placeholder: "UF"
->>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
-                              }
-                              _vm.$set(pj, "cnpj", $event.target.value)
-                            }
-                          }
-                        })
-                      ]),
-                      _vm._v(" "),
-                      _c("td", { staticClass: "border-t" }, [
-                        _c(
-                          "span",
-                          {
-                            staticClass: "px-6 py-4 flex items-center",
-                            attrs: { tabindex: "-3" }
-                          },
-                          [
-<<<<<<< HEAD
-                            _vm._v(
-                              "\n                    Teste\n                    "
-                            )
-=======
-                            _c(
-                              "label",
-                              {
-                                staticClass:
-                                  "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2",
-                                attrs: { for: "cidade" }
-                              },
-                              [
-                                _vm._v(
-                                  "\n                                        Cidade\n                                    "
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c("input", {
-                              staticClass:
-                                "appearance-none block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
-                              attrs: {
-                                name: "cidade",
-                                id: "cidade",
-                                type: "text",
-                                placeholder: "Cidade"
-                              }
-                            })
->>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-<<<<<<< HEAD
-                      _c("td", { staticClass: "border-t w-px" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass:
-                              "px-6 py-4 flex items-center cursor-pointer",
-                            attrs: { tabindex: "-4" },
-                            on: {
-                              click: function($event) {
-                                return _vm.editarPessoafisica(pj.fk_id_pessoa)
-=======
                       _c(
                         "div",
                         { staticClass: "w-full md:w-1/2 px-3 mb-6 md:mb-0" },
@@ -34858,62 +34522,89 @@ var render = function() {
                                 click: function($event) {
                                   return _vm.exibe()
                                 }
->>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
                               }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    Salvar\n                                "
+                              )
+                            ]
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.pf.usuario_atualizacao,
+                            expression: "pf.usuario_atualizacao"
+                          }
+                        ],
+                        attrs: {
+                          id: "usuario_atualizacao",
+                          name: "usuario_atualizacao",
+                          type: "hidden"
+                        },
+                        domProps: { value: _vm.pf.usuario_atualizacao },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
                             }
-                          },
-                          [
-                            _vm._v(
-                              "\n                    Editar\n                    "
+                            _vm.$set(
+                              _vm.pf,
+                              "usuario_atualizacao",
+                              $event.target.value
                             )
-                          ]
-                        )
-                      ])
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.pf.id_endereco,
+                            expression: "pf.id_endereco"
+                          }
+                        ],
+                        attrs: {
+                          id: "id_endereco",
+                          name: "id_endereco",
+                          type: "hidden"
+                        },
+                        domProps: { value: _vm.pf.id_endereco },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.pf, "id_endereco", $event.target.value)
+                          }
+                        }
+                      })
                     ]
                   )
-                }),
-                _vm._v(" "),
-                _vm.pjs.length === 0
-                  ? _c("tr", [
-                      _c(
-                        "td",
-                        {
-                          staticClass: "border-t px-6 py-4",
-                          attrs: { colspan: "4" }
-                        },
-                        [_vm._v("Sem resultados para essa pesquisa.")]
-                      )
-                    ])
-                  : _vm._e()
-              ],
-              2
+                ])
+              ]
             )
           ]
-        )
+        ),
+        _vm._v(" "),
+        _c("div", {
+          ref: "divQuadro",
+          staticClass: "max-w-7xl mx-auto sm:px-6 lg:px-8",
+          attrs: { stye: "display: none;", id: "div_3" }
+        })
       ])
     ]
   )
 }
 var staticRenderFns = []
 render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/pf/PessoaFisica.vue?vue&type=template&id=1e028ec4&":
-/*!*************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Pages/pf/PessoaFisica.vue?vue&type=template&id=1e028ec4& ***!
-  \*************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function () {}
-var staticRenderFns = []
 
 
 
@@ -35757,11 +35448,7 @@ var render = function() {
                           ),
                           _vm._v(" "),
                           _c("v-select", {
-<<<<<<< HEAD
-                            key: _vm.id_tipo_empresa,
-=======
                             key: _vm.tpempresa.id_tipo_empresa,
->>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
                             staticClass:
                               "select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white",
                             attrs: {
@@ -35774,11 +35461,11 @@ var render = function() {
                               items: _vm.tpempresa
                             },
                             model: {
-                              value: _vm.tpempresa,
+                              value: _vm.pj.empresa,
                               callback: function($$v) {
-                                _vm.tpempresa = $$v
+                                _vm.$set(_vm.pj, "empresa", $$v)
                               },
-                              expression: "tpempresa"
+                              expression: "pj.empresa"
                             }
                           })
                         ],
@@ -35804,11 +35491,7 @@ var render = function() {
                           ),
                           _vm._v(" "),
                           _c("v-select", {
-<<<<<<< HEAD
-                            key: _vm.id_tipo_estabelecimento,
-=======
                             key: _vm.tpestabelecimento.id_tipo_estabelecimento,
->>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
                             staticClass:
                               "select-text block w-full bg-gray-50 text-gray-700 border border-blue-50 rounded py-3 px-4 mb-3 leading-tight focus:text-blue-500 focus:bg-white",
                             attrs: {
@@ -35823,11 +35506,11 @@ var render = function() {
                               items: _vm.tpestabelecimento
                             },
                             model: {
-                              value: _vm.tpestabelecimento,
+                              value: _vm.pj.estabelecimento,
                               callback: function($$v) {
-                                _vm.tpestabelecimento = $$v
+                                _vm.$set(_vm.pj, "estabelecimento", $$v)
                               },
-                              expression: "tpestabelecimento"
+                              expression: "pj.estabelecimento"
                             }
                           })
                         ],
@@ -54215,6 +53898,7 @@ window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+window.axios.defaults.headers.common['Access-Control-Allow-Origin'] = 'http://ws.creadf.dev.br/api/endereco/';
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting
@@ -54238,8 +53922,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\corp\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\corp\resources\css\app.css */"./resources/css/app.css");
+__webpack_require__(/*! /var/www/html/corp/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /var/www/html/corp/resources/css/app.css */"./resources/css/app.css");
 
 
 /***/ })

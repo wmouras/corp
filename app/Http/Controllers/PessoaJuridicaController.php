@@ -11,9 +11,9 @@ use Inertia\Inertia;
 use Illuminate\Support\Facades\Crypt;
 
 
-/** 
+/**
  * Classe de tratamento de dados das empresas.
- * 
+ *
  * @var      PesssoaJuridica
  * @package  Controller
  * @author   Wellington Moura <wellington.m.sousa@gmail.com>
@@ -23,10 +23,10 @@ use Illuminate\Support\Facades\Crypt;
  */
 class PessoaJuridicaController extends Controller
 {
-    
+
     /**
      * Função inicial da classe
-     * 
+     *
      * @return array vazio
      */
     public function index()
@@ -34,18 +34,14 @@ class PessoaJuridicaController extends Controller
         return Inertia::render('pj/PessoaJuridica');
     }
 
-    /** 
+    /**
      * Função que lista as empresas
-     * 
+     *
      * @return array
      */
     public function lista()
     {
 
-        // dd( PessoaJuridica::all() );
-<<<<<<< HEAD
-        return response()->json(PessoaJuridica::all());
-=======
         $pjs = PessoaJuridica::select('fk_id_pessoa', 'nome_fantasia', 'razao_social', 'cnpj', 'codigo_registro')->get();
         foreach($pjs as $pj)
         {
@@ -53,14 +49,13 @@ class PessoaJuridicaController extends Controller
             $p[] = $pj;
         }
 
-        return response()->json($p);//PessoaJuridica::select('fk_id_pessoa', 'nome_fantasia', 'razao_social', 'cnpj', 'codigo_registro')->get() );
->>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
+        return response()->json($p);
 
     }
-    
+
     /**
      * Função que lista ss tipos de empresa
-     * 
+     *
      * @return array
      */
     public function listaTipoEmpresa()
@@ -70,7 +65,7 @@ class PessoaJuridicaController extends Controller
     }
 
     /**
-     * Função que lista ss tipos de estabelecimentos     
+     * Função que lista ss tipos de estabelecimentos
      *
      * @return array
      */
@@ -81,7 +76,7 @@ class PessoaJuridicaController extends Controller
     }
 
     /**
-     * Função que lista ss tipos de estabelecimentos     
+     * Função que lista ss tipos de estabelecimentos
      *
      * @param  $request Request
      * @return array()
@@ -101,18 +96,12 @@ class PessoaJuridicaController extends Controller
         $request->merge(['dt_ultima_alt_capital' => $alt_capital]);
         $request->merge(['dt_ultima_alt_contratual' => $alt_contratual]);
 
-<<<<<<< HEAD
-        // dd( $request );
-
-        $result = PessoaJuridica::create($request->all());
-=======
         $result = PessoaJuridica::updateOrCreate( $request->all(), ['fk_id_pessoa' => $idPessoa] );
->>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
         dd($result);
     }
 
     /**
-     * Função que retorna um empresa para edição     
+     * Função que retorna um empresa para edição
      *
      * @param  Integer $id id da empresa
      * @return array
@@ -124,16 +113,10 @@ class PessoaJuridicaController extends Controller
         $id = Crypt::decryptString($id);
 
         $pj = PessoaJuridica::where('fk_id_pessoa', $id)->get()[0];
-<<<<<<< HEAD
-        $pj['empresa'] = $tpEmp->getTipoEmpresa($pj['fk_id_tipo_empresa']);
-        $pj['estabelecimento'] = $tpEst->getTipoEstabelecimento($pj['fk_id_tipo_estabelecimento']);
-=======
         $pj['empresa'] = $tpEmp->getTipoEmpresa( $pj['fk_id_tipo_empresa'] );
         $pj['estabelecimento'] = $tpEst->getTipoEstabelecimento( $pj['fk_id_tipo_estabelecimento'] );
         $aRetorno = array('pj' => $pj);
         session(['id_pessoa' => Crypt::encryptString($id)]);
->>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
-
         return Inertia::render('pj/PessoaJuridica', $aRetorno);
 
     }

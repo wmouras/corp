@@ -74,11 +74,7 @@
                                     label="tipo_empresa"
                                     value="id_tipo_empresa"
                                     :items="tpempresa"
-<<<<<<< HEAD
-                                    :key="id_tipo_empresa"
-=======
                                     :key="tpempresa.id_tipo_empresa"
->>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
 
                                 />
 
@@ -98,12 +94,7 @@
                                     label='tipo_estabelecimento'
                                     value="id_tipo_estabelecimento"
                                     :items="tpestabelecimento"
-<<<<<<< HEAD
-                                    :key="id_tipo_estabelecimento"
-=======
                                     :key="tpestabelecimento.id_tipo_estabelecimento"
-
->>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
                                 />
 
                             </div>
@@ -284,15 +275,11 @@
         }),
         created() {
 
-<<<<<<< HEAD
-            // this.pj = this.$page.pj;
-=======
             // console.log( this.$page );
             this.pj = this.$page.pj;
             console.log( this.pj );
             // this.tpempresa = this.$page.empresa;
             // this.tpestabelecimento = this.$page.estabelecimento;
->>>>>>> 7a6cf520f87b3e1060163606fea5888e2fe51c5d
 
             axios.get('/pessoajuridica/listatipo', { headers: {
                 'Content-Type': 'application/json'
